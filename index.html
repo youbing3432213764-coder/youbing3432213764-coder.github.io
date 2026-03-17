@@ -199,21 +199,21 @@
         <div class="content" v-pre>
             
             <h2 id="Base64编码隐藏"><a href="#Base64编码隐藏" class="headerlink" title="Base64编码隐藏"></a>Base64编码隐藏</h2><p>打开题目f12查看源码发现密码被base64加密</p>
-<p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670223912.png" alt="1773670223912"></p>
+<p><img src="/images/ctfshow/1773670223912.png" alt="1773670223912"></p>
 <p>解码得到密码</p>
-<p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670666647.png" alt="1773670666647"></p>
+<p><img src="/images/ctfshow/1773670666647.png" alt="1773670666647"></p>
 <p>登录得到flag</p>
-<p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670740030.png" alt="1773670740030"></p>
+<p><img src="/images/ctfshow/1773670740030.png" alt="1773670740030"></p>
 <h2 id="HTTP头注入"><a href="#HTTP头注入" class="headerlink" title="HTTP头注入"></a>HTTP头注入</h2><p>f12查看源码发现密码被base64加密</p>
-<p><img src="https://file+.vscode-resource.vscode-cdn.net/d%3A/blog/youbingblog/source/_posts/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670223912.png" alt="1773670223912"></p>
+<p><img src="/images/ctfshow/1773670223912.png" alt="1773670223912"></p>
 <p>解码得到密码</p>
-<p><img src="https://file+.vscode-resource.vscode-cdn.net/d%3A/blog/youbingblog/source/_posts/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670666647.png" alt="1773670666647"></p>
+<p><img src="/images/ctfshow/1773670666647.png" alt="1773670666647"></p>
 <p>登录提示只能ctf-show-brower登录</p>
-<p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773671083716.png" alt="1773671083716"></p>
+<p><img src="/images/ctfshow/1773671083716.png" alt="1773671083716"></p>
 <p>这里抓包修改（靶场默认开启https，删除s切换回http再抓包）</p>
-<p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773671245832.png" alt="1773671245832"></p>
+<p><img src="/images/ctfshow/1773671245832.png" alt="1773671245832"></p>
 <p>发送请求包得到flag</p>
-<p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773671327314.png" alt="1773671327314"></p>
+<p><img src="/images/ctfshow/1773671327314.png" alt="1773671327314"></p>
 <h2 id="Base64多层嵌套解码"><a href="#Base64多层嵌套解码" class="headerlink" title="Base64多层嵌套解码"></a>Base64多层嵌套解码</h2><p>这里步骤跟“HTTP头注入”一样，只是中间的解码的步骤复杂了一些</p>
 <p>第1步逆向：Base64解码 text atob(“SXpVRlF4TTFVelJtdFNSazB3VTJ4U1UwNXFSWGRVVlZrOWNWYzU&#x3D;”)</p>
 <p>第2步逆向：这一步是 btoa(‘aB3’ + encoded + ‘qW9’).substr(2) 对第1步结果Base64解码 得到完整字符串，前面补回2个字符 去掉开头的”aB3”和结尾的”qW9”</p>
@@ -234,7 +234,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
@@ -278,7 +278,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #ffa2c4">漏洞挖掘</a>
+            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #03a9f4">漏洞挖掘</a>
         </span>
         
     </div>
