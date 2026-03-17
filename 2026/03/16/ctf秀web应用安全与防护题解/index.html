@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title> | youbing的博客</title>
+    <title>ctfshow web应用安全与防护题解 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1></h1>
+        <h1>ctfshow web应用安全与防护题解</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -167,11 +167,25 @@
         </span>
         
         
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">
+                    题解
+                </a>
+            </span>
+            
+        </span>
+        
     </div>
     
     <div class="content" v-pre>
-        <p>title: ctfshow web应用安全与防护题解<br>date: 2026-03-16 23:06:00<br>tags: 题解</p>
-<h2 id="Base64编码隐藏"><a href="#Base64编码隐藏" class="headerlink" title="Base64编码隐藏"></a>Base64编码隐藏</h2><p>打开题目f12查看源码发现密码被base64加密</p>
+        <h2 id="Base64编码隐藏"><a href="#Base64编码隐藏" class="headerlink" title="Base64编码隐藏"></a>Base64编码隐藏</h2><p>打开题目f12查看源码发现密码被base64加密</p>
 <p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670223912.png" alt="1773670223912"></p>
 <p>解码得到密码</p>
 <p><img src="/image/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/1773670666647.png" alt="1773670666647"></p>
