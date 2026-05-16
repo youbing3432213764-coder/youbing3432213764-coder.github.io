@@ -181,6 +181,52 @@
         
 
 <div class="post">
+    <a href="/2026/02/04/2026-02-04-ssssti/">
+        <h2 class="post-title">ssssti</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/4
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里ssti用fenjing试试发现flag，提取flag</p>
+<p><img src="/images/writeups/ssssti_1eaa6fb6.png" alt="ssssti_1eaa6fb6"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/SSTI/" style="color: #00bcd4">SSTI</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/04/2026-02-04-ssssti/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2026/02/04/2026-02-04-%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/">
         <h2 class="post-title">朴实无华</h2>
     </a>
@@ -216,57 +262,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/04/2026-02-04-%E6%9C%B4%E5%AE%9E%E6%97%A0%E5%8D%8E/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/04/2026-02-04-ssssti/">
-        <h2 class="post-title">ssssti</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这里ssti用fenjing试试发现flag，提取flag</p>
-<p><img src="/images/writeups/ssssti_1eaa6fb6.png" alt="ssssti_1eaa6fb6"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/SSTI/" style="color: #00bcd4">SSTI</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/04/2026-02-04-ssssti/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -304,7 +304,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -344,145 +344,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/03/2026-02-03-Evan/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/03/2026-02-03-ez_php1/">
-        <h2 class="post-title">ez_php1</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>题目要求a和b变量不相等但是md5值相等，FL_AG不能等于flag，让a&#x3D;240610708&amp;b&#x3D;QNKCDZO在POST方式传个FL_AG&#x3D;pass,就得到了第一个hint</p>
-<p><img src="/images/writeups/ez_php1_94c1521c.png" alt="ez_php1_94c1521c"></p>
-<p><code>进入/L0vey0U.php，直接给了一个flag但是假的，看代码应该是要让str反序列化等于YES I love这里序列化一下s:10:&quot;YES I love&quot;;再url编码?str=s:10:%22YES%20I%20love%22;</code></p>
-<p><code>第二个hint让看P0int.php根据代码构造payload</code></p>
-<p><code>O:5:&quot;Clazz&quot;:2:&#123;s:1:&quot;a&quot;;N;s:1:&quot;b&quot;;R:2;&#125;</code></p>
-<p><code>解码得到flag</code></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/PHP/" style="color: #03a9f4">PHP</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/03/2026-02-03-ez_php1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/03/2026-02-03-Hello,you/">
-        <h2 class="post-title">Hello,you</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>尝试<code>ls</code>发现执行成功显示flag.php和index.php，但是cat似乎被禁用了，这里先看看环境变量里面有没有flag如果再去考虑绕过检测，输入<code>env</code>成功在环境变量中找到flag</p>
-<p><img src="/images/writeups/Hello,you_f9640f1b.png" alt="Hello,you_f9640f1b"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/03/2026-02-03-Hello,you/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/03/2026-02-03-%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5/">
-        <h2 class="post-title">一键连接!</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这里需要md5_1不等于md5_2但md5(md5_1)等于md5(md5_2),shel_1和shel_2也是同理，还要传个new_player。这里使用数组绕过对比，用data协议让被读取到Welcome to NSSCTF!!!</p>
-<p>最后payload：?md5_1[]&#x3D;1&amp;md5_2[]&#x3D;2&amp;sha1_1[]&#x3D;1&amp;sha1_2[]&#x3D;2&amp;new_player&#x3D;data:&#x2F;&#x2F;text&#x2F;plain,Welcome to NSSCTF!!!</p>
-<p><img src="/images/writeups/%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5_a44c2eb8.png" alt="一键连接_a44c2eb8"><br>题目提示用蚁剑连接成功在根目录下找到flag</p>
-<p><img src="/images/writeups/%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5_28ce3aff.png" alt="一键连接_28ce3aff"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/03/2026-02-03-%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -532,6 +398,140 @@
 </div>
 
 <div class="post">
+    <a href="/2026/02/03/2026-02-03-Hello,you/">
+        <h2 class="post-title">Hello,you</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>尝试<code>ls</code>发现执行成功显示flag.php和index.php，但是cat似乎被禁用了，这里先看看环境变量里面有没有flag如果再去考虑绕过检测，输入<code>env</code>成功在环境变量中找到flag</p>
+<p><img src="/images/writeups/Hello,you_f9640f1b.png" alt="Hello,you_f9640f1b"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/03/2026-02-03-Hello,you/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/03/2026-02-03-ez_php1/">
+        <h2 class="post-title">ez_php1</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目要求a和b变量不相等但是md5值相等，FL_AG不能等于flag，让a&#x3D;240610708&amp;b&#x3D;QNKCDZO在POST方式传个FL_AG&#x3D;pass,就得到了第一个hint</p>
+<p><img src="/images/writeups/ez_php1_94c1521c.png" alt="ez_php1_94c1521c"></p>
+<p><code>进入/L0vey0U.php，直接给了一个flag但是假的，看代码应该是要让str反序列化等于YES I love这里序列化一下s:10:&quot;YES I love&quot;;再url编码?str=s:10:%22YES%20I%20love%22;</code></p>
+<p><code>第二个hint让看P0int.php根据代码构造payload</code></p>
+<p><code>O:5:&quot;Clazz&quot;:2:&#123;s:1:&quot;a&quot;;N;s:1:&quot;b&quot;;R:2;&#125;</code></p>
+<p><code>解码得到flag</code></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/PHP/" style="color: #00bcd4">PHP</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/03/2026-02-03-ez_php1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/03/2026-02-03-%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5/">
+        <h2 class="post-title">一键连接!</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里需要md5_1不等于md5_2但md5(md5_1)等于md5(md5_2),shel_1和shel_2也是同理，还要传个new_player。这里使用数组绕过对比，用data协议让被读取到Welcome to NSSCTF!!!</p>
+<p>最后payload：?md5_1[]&#x3D;1&amp;md5_2[]&#x3D;2&amp;sha1_1[]&#x3D;1&amp;sha1_2[]&#x3D;2&amp;new_player&#x3D;data:&#x2F;&#x2F;text&#x2F;plain,Welcome to NSSCTF!!!</p>
+<p><img src="/images/writeups/%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5_a44c2eb8.png" alt="一键连接_a44c2eb8"><br>题目提示用蚁剑连接成功在根目录下找到flag</p>
+<p><img src="/images/writeups/%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5_28ce3aff.png" alt="一键连接_28ce3aff"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/03/2026-02-03-%E4%B8%80%E9%94%AE%E8%BF%9E%E6%8E%A5/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2026/02/03/2026-02-03-%E4%B8%80%E4%B8%AA....%E6%B1%A0%E5%AD%90/">
         <h2 class="post-title">一个....池子？</h2>
     </a>
@@ -578,7 +578,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -586,8 +586,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/02/2026-02-02-Interesting_include/">
-        <h2 class="post-title">Interesting_include</h2>
+    <a href="/2026/02/02/2026-02-02-EZ-WEB/">
+        <h2 class="post-title">EZ WEB</h2>
     </a>
     <div class="category-and-date">
         
@@ -603,8 +603,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>好像没有限制直接?filter&#x3D;php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;flag.php解码得到flag</p>
-<p><img src="/images/writeups/Interesting_include_bee2ec05.png" alt="Interesting_include_bee2ec05"></p>
+            <p><code>题目有一个点我查看flag点了之后显示Where&#39;s the flag? i swear it was around here somewhere，查看源码发现一个/src让我们用put的方法访问/super-secret-route-nobody-will-guess可以查看flag,用bp抓包改为PUT方式访问得到flag</code></p>
+<p>&#96;&#96;</p>
 
             
         </div>
@@ -619,16 +619,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #03a9f4">文件包含</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/02/2026-02-02-Interesting_include/" class="go-post">阅读全文</a>
+    <a href="/2026/02/02/2026-02-02-EZ-WEB/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -672,7 +667,7 @@
         </div>
         <div class="name">youbing</div>
         <div class="description">
-            <p>你好！我是 Coder<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
+            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
 
         </div>
         
@@ -687,7 +682,7 @@
             </span>
             
             <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/Youbing3432213764-coder">
+                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
                     <i
                         class="fa-brands fa-github fa-fw"
                     ></i>

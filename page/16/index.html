@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/01/26/2026-01-26-EZ_eval/">
-        <h2 class="post-title">EZ_eval</h2>
+    <a href="/2026/01/26/2026-01-26-%E7%9C%8B%E7%9C%8Bip/">
+        <h2 class="post-title">看看ip</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,15 +198,10 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><img src="/images/writeups/EZ_eval_5334e318.png" alt="EZ_eval_5334e318"></p>
-<p>这里发现script没有被禁用,%09代替空格构造payload：</p>
-<p>?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘ls%09&#x2F;‘)</script></p>
-<p>发现flag文件</p>
-<p>尝试?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘c<em>t%09fl</em>g’)</script></p>
-<p>好像不行，这里直接读取文件内容</p>
-<p>&lt;script%09language&#x3D;’php’&gt;system(‘strings%09&#x2F;fl*’)</script></p>
-<p>得到flag</p>
-<p><img src="/images/writeups/EZ_eval_1939400c.png" alt="EZ_eval_1939400c"></p>
+            <p>打开题目显示了访问ip没办法在网页直接修改，尝试抓包用X-Forwarded-For可以修改ip地址尝试命令执行直接ls不行尝试使用</p>
+<p>{system(“ls &#x2F;“)}找到flag文件</p>
+<p>{system(“cat &#x2F;flag”)}得到flag</p>
+<p><img src="/images/writeups/%E7%9C%8B%E7%9C%8Bip_a2907753.png" alt="看看ip_a2907753"></p>
 
             
         </div>
@@ -221,16 +216,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00bcd4">HTTP头</a>
         </span>
         
     </div>
-    <a href="/2026/01/26/2026-01-26-EZ_eval/" class="go-post">阅读全文</a>
+    <a href="/2026/01/26/2026-01-26-%E7%9C%8B%E7%9C%8Bip/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -278,7 +273,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
@@ -288,6 +283,96 @@
         
     </div>
     <a href="/2026/01/26/2026-01-26-%E8%BF%99%E6%98%AF%E4%BB%80%E4%B9%88SQL-%E6%B3%A8%E4%B8%80%E4%B8%8B/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/25/2026-01-25-The-future/">
+        <h2 class="post-title">The future</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/25
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><img src="/images/writeups/The-future_1fa0d8b8.png" alt="The-future_1fa0d8b8"></p>
+<p>$_REQUEST[‘file’] 从GET或POST接收file参数然后直接拿来就用试了几次发现?File&#x3D;&#x2F;flag可以得到flag</p>
+<p><img src="/images/writeups/The-future_73f63e97.png" alt="The-future_73f63e97"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/25/2026-01-25-The-future/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/25/2026-01-25-weakpswd/">
+        <h2 class="post-title">weakpswd</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/25
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>点击忘记密码提示账号为admin先登录一次用bp抓包</p>
+<p><img src="/images/writeups/weakpswd_243f9640.png" alt="weakpswd_243f9640"></p>
+<p>发送到Intruder中添加payload进行爆破发现admin123响应长度和其它密码不一样查看响应找到flag</p>
+<p><img src="/images/writeups/weakpswd_09a5d41c.png" alt="weakpswd_09a5d41c"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #00a596">爆破</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/25/2026-01-25-weakpswd/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -334,12 +419,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00bcd4">SQL注入</a>
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00a596">SQL注入</a>
         </span>
         
     </div>
@@ -391,53 +476,11 @@
         
         <span class="tag">
             
-            <a href="/tags/PHP/" style="color: #03a9f4">PHP</a>
+            <a href="/tags/PHP/" style="color: #00a596">PHP</a>
         </span>
         
     </div>
     <a href="/2026/01/25/2026-01-25-PHP%E8%BA%B2%E7%8C%AB%E7%8C%AB/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/25/2026-01-25-The-future/">
-        <h2 class="post-title">The future</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/25
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><img src="/images/writeups/The-future_1fa0d8b8.png" alt="The-future_1fa0d8b8"></p>
-<p>$_REQUEST[‘file’] 从GET或POST接收file参数然后直接拿来就用试了几次发现?File&#x3D;&#x2F;flag可以得到flag</p>
-<p><img src="/images/writeups/The-future_73f63e97.png" alt="The-future_73f63e97"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/25/2026-01-25-The-future/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -477,7 +520,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
@@ -487,54 +530,6 @@
         
     </div>
     <a href="/2026/01/25/2026-01-25-ez_upload/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/25/2026-01-25-weakpswd/">
-        <h2 class="post-title">weakpswd</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/25
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>点击忘记密码提示账号为admin先登录一次用bp抓包</p>
-<p><img src="/images/writeups/weakpswd_243f9640.png" alt="weakpswd_243f9640"></p>
-<p>发送到Intruder中添加payload进行爆破发现admin123响应长度和其它密码不一样查看响应找到flag</p>
-<p><img src="/images/writeups/weakpswd_09a5d41c.png" alt="weakpswd_09a5d41c"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #00bcd4">爆破</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/25/2026-01-25-weakpswd/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -606,7 +601,7 @@
         </div>
         <div class="name">youbing</div>
         <div class="description">
-            <p>你好！我是 Coder<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
+            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
 
         </div>
         
@@ -621,7 +616,7 @@
             </span>
             
             <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/Youbing3432213764-coder">
+                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
                     <i
                         class="fa-brands fa-github fa-fw"
                     ></i>

