@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Session固定攻击甄洪琳 | youbing的博客</title>
+    <title>Session固定攻击 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Session固定攻击甄洪琳</h1>
+        <h1>Session固定攻击</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -175,14 +175,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">
+                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">
                     题解
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Session/" style="color: #03a9f4">
+                <a href="/tags/Session/" style="color: #00a596">
                     Session
                 </a>
             </span>
@@ -193,15 +193,15 @@
     
     <div class="content" v-pre>
         <p>打开题目发现可以登录，和给管理员发消息，还提示测试账号和flag在管理员页面</p>
-<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_d4625a96.png" alt="Session固定攻击甄洪琳_d4625a96"></p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB_d4625a96.png" alt="Session固定攻击_d4625a96"></p>
 <p>先登录上test账号，然后给管理员发消息，这里要直接的session id</p>
-<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_3b7e42fd.png" alt="Session固定攻击甄洪琳_3b7e42fd"></p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB_3b7e42fd.png" alt="Session固定攻击_3b7e42fd"></p>
 <p>在cookie中找到自己的session</p>
-<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_db98ad1a.png" alt="Session固定攻击甄洪琳_db98ad1a"></p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB_db98ad1a.png" alt="Session固定攻击_db98ad1a"></p>
 <p>给管理员发消息</p>
-<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_0e9f2c21.png" alt="Session固定攻击甄洪琳_0e9f2c21"></p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB_0e9f2c21.png" alt="Session固定攻击_0e9f2c21"></p>
 <p>返回开始界面，刷新得到flag</p>
-<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_ef3eedfd.png" alt="Session固定攻击甄洪琳_ef3eedfd"></p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB_ef3eedfd.png" alt="Session固定攻击_ef3eedfd"></p>
 <p>CTF{ctfshow_session_fixation_is_a_common_web_security_vulnerability}</p>
 
     </div>
@@ -250,7 +250,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

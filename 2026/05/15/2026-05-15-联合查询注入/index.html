@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>联合查询注入甄洪琳 | youbing的博客</title>
+    <title>联合查询注入 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>联合查询注入甄洪琳</h1>
+        <h1>联合查询注入</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -175,14 +175,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">
+                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">
                     题解
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00a596">
+                <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #ffa2c4">
                     SQL注入
                 </a>
             </span>
@@ -193,22 +193,22 @@
     
     <div class="content" v-pre>
         <p>打开题目发现是一个页面列表</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_604788e4.png" alt="联合查询注入甄洪琳_604788e4"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_604788e4.png" alt="联合查询注入_604788e4"></p>
 <p>点进去发现有一个id参数</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_90da9414.png" alt="联合查询注入甄洪琳_90da9414"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_90da9414.png" alt="联合查询注入_90da9414"></p>
 <p>测试了一下发现可以注入</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_77278866.png" alt="联合查询注入甄洪琳_77278866"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_77278866.png" alt="联合查询注入_77278866"></p>
 <p>先查字段数</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_79c7a0db.png" alt="联合查询注入甄洪琳_79c7a0db"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_79c7a0db.png" alt="联合查询注入_79c7a0db"></p>
 <p>然后查表名，得到pages和users</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_681d53db.png" alt="联合查询注入甄洪琳_681d53db"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_681d53db.png" alt="联合查询注入_681d53db"></p>
 <p>再查users中的列名</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_a25ec514.png" alt="联合查询注入甄洪琳_a25ec514"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_a25ec514.png" alt="联合查询注入_a25ec514"></p>
 <p>这里查id和username都没查到有用信息</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_4b3629d4.png" alt="联合查询注入甄洪琳_4b3629d4"></p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_e9af4873.png" alt="联合查询注入甄洪琳_e9af4873"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_4b3629d4.png" alt="联合查询注入_4b3629d4"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_e9af4873.png" alt="联合查询注入_e9af4873"></p>
 <p>Flag在password中</p>
-<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_1a211d1b.png" alt="联合查询注入甄洪琳_1a211d1b"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5_1a211d1b.png" alt="联合查询注入_1a211d1b"></p>
 <p>CTF{admin_secret_password}</p>
 
     </div>
@@ -257,7 +257,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

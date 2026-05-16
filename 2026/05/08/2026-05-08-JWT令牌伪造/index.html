@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>JWT令牌伪造甄洪琳 | youbing的博客</title>
+    <title>JWT令牌伪造 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>JWT令牌伪造甄洪琳</h1>
+        <h1>JWT令牌伪造</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -182,14 +182,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/JWT/" style="color: #00bcd4">
+                <a href="/tags/JWT/" style="color: #03a9f4">
                     JWT
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Session/" style="color: #03a9f4">
+                <a href="/tags/Session/" style="color: #00bcd4">
                     Session
                 </a>
             </span>
@@ -200,22 +200,22 @@
     
     <div class="content" v-pre>
         <p>题目提示伪造 JWT 令牌，获取管理员权限</p>
-<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_0e3700b9.png" alt="JWT令牌伪造甄洪琳_0e3700b9"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0_0e3700b9.png" alt="JWT令牌伪造_0e3700b9"></p>
 <p>登录抓包</p>
-<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_ffc455b7.png" alt="JWT令牌伪造甄洪琳_ffc455b7"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0_ffc455b7.png" alt="JWT令牌伪造_ffc455b7"></p>
 <p>JWT令牌分为三段</p>
 <p>1、eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</p>
 <p>2、eyJ1c2VyIjoic3NzIiwiYWRtaW4iOmZhbHNlfQ</p>
 <p>3、m8V_HNSI65wv2XVsZlxjFapXhxILIgwSrqkMv4wdxBg</p>
 <p>第一段解码后为{“alg”:”HS256”,”typ”:”JWT”}，题目提示修改alg字段为none绕过签名验证</p>
-<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_66674c61.png" alt="JWT令牌伪造甄洪琳_66674c61"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0_66674c61.png" alt="JWT令牌伪造_66674c61"></p>
 <p>第二段解码后为{“user”:”sss”,”admin”:false}，第三段解码后为乱码估计是验证部分，所以这里根据题目提示修改alg字段绕过验证,第三段因为绕过验证了所以不用加上</p>
 <p>eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0&#x3D;.eyJ1c2VyIjoic3NzIiwiYWRtaW4iOnRydWV9.</p>
 <p>抓登录包修改token，这里登录包后面还有一个包也需要修改</p>
-<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_63e98977.png" alt="JWT令牌伪造甄洪琳_63e98977"></p>
-<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_2f1bee0a.png" alt="JWT令牌伪造甄洪琳_2f1bee0a"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0_63e98977.png" alt="JWT令牌伪造_63e98977"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0_2f1bee0a.png" alt="JWT令牌伪造_2f1bee0a"></p>
 <p>修改完后得到flag</p>
-<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_bfbe2285.png" alt="JWT令牌伪造甄洪琳_bfbe2285"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0_bfbe2285.png" alt="JWT令牌伪造_bfbe2285"></p>
 <p>CTF{jwt_none_alg_bypass_success}</p>
 
     </div>
@@ -264,7 +264,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

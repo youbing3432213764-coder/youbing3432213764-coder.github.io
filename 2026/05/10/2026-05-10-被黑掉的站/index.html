@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>被黑掉的站甄洪琳 | youbing的博客</title>
+    <title>被黑掉的站 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>被黑掉的站甄洪琳</h1>
+        <h1>被黑掉的站</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -175,7 +175,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">
+                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">
                     题解
                 </a>
             </span>
@@ -186,14 +186,14 @@
     
     <div class="content" v-pre>
         <p>打开题目告诉我们网站被黑了，有很多的马</p>
-<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_f83981a8.png" alt="被黑掉的站甄洪琳_f83981a8"></p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99_f83981a8.png" alt="被黑掉的站_f83981a8"></p>
 <p>看了源码和请求响应都没有有用信息，用dirsearch扫描后台发现一个shell.php和index.php.bak ，一个是shell的登录界面一个是字符串应该是密码字典</p>
-<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_45d8cc45.png" alt="被黑掉的站甄洪琳_45d8cc45"></p>
-<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_ffd6be9b.png" alt="被黑掉的站甄洪琳_ffd6be9b"></p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99_45d8cc45.png" alt="被黑掉的站_45d8cc45"></p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99_ffd6be9b.png" alt="被黑掉的站_ffd6be9b"></p>
 <p>直接抓包爆破，先设置好payload</p>
-<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_6663d663.png" alt="被黑掉的站甄洪琳_6663d663"></p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99_6663d663.png" alt="被黑掉的站_6663d663"></p>
 <p>开始爆破，找到正确密码的响应得到flag</p>
-<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_51a2c445.png" alt="被黑掉的站甄洪琳_51a2c445"></p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99_51a2c445.png" alt="被黑掉的站_51a2c445"></p>
 <p>flag{8e539a7a46fea05dea18b9b9f9ff6a63}	</p>
 
     </div>
@@ -242,7 +242,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

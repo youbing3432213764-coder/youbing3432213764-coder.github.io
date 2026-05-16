@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Flask_Session伪造甄洪琳 | youbing的博客</title>
+    <title>Flask_Session伪造 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Flask_Session伪造甄洪琳</h1>
+        <h1>Flask_Session伪造</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -175,21 +175,21 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">
+                <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">
                     题解
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Flask/" style="color: #03a9f4">
+                <a href="/tags/Flask/" style="color: #ff7d73">
                     Flask
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/Session/" style="color: #ffa2c4">
+                <a href="/tags/Session/" style="color: #03a9f4">
                     Session
                 </a>
             </span>
@@ -200,24 +200,24 @@
     
     <div class="content" v-pre>
         <p>题目显示可以读取网页</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_35153660.png" alt="Flask_Session伪造甄洪琳_35153660"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_35153660.png" alt="Flask_Session伪造_35153660"></p>
 <p>点击后会跳转百度，查看源码发现这里有一个url参数</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_b0f33032.png" alt="Flask_Session伪造甄洪琳_b0f33032"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_b0f33032.png" alt="Flask_Session伪造_b0f33032"></p>
 <p>用file协议可以读取文件</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_a47c83c8.png" alt="Flask_Session伪造甄洪琳_a47c83c8"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_a47c83c8.png" alt="Flask_Session伪造_a47c83c8"></p>
 <p>题目叫Flask_Session伪造,需要secret_key，一般在app.py中</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_1917bde4.png" alt="Flask_Session伪造甄洪琳_1917bde4"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_1917bde4.png" alt="Flask_Session伪造_1917bde4"></p>
 <p>这里需要admin签名的cookie才能访问&#x2F;flag，所以需要先得到mac地址，然后算secret_key，再去伪造{‘username’:’admin’} 的签名 Cookie，最后替换cookie访问&#x2F;flag。因为可以读取文件，先看看能不能直接读网卡信息得到mac地址。</p>
 <p>Payload：&#x2F;read?url&#x3D;file:&#x2F;&#x2F;&#x2F;sys&#x2F;class&#x2F;net&#x2F;eth0&#x2F;address</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_a8f6fd1e.png" alt="Flask_Session伪造甄洪琳_a8f6fd1e"><br>用脚本计算secret_key</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_022c0a7c.png" alt="Flask_Session伪造甄洪琳_022c0a7c"></p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_99a6de20.png" alt="Flask_Session伪造甄洪琳_99a6de20"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_a8f6fd1e.png" alt="Flask_Session伪造_a8f6fd1e"><br>用脚本计算secret_key</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_022c0a7c.png" alt="Flask_Session伪造_022c0a7c"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_99a6de20.png" alt="Flask_Session伪造_99a6de20"></p>
 <p>得到secret_key为0.5088633266314257，用flask-session-cookie-manager伪造session</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_8db25bcb.png" alt="Flask_Session伪造甄洪琳_8db25bcb"></p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_259c58df.png" alt="Flask_Session伪造甄洪琳_259c58df"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_8db25bcb.png" alt="Flask_Session伪造_8db25bcb"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_259c58df.png" alt="Flask_Session伪造_259c58df"></p>
 <p>eyJ1c2VybmFtZSI6ImFkbWluIn0.af_3Mw.CpCI19wit_JWsNvwVA5W5vmcaZw </p>
 <p>修改cookie访问&#x2F;flag获得flag</p>
-<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_4a2b7b59.png" alt="Flask_Session伪造甄洪琳_4a2b7b59"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0_4a2b7b59.png" alt="Flask_Session伪造_4a2b7b59"></p>
 <p>CTF{flask_session_is_secure}</p>
 
     </div>
@@ -266,7 +266,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""

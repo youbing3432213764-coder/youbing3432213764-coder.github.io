@@ -214,7 +214,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
@@ -255,69 +255,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ffa2c4">RCE</a>
+            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
         </span>
         
     </div>
     <a href="/2026/02/05/2026-02-05-Canyource/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/05/2026-02-05-Ez_upload/">
-        <h2 class="post-title">Ez_upload</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这道题提交一句话木马抓包改后缀，题目提示不能带ph的后缀，先用.jpg格式上传看看还有没有其它限制，发现&lt;?被限制了这里用script方法的一句话木马，再用.htaccess文件将jpg变成php</p>
-<p>Muma.jpg:</p>
-<script language="php">phpinfo();</script>
-
-<p>.htaccess:</p>
-<p>AddType application&#x2F;x-httpd-php .jpg</p>
-<p><img src="/images/writeups/Ez_upload_f48561ec.png" alt="Ez_upload_f48561ec"></p>
-<p>再访问查看phpinfo()找到flag</p>
-<p><img src="/images/writeups/Ez_upload_1b31dcf6.png" alt="Ez_upload_1b31dcf6"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ff7d73">文件上传</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/05/2026-02-05-Ez_upload/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -365,7 +312,7 @@ test?url={%print((((lipsum|attr("\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
@@ -375,6 +322,105 @@ test?url={%print((((lipsum|attr("\u005f\u005f\u0067\u006c\u006f\u0062\u0061\u006
         
     </div>
     <a href="/2026/02/05/2026-02-05-Normal-SSTI/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/05/2026-02-05-Ez_upload/">
+        <h2 class="post-title">Ez_upload</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/5
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这道题提交一句话木马抓包改后缀，题目提示不能带ph的后缀，先用.jpg格式上传看看还有没有其它限制，发现&lt;?被限制了这里用script方法的一句话木马，再用.htaccess文件将jpg变成php</p>
+<p>Muma.jpg:</p>
+<script language="php">phpinfo();</script>
+
+<p>.htaccess:</p>
+<p>AddType application&#x2F;x-httpd-php .jpg</p>
+<p><img src="/images/writeups/Ez_upload_f48561ec.png" alt="Ez_upload_f48561ec"></p>
+<p>再访问查看phpinfo()找到flag</p>
+<p><img src="/images/writeups/Ez_upload_1b31dcf6.png" alt="Ez_upload_1b31dcf6"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ffa2c4">文件上传</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/05/2026-02-05-Ez_upload/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/05/2026-02-05-hardrce/">
+        <h2 class="post-title">hardrce</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/5
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><code>这道题禁用了全部字母和一些特殊符号，只能用取反字符串的方法，先尝试将system(“ls /”)取反(~&#39;%8C%86%8C%8B%9A%92&#39;)(~&#39;%93%8C%DF%D0&#39;);发现了flllllaaaaaaggggggg，system(“cat /flllllaaaaaaggggggg”)取反(~%8C%86%8C%8B%9A%92)(~%9C%9E%8B%DF%D0%99%93%93%93%93%93%9E%9E%9E%9E%9E%9E%98%98%98%98%98%98%98)；</code></p>
+<p><code>得到flag</code></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/05/2026-02-05-hardrce/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -458,98 +504,11 @@ if(isset($_GET['exp'])){
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/05/2026-02-05-%E7%A6%81%E6%AD%A2%E5%A5%97%E5%A8%83/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/05/2026-02-05-hardrce/">
-        <h2 class="post-title">hardrce</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><code>这道题禁用了全部字母和一些特殊符号，只能用取反字符串的方法，先尝试将system(“ls /”)取反(~&#39;%8C%86%8C%8B%9A%92&#39;)(~&#39;%93%8C%DF%D0&#39;);发现了flllllaaaaaaggggggg，system(“cat /flllllaaaaaaggggggg”)取反(~%8C%86%8C%8B%9A%92)(~%9C%9E%8B%DF%D0%99%93%93%93%93%93%9E%9E%9E%9E%9E%9E%98%98%98%98%98%98%98)；</code></p>
-<p><code>得到flag</code></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/RCE/" style="color: #ffa2c4">RCE</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/05/2026-02-05-hardrce/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/04/2026-02-04-ez-ze/">
-        <h2 class="post-title">ez-ze</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>看题目源码特征像是ssti类型的题，用fenjing扫一下发现漏洞ls &#x2F;扫到flag，cat &#x2F;flag得到flag</p>
-<p><img src="/images/writeups/ez-ze_2fc07a7f.png" alt="ez-ze_2fc07a7f"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/04/2026-02-04-ez-ze/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -587,17 +546,17 @@ if(isset($_GET['exp'])){
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #ff7d73">HTTP头</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #03a9f4">HTTP头</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/" style="color: #ffa2c4">压缩包</a>
+            <a href="/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/" style="color: #00a596">压缩包</a>
         </span>
         
     </div>
@@ -605,8 +564,8 @@ if(isset($_GET['exp'])){
 </div>
 
 <div class="post">
-    <a href="/2026/02/04/2026-02-04-in_the_vaporwaves/">
-        <h2 class="post-title">in_the_vaporwaves</h2>
+    <a href="/2026/02/04/2026-02-04-ez-ze/">
+        <h2 class="post-title">ez-ze</h2>
     </a>
     <div class="category-and-date">
         
@@ -622,10 +581,8 @@ if(isset($_GET['exp'])){
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这里发现双声道刚好相反对称，将通道分离在混合渲染得到一段摩斯电码</p>
-<p><img src="/images/writeups/in_the_vaporwaves_99c36403.png" alt="in_the_vaporwaves_99c36403"></p>
-<p>就得到SCTFDES1R3_DRIVES_INT0_VAPORW@VES按照格式改成</p>
-<p>NSSCTF{DES1R3_DRIVES_INT0_VAPORW@VES}</p>
+            <p>看题目源码特征像是ssti类型的题，用fenjing扫一下发现漏洞ls &#x2F;扫到flag，cat &#x2F;flag得到flag</p>
+<p><img src="/images/writeups/ez-ze_2fc07a7f.png" alt="ez-ze_2fc07a7f"></p>
 
             
         </div>
@@ -640,11 +597,11 @@ if(isset($_GET['exp'])){
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/04/2026-02-04-in_the_vaporwaves/" class="go-post">阅读全文</a>
+    <a href="/2026/02/04/2026-02-04-ez-ze/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -687,11 +644,54 @@ if(isset($_GET['exp'])){
         
         <span class="tag">
             
-            <a href="/tags/Flask/" style="color: #ffa2c4">Flask</a>
+            <a href="/tags/Flask/" style="color: #00bcd4">Flask</a>
         </span>
         
     </div>
     <a href="/2026/02/04/2026-02-04-flask%E7%9C%9F%E9%A6%99/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/04/2026-02-04-in_the_vaporwaves/">
+        <h2 class="post-title">in_the_vaporwaves</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/4
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里发现双声道刚好相反对称，将通道分离在混合渲染得到一段摩斯电码</p>
+<p><img src="/images/writeups/in_the_vaporwaves_99c36403.png" alt="in_the_vaporwaves_99c36403"></p>
+<p>就得到SCTFDES1R3_DRIVES_INT0_VAPORW@VES按照格式改成</p>
+<p>NSSCTF{DES1R3_DRIVES_INT0_VAPORW@VES}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/04/2026-02-04-in_the_vaporwaves/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -735,7 +735,7 @@ if(isset($_GET['exp'])){
         </div>
         <div class="name">youbing</div>
         <div class="description">
-            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
+            <p>你好！我是 Coder<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
 
         </div>
         
@@ -750,7 +750,7 @@ if(isset($_GET['exp'])){
             </span>
             
             <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
+                <a target="_blank" rel="noopener" href="https://github.com/Youbing3432213764-coder">
                     <i
                         class="fa-brands fa-github fa-fw"
                     ></i>

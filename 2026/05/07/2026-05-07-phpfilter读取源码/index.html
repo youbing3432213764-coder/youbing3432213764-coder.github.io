@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>phpfilter读取源码甄洪琳 | youbing的博客</title>
+    <title>phpfilter读取源码 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -156,7 +156,7 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>phpfilter读取源码甄洪琳</h1>
+        <h1>phpfilter读取源码</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -182,14 +182,14 @@
             
             <span class="tag">
                 
-                <a href="/tags/PHP/" style="color: #00bcd4">
+                <a href="/tags/PHP/" style="color: #00a596">
                     PHP
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #ff7d73">
+                <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #00bcd4">
                     代码审计
                 </a>
             </span>
@@ -200,16 +200,16 @@
     
     <div class="content" v-pre>
         <p>题目名字叫php:&#x2F;&#x2F;filter读取源码，猜测可能需要php伪协议读取文件源码，尝试输入一个路径看看什么情况</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_3ba6824c.png" alt="phpfilter读取源码甄洪琳_3ba6824c"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_3ba6824c.png" alt="phpfilter读取源码_3ba6824c"></p>
 <p>被禁用了，查看一下当前页面的源码看看什么情况</p>
 <p>php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;index.php</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_ec9eafa6.png" alt="phpfilter读取源码甄洪琳_ec9eafa6"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_ec9eafa6.png" alt="phpfilter读取源码_ec9eafa6"></p>
 <p>Base64解码后发现这里包含了一个db.php文件</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_4e64daa3.png" alt="phpfilter读取源码甄洪琳_4e64daa3"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_4e64daa3.png" alt="phpfilter读取源码_4e64daa3"></p>
 <p>再用同样的方法查看一下db.php文件中有什么</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_1b6f2561.png" alt="phpfilter读取源码甄洪琳_1b6f2561"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_1b6f2561.png" alt="phpfilter读取源码_1b6f2561"></p>
 <p>Base64解码后发现flag</p>
-<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81%E7%94%84%E6%B4%AA%E7%90%B3_2a444633.png" alt="phpfilter读取源码甄洪琳_2a444633"></p>
+<p><img src="/images/writeups/phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81_2a444633.png" alt="phpfilter读取源码_2a444633"></p>
 <p>CTF{3ecret_passw0rd_here}</p>
 
     </div>
@@ -258,7 +258,7 @@
     
 <script
     src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo="Youbing3432213764-coder/Youbing3432213764-coder.github.io"
     data-repo-id=""
     data-category=""
     data-category-id=""
