@@ -276,7 +276,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Session/" style="color: #00bcd4">Session</a>
+            <a href="/tags/Session/" style="color: #ff7d73">Session</a>
         </span>
         
     </div>
@@ -322,7 +322,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
@@ -378,16 +378,70 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" style="color: #03a9f4">编码解码</a>
+            <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" style="color: #ff7d73">编码解码</a>
         </span>
         
     </div>
     <a href="/2026/04/21/2026-04-21-Base64%E5%A4%9A%E5%B1%82%E5%B5%8C%E5%A5%97%E8%A7%A3%E7%A0%81/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/04/21/2026-04-21-HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5/">
+        <h2 class="post-title">HTTP头注入</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/4/21
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>f12查看源码发现密码被base64加密</p>
+<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_fcd75f5b.png" alt="HTTP头注入1"></p>
+<p>解码得到密码</p>
+<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_e01ece3e.png" alt="HTTP头注入2"></p>
+<p>登录提示只能ctf-show-brower登录</p>
+<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_783ef6ab.png" alt="HTTP头注入3"></p>
+<p>这里抓包修改（靶场默认开启https，删除s切换回http再抓包）</p>
+<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_eef061af.png" alt="HTTP头注入4"></p>
+<p>发送请求包得到flag</p>
+<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_1f496b9e.png" alt="HTTP头注入5"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #ff7d73">HTTP头</a>
+        </span>
+        
+    </div>
+    <a href="/2026/04/21/2026-04-21-HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -433,65 +487,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" style="color: #03a9f4">编码解码</a>
+            <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%A3%E7%A0%81/" style="color: #00bcd4">编码解码</a>
         </span>
         
     </div>
     <a href="/2026/04/21/2026-04-21-Base64%E7%BC%96%E7%A0%81%E9%9A%90%E8%97%8F/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/04/21/2026-04-21-HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5/">
-        <h2 class="post-title">HTTP头注入</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/4/21
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>f12查看源码发现密码被base64加密</p>
-<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_fcd75f5b.png" alt="HTTP头注入1"></p>
-<p>解码得到密码</p>
-<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_e01ece3e.png" alt="HTTP头注入2"></p>
-<p>登录提示只能ctf-show-brower登录</p>
-<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_783ef6ab.png" alt="HTTP头注入3"></p>
-<p>这里抓包修改（靶场默认开启https，删除s切换回http再抓包）</p>
-<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_eef061af.png" alt="HTTP头注入4"></p>
-<p>发送请求包得到flag</p>
-<p><img src="/images/writeups/HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5_1f496b9e.png" alt="HTTP头注入5"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
-        </span>
-        
-    </div>
-    <a href="/2026/04/21/2026-04-21-HTTP%E5%A4%B4%E6%B3%A8%E5%85%A5/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -544,7 +544,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -596,7 +596,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
@@ -654,7 +654,7 @@
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
+            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
         </span>
         
     </div>
@@ -705,7 +705,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
