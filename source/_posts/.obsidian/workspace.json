@@ -1,0 +1,190 @@
+{
+  "main": {
+    "id": "54355f2c72e9f8a5",
+    "type": "split",
+    "children": [
+      {
+        "id": "abc0b1ce6097cd60",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "223258c0eafcaec8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ctf秀web应用安全与防护题解.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ctf秀web应用安全与防护题解"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "249f1b818a657e64",
+    "type": "split",
+    "children": [
+      {
+        "id": "d333996bc76cab67",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ae31bebd24eca28c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "1880620a32538156",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "05fb078ea979feff",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7858cc561a7e7233",
+    "type": "split",
+    "children": [
+      {
+        "id": "97bf00ddc76fca39",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c0b3995c19e964db",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ctf秀web应用安全与防护题解.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "ctf秀web应用安全与防护题解 的反向链接列表"
+            }
+          },
+          {
+            "id": "f729ddf4e91cda54",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ctf秀web应用安全与防护题解.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "ctf秀web应用安全与防护题解 的出链列表"
+            }
+          },
+          {
+            "id": "f5ca49c176bd7c61",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "448432b90d6467aa",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "8ee4df7bacc4e223",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ctf秀web应用安全与防护题解.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "ctf秀web应用安全与防护题解 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "223258c0eafcaec8",
+  "lastOpenFiles": [
+    "hello-world.md"
+  ]
+}
