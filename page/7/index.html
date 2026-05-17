@@ -218,7 +218,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
@@ -228,6 +228,46 @@
         
     </div>
     <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4%E9%AC%BC%E6%89%8D/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/13/2026-02-13-login/">
+        <h2 class="post-title">login</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里根据提示输入20200101显示登录成功，学号加1发现出现f再加1发现出现l这里猜测按照学号输下去在拼起来就可以得到flag:flag{dlcg}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/13/2026-02-13-login/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -266,56 +306,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #ffa2c4">HTTP头</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
         </span>
         
     </div>
     <a href="/2026/02/13/2026-02-13-iphone/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/13/2026-02-13-login/">
-        <h2 class="post-title">login</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/13
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这里根据提示输入20200101显示登录成功，学号加1发现出现f再加1发现出现l这里猜测按照学号输下去在拼起来就可以得到flag:flag{dlcg}</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/13/2026-02-13-login/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -356,11 +356,57 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/13/2026-02-13-%E6%B5%AE%E7%94%9F%E6%97%A5%E8%AE%B0/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/12/2026-02-12-jwt/">
+        <h2 class="post-title">jwt</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>登录admin发现账号存在，尝试注册admin账号发现不行，创一个账号登录发现cookie中有jwt这里尝试修改jwt登录admin账号，用jwt-cracker得到密钥，用admin的jwt替换原来的jwt，登录上admin得到flag</p>
+<p><img src="/images/writeups/jwt_9e8f1909.png" alt="jwt_9e8f1909"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/JWT/" style="color: #ff7d73">JWT</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/12/2026-02-12-jwt/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -401,7 +447,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
@@ -444,57 +490,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/12/2026-02-12-%E5%8F%AC%E5%94%A4%E7%A5%9E%E9%BE%99/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/12/2026-02-12-jwt/">
-        <h2 class="post-title">jwt</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/12
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>登录admin发现账号存在，尝试注册admin账号发现不行，创一个账号登录发现cookie中有jwt这里尝试修改jwt登录admin账号，用jwt-cracker得到密钥，用admin的jwt替换原来的jwt，登录上admin得到flag</p>
-<p><img src="/images/writeups/jwt_9e8f1909.png" alt="jwt_9e8f1909"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/JWT/" style="color: #00a596">JWT</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/12/2026-02-12-jwt/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -531,7 +531,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -572,7 +572,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -617,12 +617,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
+            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
         </span>
         
     </div>

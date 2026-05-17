@@ -223,72 +223,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00bcd4">文件包含</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00a596">文件包含</a>
         </span>
         
     </div>
     <a href="/2026/05/08/2026-05-08-%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB(RFI)/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">
-        <h2 class="post-title">日志文件包含</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/7
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>打开题目发现可以输入文件路径</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_fe94a8b9.png" alt="日志文件包含_fe94a8b9"></p>
-<p>结合题目名字叫日志文件包含，所以先找一下日志文件的路径，在网络响应中发现服务端是nginx</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_26121b2f.png" alt="日志文件包含_26121b2f"></p>
-<p>搜索发现nginx服务器一般日志文件路径是&#x2F;var&#x2F;log&#x2F;nginx，这里看看访问日志&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log</p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_c5fd0cf0.png" alt="日志文件包含_c5fd0cf0"></p>
-<p>发现日志会记录请求头，这里修改User-Agent也会被记录进去，在User-Agent写段命令进去看看网页打开日志文件时会不会执行里面的命令</p>
-<p>User-Agent:<?phpsystem('ls');?><br><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_e7bc2371.png" alt="日志文件包含_e7bc2371"></p>
-<p>响应中出现了当前目录下的文件，说明命令被成功执行，而且根据响应中已经得到了flag的位置直接执行cat命令</p>
-<p>User-Agent: <?php system('cat /var/www/html/flag.php');?></p>
-<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_0447760d.png" alt="日志文件包含_0447760d"></p>
-<p>CTF{php_access_l0g_lf1_is_fun}</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #ffa2c4">文件包含</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -335,7 +279,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
@@ -345,7 +289,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #03a9f4">代码审计</a>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #ffa2c4">代码审计</a>
         </span>
         
     </div>
@@ -395,6 +339,62 @@
         
     </div>
     <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/">
+        <h2 class="post-title">日志文件包含</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>打开题目发现可以输入文件路径</p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_fe94a8b9.png" alt="日志文件包含_fe94a8b9"></p>
+<p>结合题目名字叫日志文件包含，所以先找一下日志文件的路径，在网络响应中发现服务端是nginx</p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_26121b2f.png" alt="日志文件包含_26121b2f"></p>
+<p>搜索发现nginx服务器一般日志文件路径是&#x2F;var&#x2F;log&#x2F;nginx，这里看看访问日志&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log</p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_c5fd0cf0.png" alt="日志文件包含_c5fd0cf0"></p>
+<p>发现日志会记录请求头，这里修改User-Agent也会被记录进去，在User-Agent写段命令进去看看网页打开日志文件时会不会执行里面的命令</p>
+<p>User-Agent:<?phpsystem('ls');?><br><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_e7bc2371.png" alt="日志文件包含_e7bc2371"></p>
+<p>响应中出现了当前目录下的文件，说明命令被成功执行，而且根据响应中已经得到了flag的位置直接执行cat命令</p>
+<p>User-Agent: <?php system('cat /var/www/html/flag.php');?></p>
+<p><img src="/images/writeups/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB_0447760d.png" alt="日志文件包含_0447760d"></p>
+<p>CTF{php_access_l0g_lf1_is_fun}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #ffa2c4">文件包含</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -534,7 +534,7 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
@@ -544,6 +544,103 @@ finally:
         
     </div>
     <a href="/2026/05/02/2026-05-02-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/">
+        <h2 class="post-title">反弹shell构造</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>输入whoami，发现不会回显信息</p>
+<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_523e0a46.png" alt="反弹shell构造_523e0a46"></p>
+<p>尝试重定向写入文件</p>
+<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_c5c3a1c2.png" alt="反弹shell构造_c5c3a1c2"></p>
+<p>访问1.txt得到flag</p>
+<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_3bcddcd4.png" alt="反弹shell构造_3bcddcd4"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/01/2026-05-01-%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4/">
+        <h2 class="post-title">管道符绕过过滤</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这道题发现输入的东西会自动在前面接上ls执行</p>
+<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_15811a70.png" alt="管道符绕过过滤_15811a70"></p>
+<p>先找到flag的位置</p>
+<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_027c5098.png" alt="管道符绕过过滤_027c5098"></p>
+<p>然后用；结束ls命令再执行cat去得到flag</p>
+<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_7255da6d.png" alt="管道符绕过过滤_7255da6d"></p>
+<p>命令成功执行在源码中找到flag</p>
+<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_21aa9a5f.png" alt="管道符绕过过滤_21aa9a5f"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/01/2026-05-01-%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -587,56 +684,6 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/01/2026-05-01-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC%E5%8F%98%E5%BD%A2/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/">
-        <h2 class="post-title">反弹shell构造</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>输入whoami，发现不会回显信息</p>
-<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_523e0a46.png" alt="反弹shell构造_523e0a46"></p>
-<p>尝试重定向写入文件</p>
-<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_c5c3a1c2.png" alt="反弹shell构造_c5c3a1c2"></p>
-<p>访问1.txt得到flag</p>
-<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_3bcddcd4.png" alt="反弹shell构造_3bcddcd4"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
@@ -646,7 +693,7 @@ finally:
         </span>
         
     </div>
-    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/" class="go-post">阅读全文</a>
+    <a href="/2026/05/01/2026-05-01-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC%E5%8F%98%E5%BD%A2/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -685,68 +732,21 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ffa2c4">RCE</a>
+            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #ff7d73">代码审计</a>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #ffa2c4">代码审计</a>
         </span>
         
     </div>
     <a href="/2026/05/01/2026-05-01-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/01/2026-05-01-%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4/">
-        <h2 class="post-title">管道符绕过过滤</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这道题发现输入的东西会自动在前面接上ls执行</p>
-<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_15811a70.png" alt="管道符绕过过滤_15811a70"></p>
-<p>先找到flag的位置</p>
-<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_027c5098.png" alt="管道符绕过过滤_027c5098"></p>
-<p>然后用；结束ls命令再执行cat去得到flag</p>
-<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_7255da6d.png" alt="管道符绕过过滤_7255da6d"></p>
-<p>命令成功执行在源码中找到flag</p>
-<p><img src="/images/writeups/%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4_21aa9a5f.png" alt="管道符绕过过滤_21aa9a5f"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/01/2026-05-01-%E7%AE%A1%E9%81%93%E7%AC%A6%E7%BB%95%E8%BF%87%E8%BF%87%E6%BB%A4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -783,7 +783,7 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
