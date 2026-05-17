@@ -229,7 +229,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -237,8 +237,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/27/2026-02-27-solid/">
-        <h2 class="post-title">solid</h2>
+    <a href="/2026/02/27/2026-02-27-%E6%9F%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%8D%E4%BB%87/">
+        <h2 class="post-title">某函数的复仇</h2>
     </a>
     <div class="category-and-date">
         
@@ -254,12 +254,11 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这道题看图完整的只有这6个中间还有顺序的数字</p>
-<p><img src="/images/writeups/solid_c5d66642.png" alt="solid_c5d66642"></p>
-<p>根据1不动把每个面拼成立体864513解出来就是952375再按照题目加密</p>
-<p><img src="/images/writeups/solid_796a5d88.png" alt="solid_796a5d88"></p>
+            <p>题目告诉我们flag在&#x2F;flag里面这里只要读取&#x2F;flag就行了</p>
+<p>这里需要利用$shaw(‘’,$root);执行命令构造payload：?root&#x3D;;}readfile(‘&#x2F;flag’);&#x2F;*</p>
+<p>POST：shaw&#x3D;create_function</p>
 <p>得到flag</p>
-<p>Flag{70af0aa975da81f48080d64b400b03d7}</p>
+<p><img src="/images/writeups/%E6%9F%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%8D%E4%BB%87_ca197ef1.png" alt="某函数的复仇_ca197ef1"></p>
 
             
         </div>
@@ -274,11 +273,54 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/27/2026-02-27-solid/" class="go-post">阅读全文</a>
+    <a href="/2026/02/27/2026-02-27-%E6%9F%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%8D%E4%BB%87/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/26/2026-02-26-2/">
+        <h2 class="post-title">2</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/26
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>打开压缩包发现有一个加密的图片，暴力破解得到密码</p>
+<p><img src="/images/writeups/2_83c015cb.png" alt="2_83c015cb"></p>
+<p>这里查看发现没包含文件，查看属性都没得到有用信息，用Stegsolve.jar发现lsb有数据用cloacked-pixel分析密码用压缩包密码，分析得到flag</p>
+<p><img src="/images/writeups/2_af0e6681.png" alt="2_af0e6681"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/26/2026-02-26-2/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -319,59 +361,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Webshell/" style="color: #ffa2c4">Webshell</a>
+            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
         </span>
         
     </div>
     <a href="/2026/02/26/2026-02-26-%E5%86%99shell/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/26/2026-02-26-2/">
-        <h2 class="post-title">2</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>打开压缩包发现有一个加密的图片，暴力破解得到密码</p>
-<p><img src="/images/writeups/2_83c015cb.png" alt="2_83c015cb"></p>
-<p>这里查看发现没包含文件，查看属性都没得到有用信息，用Stegsolve.jar发现lsb有数据用cloacked-pixel分析密码用压缩包密码，分析得到flag</p>
-<p><img src="/images/writeups/2_af0e6681.png" alt="2_af0e6681"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/26/2026-02-26-2/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -415,7 +414,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
@@ -458,7 +457,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
@@ -471,8 +470,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/">
-        <h2 class="post-title">爆破</h2>
+    <a href="/2026/02/25/2026-02-25-$$/">
+        <h2 class="post-title">$$</h2>
     </a>
     <div class="category-and-date">
         
@@ -488,10 +487,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>根据题目构造脚本爆破得到密码</p>
-<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_70d497b2.png" alt="爆破_70d497b2"></p>
-<p>输入密码得到flag</p>
-<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_aafff50a.png" alt="爆破_aafff50a"></p>
+            <p>这里flag估计是个变量直接让c&#x3D;GLOBALS查看所有变量得到flag</p>
+<p><img src="/images/writeups/$$_9356264f.png" alt="$$_9356264f"></p>
 
             
         </div>
@@ -506,16 +503,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #00a596">爆破</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/" class="go-post">阅读全文</a>
+    <a href="/2026/02/25/2026-02-25-$$/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -554,12 +546,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #ffa2c4">HTTP头</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
         </span>
         
     </div>
@@ -606,7 +598,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -614,8 +606,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/25/2026-02-25-$$/">
-        <h2 class="post-title">$$</h2>
+    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/">
+        <h2 class="post-title">爆破</h2>
     </a>
     <div class="category-and-date">
         
@@ -631,8 +623,10 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这里flag估计是个变量直接让c&#x3D;GLOBALS查看所有变量得到flag</p>
-<p><img src="/images/writeups/$$_9356264f.png" alt="$$_9356264f"></p>
+            <p>根据题目构造脚本爆破得到密码</p>
+<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_70d497b2.png" alt="爆破_70d497b2"></p>
+<p>输入密码得到flag</p>
+<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_aafff50a.png" alt="爆破_aafff50a"></p>
 
             
         </div>
@@ -647,11 +641,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #ffa2c4">爆破</a>
         </span>
         
     </div>
-    <a href="/2026/02/25/2026-02-25-$$/" class="go-post">阅读全文</a>
+    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 

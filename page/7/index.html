@@ -223,7 +223,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #03a9f4">爆破</a>
+            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #ffa2c4">爆破</a>
         </span>
         
     </div>
@@ -266,12 +266,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00bcd4">HTTP头</a>
         </span>
         
     </div>
@@ -311,7 +311,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
@@ -356,7 +356,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
@@ -397,7 +397,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
@@ -447,7 +447,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
@@ -531,7 +531,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
@@ -572,7 +572,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
@@ -580,8 +580,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/10/2026-02-10-%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97/">
-        <h2 class="post-title">蜜雪冰城吉警店</h2>
+    <a href="/2026/02/10/2026-02-10-%E7%AE%80%E5%8D%95rce/">
+        <h2 class="post-title">简单rce</h2>
     </a>
     <div class="category-and-date">
         
@@ -597,8 +597,12 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这道题一开始猜测9号可能被隐藏了，没找到在哪。尝试直接触发9号，把8号的按钮id改为9，点击8号得到flag</p>
-<p><img src="/images/writeups/%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97_15f2c0a1.png" alt="蜜雪冰城吉警店_15f2c0a1"></p>
+            <p>这道题system被禁用了所以这里使用&#96;&#96;执行命令先查看环境变量?sys&#x3D;echo(<code>env</code>);</p>
+<p>POST:yyds&#x3D;666</p>
+<p>在环境变量中找到flag</p>
+<p><img src="/images/writeups/%E7%AE%80%E5%8D%95rce_fb2e8531.png" alt="简单rce_fb2e8531"></p>
+<p>提交发现是错的确认不是格式问题后尝试其它方法这里用print_r(scandir(‘&#x2F;‘));读根目录发现flag文件再用readfile(%27&#x2F;flag%27);得到flag</p>
+<p><img src="/images/writeups/%E7%AE%80%E5%8D%95rce_4f69237c.png" alt="简单rce_4f69237c"></p>
 
             
         </div>
@@ -613,11 +617,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
         </span>
         
     </div>
-    <a href="/2026/02/10/2026-02-10-%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97/" class="go-post">阅读全文</a>
+    <a href="/2026/02/10/2026-02-10-%E7%AE%80%E5%8D%95rce/" class="go-post">阅读全文</a>
 </div>
 
 

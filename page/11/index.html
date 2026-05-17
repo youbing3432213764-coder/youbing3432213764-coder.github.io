@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/02/04/2026-02-04-Zoinked-Zip-1/">
-        <h2 class="post-title">Zoinked Zip 1</h2>
+    <a href="/2026/02/04/2026-02-04-ssssti/">
+        <h2 class="post-title">ssssti</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,9 +198,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>题目附件压缩包发现打不开，用编辑器查看发现开头标识不对，改为正确的之后解压得到</p>
-<p>Flag</p>
-<p><img src="/images/writeups/Zoinked-Zip-1_b018c909.png" alt="Zoinked-Zip-1_b018c909"></p>
+            <p>这里ssti用fenjing试试发现flag，提取flag</p>
+<p><img src="/images/writeups/ssssti_1eaa6fb6.png" alt="ssssti_1eaa6fb6"></p>
 
             
         </div>
@@ -215,21 +214,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #ff7d73">HTTP头</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/" style="color: #00bcd4">压缩包</a>
+            <a href="/tags/SSTI/" style="color: #00bcd4">SSTI</a>
         </span>
         
     </div>
-    <a href="/2026/02/04/2026-02-04-Zoinked-Zip-1/" class="go-post">阅读全文</a>
+    <a href="/2026/02/04/2026-02-04-ssssti/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -268,7 +262,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
@@ -310,7 +304,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -350,61 +344,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/03/2026-02-03-Evan/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/03/2026-02-03-ez_php1/">
-        <h2 class="post-title">ez_php1</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>题目要求a和b变量不相等但是md5值相等，FL_AG不能等于flag，让a&#x3D;240610708&amp;b&#x3D;QNKCDZO在POST方式传个FL_AG&#x3D;pass,就得到了第一个hint</p>
-<p><img src="/images/writeups/ez_php1_94c1521c.png" alt="ez_php1_94c1521c"></p>
-<p><code>进入/L0vey0U.php，直接给了一个flag但是假的，看代码应该是要让str反序列化等于YES I love这里序列化一下s:10:&quot;YES I love&quot;;再url编码?str=s:10:%22YES%20I%20love%22;</code></p>
-<p><code>第二个hint让看P0int.php根据代码构造payload</code></p>
-<p><code>O:5:&quot;Clazz&quot;:2:&#123;s:1:&quot;a&quot;;N;s:1:&quot;b&quot;;R:2;&#125;</code></p>
-<p><code>解码得到flag</code></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/PHP/" style="color: #03a9f4">PHP</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/03/2026-02-03-ez_php1/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -446,6 +390,56 @@
         
     </div>
     <a href="/2026/02/03/2026-02-03-Hello,you/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/03/2026-02-03-ez_php1/">
+        <h2 class="post-title">ez_php1</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目要求a和b变量不相等但是md5值相等，FL_AG不能等于flag，让a&#x3D;240610708&amp;b&#x3D;QNKCDZO在POST方式传个FL_AG&#x3D;pass,就得到了第一个hint</p>
+<p><img src="/images/writeups/ez_php1_94c1521c.png" alt="ez_php1_94c1521c"></p>
+<p><code>进入/L0vey0U.php，直接给了一个flag但是假的，看代码应该是要让str反序列化等于YES I love这里序列化一下s:10:&quot;YES I love&quot;;再url编码?str=s:10:%22YES%20I%20love%22;</code></p>
+<p><code>第二个hint让看P0int.php根据代码构造payload</code></p>
+<p><code>O:5:&quot;Clazz&quot;:2:&#123;s:1:&quot;a&quot;;N;s:1:&quot;b&quot;;R:2;&#125;</code></p>
+<p><code>解码得到flag</code></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/PHP/" style="color: #ffa2c4">PHP</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/03/2026-02-03-ez_php1/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -495,7 +489,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
@@ -538,7 +532,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -625,7 +619,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>

