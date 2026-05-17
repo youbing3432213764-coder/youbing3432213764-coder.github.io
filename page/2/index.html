@@ -235,7 +235,7 @@
         
         <span class="tag">
             
-            <a href="/tags/JWT/" style="color: #ff7d73">JWT</a>
+            <a href="/tags/JWT/" style="color: #03a9f4">JWT</a>
         </span>
         
         <span class="tag">
@@ -291,7 +291,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
@@ -301,11 +301,56 @@
         
         <span class="tag">
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #03a9f4">代码审计</a>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #00a596">代码审计</a>
         </span>
         
     </div>
     <a href="/2026/05/07/2026-05-07-phpfilter%E8%AF%BB%E5%8F%96%E6%BA%90%E7%A0%81/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/">
+        <h2 class="post-title">路径遍历突破</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>题目提示flag为&#x2F;flag.txt，直接读取发现不让用&#x2F;或..&#x2F;开头</p>
+<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4_95c9db97.png" alt="路径遍历突破_95c9db97"></p>
+<p>这里开头随便加个东西不为&#x2F;或..&#x2F;就行了，然后用..&#x2F;先根目录移动</p>
+<p>1&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;flag.txt</p>
+<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4_3707f5d8.png" alt="路径遍历突破_3707f5d8"></p>
+<p>CTF{file_path_bypass_is_fun}</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -357,56 +402,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #00a596">文件包含</a>
+            <a href="/tags/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" style="color: #03a9f4">文件包含</a>
         </span>
         
     </div>
     <a href="/2026/05/07/2026-05-07-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/">
-        <h2 class="post-title">路径遍历突破</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/7
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>题目提示flag为&#x2F;flag.txt，直接读取发现不让用&#x2F;或..&#x2F;开头</p>
-<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4_95c9db97.png" alt="路径遍历突破_95c9db97"></p>
-<p>这里开头随便加个东西不为&#x2F;或..&#x2F;就行了，然后用..&#x2F;先根目录移动</p>
-<p>1&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;..&#x2F;flag.txt</p>
-<p><img src="/images/writeups/%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4_3707f5d8.png" alt="路径遍历突破_3707f5d8"></p>
-<p>CTF{file_path_bypass_is_fun}</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/07/2026-05-07-%E8%B7%AF%E5%BE%84%E9%81%8D%E5%8E%86%E7%AA%81%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -546,16 +546,66 @@ finally:
         
         <span class="tag">
             
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #00bcd4">RCE</a>
+        </span>
+        
+    </div>
+    <a href="/2026/05/02/2026-05-02-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/">
+        <h2 class="post-title">反弹shell构造</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/5/1
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>输入whoami，发现不会回显信息</p>
+<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_523e0a46.png" alt="反弹shell构造_523e0a46"></p>
+<p>尝试重定向写入文件</p>
+<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_c5c3a1c2.png" alt="反弹shell构造_c5c3a1c2"></p>
+<p>访问1.txt得到flag</p>
+<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_3bcddcd4.png" alt="反弹shell构造_3bcddcd4"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #ff7d73">RCE</a>
+            <a href="/tags/Webshell/" style="color: #ff7d73">Webshell</a>
         </span>
         
     </div>
-    <a href="/2026/05/02/2026-05-02-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
+    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -599,12 +649,12 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/Webshell/" style="color: #03a9f4">Webshell</a>
+            <a href="/tags/Webshell/" style="color: #00bcd4">Webshell</a>
         </span>
         
     </div>
@@ -647,71 +697,21 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #00bcd4">RCE</a>
+            <a href="/tags/RCE/" style="color: #ffa2c4">RCE</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #03a9f4">代码审计</a>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #00a596">代码审计</a>
         </span>
         
     </div>
     <a href="/2026/05/01/2026-05-01-%E6%97%A0%E5%AD%97%E6%AF%8D%E6%95%B0%E5%AD%97%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/">
-        <h2 class="post-title">反弹shell构造</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/5/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>输入whoami，发现不会回显信息</p>
-<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_523e0a46.png" alt="反弹shell构造_523e0a46"></p>
-<p>尝试重定向写入文件</p>
-<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_c5c3a1c2.png" alt="反弹shell构造_c5c3a1c2"></p>
-<p>访问1.txt得到flag</p>
-<p><img src="/images/writeups/%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0_3bcddcd4.png" alt="反弹shell构造_3bcddcd4"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Webshell/" style="color: #00bcd4">Webshell</a>
-        </span>
-        
-    </div>
-    <a href="/2026/05/01/2026-05-01-%E5%8F%8D%E5%BC%B9shell%E6%9E%84%E9%80%A0/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -754,7 +754,7 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
@@ -795,12 +795,12 @@ finally:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #00bcd4">RCE</a>
+            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
         </span>
         
     </div>

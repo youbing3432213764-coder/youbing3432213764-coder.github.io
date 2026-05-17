@@ -215,12 +215,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="color: #ff7d73">图片隐写</a>
+            <a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/" style="color: #ffa2c4">图片隐写</a>
         </span>
         
     </div>
@@ -228,8 +228,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/01/29/2026-01-29-RCE-PLUS/">
-        <h2 class="post-title">RCE-PLUS</h2>
+    <a href="/2026/01/29/2026-01-29-Take-me-hand-(%E5%88%9D%E7%BA%A7)/">
+        <h2 class="post-title">Take me hand (初级)</h2>
     </a>
     <div class="category-and-date">
         
@@ -245,9 +245,96 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这里的命令没有回显试着用tee把命令放在txt文件中，tac &#x2F;f* | tee 1.txt</p>
-<p>然后读取1.txt得到flag</p>
-<p><img src="/images/writeups/RCE-PLUS_8f7574c6.png" alt="RCE-PLUS_8f7574c6"></p>
+            <p>题目给了一个.pcapng文件，用wireshark打开搜索一下flag分组字节流里找到flag<br><img src="/images/writeups/Take-me-hand-(%E5%88%9D%E7%BA%A7)_a15ebd6c.png" alt="Take-me-hand-(初级)_a15ebd6c"></p>
+<p>得到flag<br><img src="/images/writeups/Take-me-hand-(%E5%88%9D%E7%BA%A7)_6b207891.png" alt="Take-me-hand-(初级)_6b207891"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/29/2026-01-29-Take-me-hand-(%E5%88%9D%E7%BA%A7)/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/29/2026-01-29-what-are-y0u-uploading/">
+        <h2 class="post-title">what are y0u uploading？</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这道题让我们上传文件抓包修改文件后缀，然后告诉我们上传一个f1ag.php就给我们flag</p>
+<p>抓包修改上传f1ag.php得到flag</p>
+<p><img src="/images/writeups/what-are-y0u-uploading_aafed512.png" alt="what-are-y0u-uploading_aafed512"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #00bcd4">文件上传</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/29/2026-01-29-what-are-y0u-uploading/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/29/2026-01-29-xff/">
+        <h2 class="post-title">xff</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这里提示我们要用小红自己的电脑用X-Forwarded-For:127.0.0.1访问把访问地址改为本地就得到flag了</p>
+<p><img src="/images/writeups/xff_d3533538.png" alt="xff_d3533538"></p>
 
             
         </div>
@@ -267,11 +354,52 @@
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
+            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
         </span>
         
     </div>
-    <a href="/2026/01/29/2026-01-29-RCE-PLUS/" class="go-post">阅读全文</a>
+    <a href="/2026/01/29/2026-01-29-xff/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2026/01/29/2026-01-29-%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA/">
+        <h2 class="post-title">导弹迷踪</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/1/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这道题游戏是在前端运行本来想着修改前端代码作弊的但是没找到怎么改，想了一下flag可能也在前端，然后在game.js中找到flag</p>
+<p><img src="/images/writeups/%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA_1330c036.png" alt="导弹迷踪_1330c036"></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
+        </span>
+        
+    </div>
+    <a href="/2026/01/29/2026-01-29-%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -310,150 +438,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/" style="color: #ff7d73">压缩包</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/29/2026-01-29-%E5%96%9C%E6%AC%A2%E6%88%91%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B9%88-(%E5%88%9D%E7%BA%A7)/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/29/2026-01-29-xff/">
-        <h2 class="post-title">xff</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这里提示我们要用小红自己的电脑用X-Forwarded-For:127.0.0.1访问把访问地址改为本地就得到flag了</p>
-<p><img src="/images/writeups/xff_d3533538.png" alt="xff_d3533538"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
             <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/HTTP%E5%A4%B4/" style="color: #00a596">HTTP头</a>
+            <a href="/tags/%E5%8E%8B%E7%BC%A9%E5%8C%85/" style="color: #00bcd4">压缩包</a>
         </span>
         
     </div>
-    <a href="/2026/01/29/2026-01-29-xff/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/29/2026-01-29-what-are-y0u-uploading/">
-        <h2 class="post-title">what are y0u uploading？</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这道题让我们上传文件抓包修改文件后缀，然后告诉我们上传一个f1ag.php就给我们flag</p>
-<p>抓包修改上传f1ag.php得到flag</p>
-<p><img src="/images/writeups/what-are-y0u-uploading_aafed512.png" alt="what-are-y0u-uploading_aafed512"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" style="color: #03a9f4">文件上传</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/29/2026-01-29-what-are-y0u-uploading/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/01/29/2026-01-29-%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA/">
-        <h2 class="post-title">导弹迷踪</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/1/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>这道题游戏是在前端运行本来想着修改前端代码作弊的但是没找到怎么改，想了一下flag可能也在前端，然后在game.js中找到flag</p>
-<p><img src="/images/writeups/%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA_1330c036.png" alt="导弹迷踪_1330c036"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/01/29/2026-01-29-%E5%AF%BC%E5%BC%B9%E8%BF%B7%E8%B8%AA/" class="go-post">阅读全文</a>
+    <a href="/2026/01/29/2026-01-29-%E5%96%9C%E6%AC%A2%E6%88%91%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B9%88-(%E5%88%9D%E7%BA%A7)/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -490,12 +484,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #00bcd4">代码审计</a>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" style="color: #03a9f4">代码审计</a>
         </span>
         
     </div>
@@ -537,17 +531,17 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
+            <a href="/tags/RCE/" style="color: #00a596">RCE</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5/" style="color: #ff7d73">命令注入</a>
+            <a href="/tags/%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5/" style="color: #ffa2c4">命令注入</a>
         </span>
         
     </div>
@@ -603,8 +597,8 @@
 </div>
 
 <div class="post">
-    <a href="/2026/01/28/2026-01-28-easycon/">
-        <h2 class="post-title">easycon</h2>
+    <a href="/2026/01/28/2026-01-28-ez_rce/">
+        <h2 class="post-title">ez_rce</h2>
     </a>
     <div class="category-and-date">
         
@@ -620,14 +614,9 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>这里初始界面没找到什么有用的信息，加应该index.php发现POST传cmd可以执行命令</p>
-<p><img src="/images/writeups/easycon_e97c5393.png" alt="easycon_e97c5393"></p>
-<p>输入cmd&#x3D;system(‘ls’);</p>
-<p>回显bbbbbbbbb.txt gw.jpg gw2.jpg index.html index.php</p>
-<p>bbbbbbbbb.txt比较可疑</p>
-<p><img src="/images/writeups/easycon_160da602.png" alt="easycon_160da602"></p>
-<p>搜索没有在里面搜到flag结尾有等号，可能是base64解码一下头部有JFIF应该是图片解码成图片得到flag</p>
-<p><img src="/images/writeups/easycon_35309ed5.png" alt="easycon_35309ed5"></p>
+            <p>发现题目没有禁用反引号尝试print_r(<code>l\s /</code>);回显了一个fffffffffflagafag应该就是flag在的地方，这里nl没有被禁用用nl显示flag</p>
+<p>print_r(<code>nl /fffffffffflagafag</code>);成功得到flag</p>
+<p><img src="/images/writeups/ez_rce_3da701c3.png" alt="ez_rce_3da701c3"></p>
 
             
         </div>
@@ -642,11 +631,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/RCE/" style="color: #03a9f4">RCE</a>
         </span>
         
     </div>
-    <a href="/2026/01/28/2026-01-28-easycon/" class="go-post">阅读全文</a>
+    <a href="/2026/01/28/2026-01-28-ez_rce/" class="go-post">阅读全文</a>
 </div>
 
 
