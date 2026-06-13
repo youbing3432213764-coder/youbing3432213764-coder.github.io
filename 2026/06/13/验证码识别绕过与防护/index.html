@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>youbing的博客</title>
+    <title>验证码识别绕过 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -42,7 +42,9 @@
 
 
 
-<script src="/js/lib/home.js"></script>
+
+
+
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -152,40 +154,11 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div id="home-head">
-    <div
-        id="home-background"
-        ref="homeBackground"
-        data-images="/images/tx1.jpg"
-    ></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>youbing的博客</h1>
-                <h3>记录学习与生活</h3>
-                <h5>技术博客，分享编程学习笔记</h5>
-            </div>
-        </span>
+            <div class="article">
+    <div>
+        <h1>验证码识别绕过</h1>
     </div>
-</div>
-<div
-    id="home-posts-wrap"
-    ref="homePostsWrap"
-    true
->
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2026/06/13/%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E7%BB%95%E8%BF%87%E4%B8%8E%E9%98%B2%E6%8A%A4/">
-        <h2 class="post-title">验证码识别绕过</h2>
-    </a>
-    <div class="category-and-date">
-        
+    <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
@@ -194,11 +167,25 @@
         </span>
         
         
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
             
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇文章主要介绍传统图形验证码绕过方式和防护手段，以及防护方面的思考。文章仅供学习，作者不鼓励、不支持任何未经授权的系统测试、数据获取或安全绕过行为。</p>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81%E7%BB%95%E8%BF%87/" style="color: #ff7d73">
+                    验证码绕过
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇文章主要介绍传统图形验证码绕过方式和防护手段，以及防护方面的思考。文章仅供学习，作者不鼓励、不支持任何未经授权的系统测试、数据获取或安全绕过行为。</p>
 <h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>当发现网站验证码比较简单没有什么干扰比如<br>![[test.gif]]</p>
 <p>就可以尝试找到网站的验证码响应<br>![[8736b706e8850da579965b598d716ea2.png]]</p>
 <p>然后保存下来利用EasyOCR识别验证码，这里放一个示例脚本</p>
@@ -211,188 +198,17 @@
 <h6 id="对用户体验影响较小："><a href="#对用户体验影响较小：" class="headerlink" title="对用户体验影响较小："></a>对用户体验影响较小：</h6><p>1、IP风控<br>2、风险评分系统</p>
 <h3 id="思考与总结"><a href="#思考与总结" class="headerlink" title="思考与总结"></a>思考与总结</h3><p>传统字符验证码作为独立安全措施具有较大风险，一个安全的认证需要更多手段结合构建一个完整的认证体系。滑块验证码和行为验证码在一定程度上增加了验证码的安全性，但是牺牲了用户体验（增加用户验证时长，增加用户操作步骤）。IP风控和风险评分系统在用户使用过程中影响较小，但是可能会对用户造成误伤，还有在使用过程中会增加维护成本。</p>
 
-            
-        </div>
     </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81%E7%BB%95%E8%BF%87/" style="color: #ff7d73">验证码绕过</a>
-        </span>
-        
-    </div>
-    <a href="/2026/06/13/%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E7%BB%95%E8%BF%87%E4%B8%8E%E9%98%B2%E6%8A%A4/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/03/16/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/">
-        <h2 class="post-title">ctfshow web应用安全与防护题解</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/16
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="Base64编码隐藏"><a href="#Base64编码隐藏" class="headerlink" title="Base64编码隐藏"></a>Base64编码隐藏</h2><p>打开题目f12查看源码发现密码被base64加密</p>
-<p><img src="/images/ctfshow/1773670223912.png" alt="1773670223912"></p>
-<p>解码得到密码</p>
-<p><img src="/images/ctfshow/1773670666647.png" alt="1773670666647"></p>
-<p>登录得到flag</p>
-<p><img src="/images/ctfshow/1773670740030.png" alt="1773670740030"></p>
-<h2 id="HTTP头注入"><a href="#HTTP头注入" class="headerlink" title="HTTP头注入"></a>HTTP头注入</h2><p>f12查看源码发现密码被base64加密</p>
-<p><img src="/images/ctfshow/1773670223912.png" alt="1773670223912"></p>
-<p>解码得到密码</p>
-<p><img src="/images/ctfshow/1773670666647.png" alt="1773670666647"></p>
-<p>登录提示只能ctf-show-brower登录</p>
-<p><img src="/images/ctfshow/1773671083716.png" alt="1773671083716"></p>
-<p>这里抓包修改（靶场默认开启https，删除s切换回http再抓包）</p>
-<p><img src="/images/ctfshow/1773671245832.png" alt="1773671245832"></p>
-<p>发送请求包得到flag</p>
-<p><img src="/images/ctfshow/1773671327314.png" alt="1773671327314"></p>
-<h2 id="Base64多层嵌套解码"><a href="#Base64多层嵌套解码" class="headerlink" title="Base64多层嵌套解码"></a>Base64多层嵌套解码</h2><p>这里步骤跟“HTTP头注入”一样，只是中间的解码的步骤复杂了一些</p>
-<p>第1步逆向：Base64解码 text atob(“SXpVRlF4TTFVelJtdFNSazB3VTJ4U1UwNXFSWGRVVlZrOWNWYzU&#x3D;”)</p>
-<p>第2步逆向：这一步是 btoa(‘aB3’ + encoded + ‘qW9’).substr(2) 对第1步结果Base64解码 得到完整字符串，前面补回2个字符 去掉开头的”aB3”和结尾的”qW9”</p>
-<p>第3步逆向：这一步是 btoa(encoded.split(‘’).reverse().join(‘’)) 对第2步结果Base64解码 将字符串反转 </p>
-<p>第4步逆向：这一步是 btoa(encoded + ‘xH7jK’).slice(3) 对第3步结果Base64解码 开头补回3个字符 去掉结尾的”xH7jK”</p>
-<p>第5步逆向：最后Base64解码，得到原始密码</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ff7d73">题解</a>
-        </span>
-        
-    </div>
-    <a href="/2026/03/16/ctf%E7%A7%80web%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E9%98%B2%E6%8A%A4%E9%A2%98%E8%A7%A3/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2026/03/10/%E6%8C%96%E6%B4%9E%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">漏洞挖掘学习笔记</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/3/10
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="int类型"><a href="#int类型" class="headerlink" title="int类型"></a>int类型</h2><p>2147483648&#x3D;0</p>
-<h2 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h2><p>x为任意正整数<br>1e-x绕过检测让数为小数<br>1e+x绕过最大输入位数</p>
-<h2 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h2><p>例子：平台充值0.014第三方最小到0.01支付0.01实际到账0.014</p>
-<h2 id="Pirce"><a href="#Pirce" class="headerlink" title="Pirce"></a>Pirce</h2><p>可以尝试将参数修改成不正常的值（如：-1，0.01，0.019）</p>
-<h2 id="越权"><a href="#越权" class="headerlink" title="越权"></a>越权</h2><p>找到能够越权的参数比如userid、couponid、address</p>
-<h2 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h2>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #ffa2c4">漏洞挖掘</a>
-        </span>
-        
-    </div>
-    <a href="/2026/03/10/%E6%8C%96%E6%B4%9E%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    
-    <span class="current">1</span>
     
     
     
     
-</div>
-
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
     </div>
     
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/tx.gif" alt="avatar" />
-        </div>
-        <div class="name">youbing</div>
-        <div class="description">
-            <p>你好！我是 youbing<br>这是我的技术博客<br>分享编程学习笔记和生活记录</p>
-
-        </div>
-        
-        <div class="icon-links">
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://space.bilibili.com/484450203">
-                    <i
-                        class="fa-brands fa-bilibili fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a target="_blank" rel="noopener" href="https://github.com/youbing3432213764-coder">
-                    <i
-                        class="fa-brands fa-github fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-            <span class="icon-link">
-                <a href="mailto:youbing3432213764@gmail.com">
-                    <i
-                        class="fa-solid fa-envelope fa-fw"
-                    ></i>
-                </a>
-            </span>
-            
-        </div>
-        
-        
-    </div>
-</div>
-
-    </div>
+    
+    
     
 </div>
 
@@ -424,6 +240,29 @@
         
     </div>
     <script src="/js/main.js"></script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo-id=""
+    data-category=""
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang=""
+    crossorigin
+    async
+></script>
+
+
+
+
+
     
 </body>
 </html>
