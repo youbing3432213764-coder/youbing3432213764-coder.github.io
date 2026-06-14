@@ -186,12 +186,30 @@
     
     <div class="content" v-pre>
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇文章主要介绍传统图形验证码绕过方式和防护手段，以及防护方面的思考。文章仅供学习，作者不鼓励、不支持任何未经授权的系统测试、数据获取或安全绕过行为。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>当发现网站验证码比较简单没有什么干扰比如<br><img src="/test.gif"><br>就可以尝试找到网站的验证码响应<br><img src="/8736b706e8850da579965b598d716ea2.png"></p>
-<p>然后保存下来利用EasyOCR识别验证码，这里放一个示例脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">import numpy as np</span><br><span class="line">import easyocr</span><br><span class="line"></span><br><span class="line">reader = easyocr.Reader([&#x27;en&#x27;], gpu=False)</span><br><span class="line"></span><br><span class="line">def recognize(path):</span><br><span class="line">    img = Image.open(path).convert(&#x27;RGB&#x27;)</span><br><span class="line">    arr = np.array(img)</span><br><span class="line">    res = reader.readtext(arr)</span><br><span class="line">    return &#x27;&#x27;.join([item[1] for item in res])</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    img_path = input(&quot;请输入验证码图片路径（支持拖拽）：&quot;).strip().strip(&#x27;&quot;&#x27;)</span><br><span class="line">    try:</span><br><span class="line">        code = recognize(img_path)</span><br><span class="line">        print(f&quot;识别结果：&#123;code&#125;&quot;)</span><br><span class="line">    except Exception as e:</span><br><span class="line">        print(f&quot;出错：&#123;e&#125;&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>当发现网站验证码比较简单没有什么干扰比如<br><img src="/images/test.gif"><br>就可以尝试找到网站的验证码响应<br><img src="/images/8736b706e8850da579965b598d716ea2.png">然后保存下来利用EasyOCR识别验证码，这里放一个示例脚本</p>
+<pre class="line-numbers language-none"><code class="language-none">from PIL import Image
+import numpy as np
+import easyocr
 
-<p>成功识别该验证码<br><img src="/86852be73104955ee5d0340e9c4a9054.png"></p>
-<h3 id="作用s"><a href="#作用s" class="headerlink" title="作用s"></a>作用s</h3><p>一些网站为了防止绕口令爆破会使用验证码进行防护，示例中虽然只验证了单次识别验证码，但是配合其它代码可能降低自动化请求的成本。</p>
+reader &#x3D; easyocr.Reader([&#39;en&#39;], gpu&#x3D;False)
+
+def recognize(path):
+    img &#x3D; Image.open(path).convert(&#39;RGB&#39;)
+    arr &#x3D; np.array(img)
+    res &#x3D; reader.readtext(arr)
+    return &#39;&#39;.join([item[1] for item in res])
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    img_path &#x3D; input(&quot;请输入验证码图片路径（支持拖拽）：&quot;).strip().strip(&#39;&quot;&#39;)
+    try:
+        code &#x3D; recognize(img_path)
+        print(f&quot;识别结果：&#123;code&#125;&quot;)
+    except Exception as e:
+        print(f&quot;出错：&#123;e&#125;&quot;)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>成功识别该验证码<br><img src="/images/86852be73104955ee5d0340e9c4a9054.png"></p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>一些网站为了防止绕口令爆破会使用验证码进行防护，示例中虽然只验证了单次识别验证码，但是配合其它代码可能降低自动化请求的成本。</p>
 <h3 id="验证码失效原因"><a href="#验证码失效原因" class="headerlink" title="验证码失效原因"></a>验证码失效原因</h3><p>验证码样式过于简单，无干扰元素或干扰元素较弱（背景单一，干扰线无或过少，固定字体，格式统一）</p>
 <h3 id="如何进行防护"><a href="#如何进行防护" class="headerlink" title="如何进行防护"></a>如何进行防护</h3><h6 id="可能影响用户体验："><a href="#可能影响用户体验：" class="headerlink" title="可能影响用户体验："></a>可能影响用户体验：</h6><p>1、添加更多干扰元素减少识别成功率<br>2、改用滑块或行为验证码</p>
 <h6 id="对用户体验影响较小："><a href="#对用户体验影响较小：" class="headerlink" title="对用户体验影响较小："></a>对用户体验影响较小：</h6><p>1、IP风控<br>2、风险评分系统</p>

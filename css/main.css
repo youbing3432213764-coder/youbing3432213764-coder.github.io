@@ -972,4 +972,39 @@ ol li {
     ol {
         padding-left: 20px;
     }
+    /* 修复 Hexo 代码块显示 */
+    .highlight {
+        overflow-x: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+
+    .highlight table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .highlight pre {
+        margin: 0 !important;
+        white-space: pre !important;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        word-break: normal !important;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .highlight .gutter {
+        width: 50px;
+        user-select: none;
+    }
+
+    .highlight .code {
+        white-space: pre !important;
+    }
+
+    .highlight td {
+        padding: 0;
+    }
 }
