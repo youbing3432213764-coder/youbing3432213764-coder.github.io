@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>验证码识别绕过与防护 | youbing的博客</title>
+    <title>Tags: 安全 | youbing的博客</title>
     <meta name="author" content="youbing" />
     <meta name="description" content="技术博客，分享编程学习笔记" />
     <meta name="keywords" content="编程,学习,技术" />
@@ -37,10 +37,6 @@
 
 
 <script src="/js/lib/preview.js"></script>
-
-
-
-
 
 
 
@@ -154,85 +150,148 @@
 </transition>
 
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-            <div class="article">
-    <div>
-        <h1>验证码识别绕过与防护</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2026/6/13
+            <div id="archives">
+    
+    <div class="categories-tags">
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                题解
+            </a>
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #03a9f4">
-                    安全
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #ff7d73">
-                    验证码
-                </a>
-            </span>
-            
+        
+        <span>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                安全
+            </a>
         </span>
+        
+        
+        
+        
+        
+        <span>
+            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="background: #ffa2c4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                漏洞挖掘
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F/" style="background: #00a596">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                信息泄漏
+            </a>
+        </span>
+        
+        
+        
+        <span>
+            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="background: #03a9f4">
+                <span class="icon">
+                    <i class="fa-solid fa-tags fa-fw"></i>
+                </span>
+                验证码
+            </a>
+        </span>
+        
         
     </div>
     
-    <div class="content" v-pre>
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇文章主要介绍传统图形验证码绕过方式和防护手段，以及防护方面的思考。文章仅供学习，作者不鼓励、不支持任何未经授权的系统测试、数据获取或安全绕过行为。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>当发现网站验证码比较简单没有什么干扰比如<br><img src="/images/test.gif"><br>就可以尝试找到网站的验证码响应<br><img src="/images/8736b706e8850da579965b598d716ea2.png">然后保存下来利用EasyOCR识别验证码，这里放一个示例脚本</p>
-<pre class="line-numbers language-none"><code class="language-none">from PIL import Image
-import numpy as np
-import easyocr
-
-reader &#x3D; easyocr.Reader([&#39;en&#39;], gpu&#x3D;False)
-
-def recognize(path):
-    img &#x3D; Image.open(path).convert(&#39;RGB&#39;)
-    arr &#x3D; np.array(img)
-    res &#x3D; reader.readtext(arr)
-    return &#39;&#39;.join([item[1] for item in res])
-
-if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
-    img_path &#x3D; input(&quot;请输入验证码图片路径（支持拖拽）：&quot;).strip().strip(&#39;&quot;&#39;)
-    try:
-        code &#x3D; recognize(img_path)
-        print(f&quot;识别结果：&#123;code&#125;&quot;)
-    except Exception as e:
-        print(f&quot;出错：&#123;e&#125;&quot;)
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>成功识别该验证码<br><img src="/images/86852be73104955ee5d0340e9c4a9054.png"></p>
-<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>一些网站为了防止绕口令爆破会使用验证码进行防护，示例中虽然只验证了单次识别验证码，但是配合其它代码可能降低自动化请求的成本。</p>
-<h3 id="验证码失效原因"><a href="#验证码失效原因" class="headerlink" title="验证码失效原因"></a>验证码失效原因</h3><p>验证码样式过于简单，无干扰元素或干扰元素较弱（背景单一，干扰线无或过少，固定字体，格式统一）</p>
-<h3 id="如何进行防护"><a href="#如何进行防护" class="headerlink" title="如何进行防护"></a>如何进行防护</h3><h6 id="可能影响用户体验："><a href="#可能影响用户体验：" class="headerlink" title="可能影响用户体验："></a>可能影响用户体验：</h6><p>1、添加更多干扰元素减少识别成功率<br>2、改用滑块或行为验证码</p>
-<h6 id="对用户体验影响较小："><a href="#对用户体验影响较小：" class="headerlink" title="对用户体验影响较小："></a>对用户体验影响较小：</h6><p>1、IP风控<br>2、风险评分系统</p>
-<h3 id="思考与总结"><a href="#思考与总结" class="headerlink" title="思考与总结"></a>思考与总结</h3><p>传统字符验证码作为独立安全措施具有较大风险，一个安全的认证需要更多手段结合构建一个完整的认证体系。滑块验证码和行为验证码在一定程度上增加了验证码的安全性，但是牺牲了用户体验（增加用户验证时长，增加用户操作步骤）。IP风控和风险评分系统在用户使用过程中影响较小，但是可能会对用户造成误伤，还有在使用过程中会增加维护成本。</p>
-
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2026/8/12</div>
+            <a href="/2026/08/12/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%95%99%E8%82%B2%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F%E9%97%AE%E9%A2%98%E7%9A%84%E6%8C%96%E6%8E%98%E6%80%9D%E8%B7%AF/">
+                <h3>记一次教育网站信息泄漏问题的挖掘思路</h3>
+            </a>
+            <div class="info">
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">
+                            安全
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #ff7d73">
+                            漏洞挖掘
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F/" style="color: #00bcd4">
+                            信息泄漏
+                        </a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
     
-    
-    
-    
-    <div id="comment">
-        <div id="giscus-container" class="giscus"></div>
+    <div class="timeline">
+        <div class="timeline-tail"></div>
+        <div class="timeline-content">
+            <div class="item-time">2026/6/13</div>
+            <a href="/2026/06/13/%E9%AA%8C%E8%AF%81%E7%A0%81%E8%AF%86%E5%88%AB%E7%BB%95%E8%BF%87%E4%B8%8E%E9%98%B2%E6%8A%A4/">
+                <h3>验证码识别绕过与防护</h3>
+            </a>
+            <div class="info">
+                
+                
+                <span class="tags">
+                    <span class="icon">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ffa2c4">
+                            安全
+                        </a>
+                    </span>
+                    
+                    <span class="tag">
+                        
+                        <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #00bcd4">
+                            验证码
+                        </a>
+                    </span>
+                    
+                </span>
+                
+            </div>
+        </div>
     </div>
-    
-    
-    
     
 </div>
 
@@ -264,29 +323,6 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
     </div>
     <script src="/js/main.js"></script>
-    
-    
-<script
-    src="https://giscus.app/client.js"
-    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
-    data-repo-id=""
-    data-category=""
-    data-category-id=""
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="bottom"
-    data-theme="preferred_color_scheme"
-    data-lang=""
-    crossorigin
-    async
-></script>
-
-
-
-
-
     
 </body>
 </html>
