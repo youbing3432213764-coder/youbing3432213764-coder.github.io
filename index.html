@@ -198,7 +198,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在日常安全测试学习过程中，对某教育网站公开资源进行观察时，发现部分文件存在访问控制问题。</p>
+            <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p>本文仅用于记录个人安全学习与漏洞挖掘过程，旨在分享漏洞发现思路、安全分析方法以及防护建<br>议。本文重点在于分享漏洞产生原因和安全防护思路，不提供针对真实系统的利用方法、自动化测试方案或数据获取方式。任何组织或个人在进行安全测试时，应确保已获得明确授权，并遵守相关法律法规及平台规则。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在日常安全测试学习过程中，对某教育网站公开资源进行观察时，发现部分文件存在访问控制问题。</p>
 <h2 id="初始发现"><a href="#初始发现" class="headerlink" title="初始发现"></a>初始发现</h2><p>在访问某公开页面时，注意到页面中存在附件资源，资源已经过了规定的公示时间，但是仍然能够下载，而且附件内容包含个人敏感信息。</p>
 <h2 id="分析过程"><a href="#分析过程" class="headerlink" title="分析过程"></a>分析过程</h2><h3 id="过程："><a href="#过程：" class="headerlink" title="过程："></a>过程：</h3><p>页面-&gt;附件链接-&gt;文件服务器-&gt;直接返回文件</p>
 <h3 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h3><p>获得泄漏信息全程仅需网站正常下载附件的操作不需要专业知识和工具。</p>
@@ -207,7 +208,7 @@
 <p>漏洞本身泄漏出来的个人信息，可能导致隐私暴露和被社工的风险。</p>
 <h2 id="漏洞原因分析"><a href="#漏洞原因分析" class="headerlink" title="漏洞原因分析"></a>漏洞原因分析</h2><p>对于存在公开周期的文件，未在结束后及时删除或限制；</p>
 <p>在公开界面中放置带敏感信息的文件。</p>
-<h3 id="后续发现"><a href="#后续发现" class="headerlink" title="后续发现"></a>后续发现</h3><p>经过复盘发现这种资源公开模式是高校普遍存在的，那么可能其它地方也存在同样的问题，构造搜索语法搜索，发现该问题有一定的普遍性。</p>
+<h3 id="后续发现"><a href="#后续发现" class="headerlink" title="后续发现"></a>后续发现</h3><p>经过复盘发现这种资源公开模式是高校普遍存在的，那么可能其它地方也存在同样的问题，进一步测试发现该问题有一定的普遍性。</p>
 <h2 id="修复建议"><a href="#修复建议" class="headerlink" title="修复建议"></a>修复建议</h2><p>开发：<br>文件权限控制；</p>
 <p>敏感文件脱敏；</p>
 <p>公示结束自动失效。</p>
@@ -227,12 +228,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ff7d73">安全</a>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ffa2c4">安全</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #00a596">漏洞挖掘</a>
+            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #00bcd4">漏洞挖掘</a>
         </span>
         
         <span class="tag">
@@ -310,7 +311,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
         <span class="tag">
             
-            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #ffa2c4">验证码</a>
+            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #00a596">验证码</a>
         </span>
         
     </div>
@@ -371,7 +372,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #ffa2c4">题解</a>
         </span>
         
     </div>
