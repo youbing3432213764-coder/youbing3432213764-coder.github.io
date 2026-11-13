@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>burp suite插件分享 | youbing的博客</title>
+    <meta name="author" content="youbing" />
+    <meta name="description" content="技术博客，分享编程学习笔记" />
+    <meta name="keywords" content="编程,学习,技术" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/tx.gif" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>YOUBING的博客</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;YOUBING的博客</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>burp suite插件分享</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2026/11/13
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" style="color: #ff7d73">
+                    漏洞挖掘
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%B8%97%E9%80%8F/" style="color: #03a9f4">
+                    渗透
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>[[#1、burp suite插件安装教程|1、burp suite插件安装教程]]<ol>
+<li>[[#1、burp suite插件安装教程#jython安装教程|jython安装教程]]</li>
+</ol>
+</li>
+<li>[[#2、插件分享|2、插件分享]]<ol>
+<li>[[#2、插件分享#1、xia sql（瞎注）|1、xia sql（瞎注）]]</li>
+<li>[[#2、插件分享#2、xia yue （瞎越）|2、xia yue （瞎越）]]</li>
+<li>[[#2、插件分享#3、HaE|3、HaE]]</li>
+<li>[[#2、插件分享#4、jsonphunter|4、jsonphunter]]</li>
+</ol>
+</li>
+</ol>
+<h2 id="1、burp-suite插件安装教程"><a href="#1、burp-suite插件安装教程" class="headerlink" title="1、burp suite插件安装教程"></a>1、burp suite插件安装教程</h2><p>1、点击扩展（extensions）<img src="/images/Pasted%20image%2020261113193541.png"></p>
+<p>2、点击添加（add）<br><img src="/images/Pasted%20image%2020261113193744.png"></p>
+<p>3、添加插件具体步骤看图,如果报错可以将报错信息问ai怎么解决（python插件需要安装jython，下方有jython安装教程）。<br><img src="/images/Pasted%20image%2020261113194140.png"> </p>
+<h3 id="jython安装教程"><a href="#jython安装教程" class="headerlink" title="jython安装教程"></a>jython安装教程</h3><p>访问jython官网:<a target="_blank" rel="noopener" href="https://www.jython.org/download">https://www.jython.org/download</a><br><img src="/images/Pasted%20image%2020261113195759.png"></p>
+<p>打开设置<br><img src="/images/Pasted%20image%2020261113195947.png"></p>
+<p>在extensions中根据图片添加刚刚下载的jython文件<br><img src="/images/Pasted%20image%2020261113200154.png"></p>
+<h2 id="2、插件分享"><a href="#2、插件分享" class="headerlink" title="2、插件分享"></a>2、插件分享</h2><h3 id="1、xia-sql（瞎注）"><a href="#1、xia-sql（瞎注）" class="headerlink" title="1、xia sql（瞎注）"></a>1、xia sql（瞎注）</h3><p>插件介绍：这个插件会对请求包中的参数进行修改重新发送，根据响应的变化给出可能存在sql注入漏洞的参数。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="https://github.com/smxiazi/xia_sql">https://github.com/smxiazi/xia_sql</a></p>
+<p><img src="/images/Pasted%20image%2020261113211705.png"></p>
+<h3 id="2、xia-yue-（瞎越）"><a href="#2、xia-yue-（瞎越）" class="headerlink" title="2、xia yue （瞎越）"></a>2、xia yue （瞎越）</h3><p>插件介绍：用于测试越权、未授权</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="https://github.com/smxiazi/xia_Yue">https://github.com/smxiazi/xia_Yue</a></p>
+<p><img src="/images/Pasted%20image%2020261113211919.png"></p>
+<h3 id="3、HaE"><a href="#3、HaE" class="headerlink" title="3、HaE"></a>3、HaE</h3><p>插件介绍：根据正则匹配请求和响应报文，对满足的正则匹配的报文进行高亮显示，适合用于敏感信息泄漏发现。</p>
+<p>下载链接：<a target="_blank" rel="noopener" href="https://github.com/overspace-labs/HaE">https://github.com/overspace-labs/HaE</a></p>
+<p><img src="/images/Pasted%20image%2020261113211936.png"></p>
+<h3 id="4、jsonphunter"><a href="#4、jsonphunter" class="headerlink" title="4、jsonphunter"></a>4、jsonphunter</h3><p>插件介绍：可以被动扫描自动挖掘jsonpxss漏洞</p>
+
+    </div>
+    
+    
+    
+    
+    <div id="comment">
+        <div id="giscus-container" class="giscus"></div>
+    </div>
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2026 - 2026 youbing的博客
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;youbing
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+<script
+    src="https://giscus.app/client.js"
+    data-repo="youbing3432213764-coder/youbing3432213764-coder.github.io"
+    data-repo-id=""
+    data-category=""
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang=""
+    crossorigin
+    async
+></script>
+
+
+
+
+
+    
+</body>
+</html>
